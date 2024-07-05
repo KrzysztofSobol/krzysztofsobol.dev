@@ -1,4 +1,4 @@
-import MapLine from "./MapLine.jsx";
+import Map from "./map.jsx";
 import Asia from "./Asia.jsx";
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
 
     return(
         <>
-            <MapLine map={map}/>
+            <Map map={map}/>
         </>
     );
 }

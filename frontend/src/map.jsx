@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MapLine(props) {
+function Map( props) {
     const mapProp = props.map;
 
     function getLetterClass(letter) {
@@ -37,4 +37,4 @@ function MapLine(props) {
     );
 }
 
-export default MapLine;
+export default Map;

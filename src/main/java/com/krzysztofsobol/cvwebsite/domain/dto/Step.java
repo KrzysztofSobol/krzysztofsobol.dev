@@ -1,13 +1,16 @@
 package com.krzysztofsobol.cvwebsite.domain.dto;
 
-public class Step {
-    final int x;
-    final int y;
-    final char letter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    public Step(int x, int y, char letter) {
-        this.x = x;
-        this.y = y;
-        this.letter = letter;
-    }
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Step {
+    private int x;
+    private int y;
+    private char letter;
 }
