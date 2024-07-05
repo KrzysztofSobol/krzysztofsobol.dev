@@ -1,4 +1,5 @@
 import MapLine from "./MapLine.jsx";
+import Asia from "./Asia.jsx";
 
 function App() {
 

@@ -5,8 +5,8 @@
 
 .table{
     width: 100%;
-    background-color: #2C5E38;
-    border-radius: 5px;
+    background-color: #0d5227; <!-- #0d5227 , #2C5E38 -->
+    border-radius: 10px;
 }
 
 .table th{
@@ -24,9 +24,13 @@
 }
 
 .letter-c{
-    color: #558F56;
+    color: #558F56; <!-- #558F56 -->
 }
 
 .letter-x{
     color: #558F56;
+}
+
+.asia{
+    height: 300px;
 }
