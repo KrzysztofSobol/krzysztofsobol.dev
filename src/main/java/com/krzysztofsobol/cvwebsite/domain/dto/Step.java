@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Step {
+    private int id;
     private int x;
     private int y;
     private char letter;

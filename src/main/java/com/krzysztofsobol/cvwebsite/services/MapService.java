@@ -53,7 +53,7 @@ public class MapService {
         int y = rand.nextInt(yMax);
 
         tileQueue.add(new TileInfo(x, y, 1));
-
+        int id = 0;
         for(int h = 0; h < (xMax*yMax)-1; h++){
             TileInfo nextTile = tileQueue.peek();
             x = nextTile.getX();
@@ -65,7 +65,8 @@ public class MapService {
             tile.setCollapsed(true);
 
             tileQueue.remove();
-            steps.add(new Step(x, y, tile.getDisplay()));
+            steps.add(new Step(id, x, y, tile.getDisplay()));
+            id++;
 
             UpdateNeighbours(x, y);
         }

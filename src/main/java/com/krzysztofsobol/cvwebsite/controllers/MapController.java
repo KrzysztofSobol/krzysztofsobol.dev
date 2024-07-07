@@ -3,6 +3,7 @@ package com.krzysztofsobol.cvwebsite.controllers;
 import com.krzysztofsobol.cvwebsite.domain.dto.Step;
 import com.krzysztofsobol.cvwebsite.domain.dto.Tile;
 import com.krzysztofsobol.cvwebsite.services.MapService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,7 @@ public class MapController {
         this.mapService = mapService;
     }
 
+    @CrossOrigin(origins = "http://localhost:5173") // for testing the frontend
     @GetMapping(path = "/api/mapdata")
     public List<Step> listMapSteps(){
         LinkedList<Tile> tiles = new LinkedList<>();
