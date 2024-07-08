@@ -19,8 +19,8 @@ public class MapService {
     private PriorityQueue<TileInfo> tileQueue;
 
     public MapService() {
-        this.xMax = 10;
-        this.yMax = 10;
+        this.xMax = 26;
+        this.yMax = 126;
     }
 
     @SuppressWarnings("unchecked")
