@@ -20,11 +20,11 @@ public class MapController {
 
     @CrossOrigin(origins = "http://localhost:5173") // for testing the frontend
     @GetMapping(path = "/api/mapdata")
-    public List<Step> listMapSteps(){
+    public List<String> listMapSteps(){
         LinkedList<Tile> tiles = new LinkedList<>();
 
         Tile grass = new Tile('X', 300, 3, 3, 3, 3);
-        Tile sea = new Tile('?', 150, 1, 1, 1, 1);
+        Tile sea = new Tile('?', 200, 1, 1, 1, 1);
 
         Tile coast = new Tile('A', 10, 3, 5, 1, 5);
         Tile coast1 = new Tile('B', 10, 4, 3, 4, 1);
@@ -57,6 +57,7 @@ public class MapController {
         tiles.add(outer_corner3);
 
         mapService.init(tiles);
-        return mapService.Generate();
+        mapService.Generate();
+        return mapService.GetLines();
     }
 }

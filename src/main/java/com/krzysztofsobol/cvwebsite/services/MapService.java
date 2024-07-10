@@ -15,7 +15,7 @@ public class MapService {
     private final int xMax;
     private final int yMax;
     private LinkedList<Tile>[][] map;
-    private LinkedList<Step> steps;
+    private LinkedList<String> lines;
     private PriorityQueue<TileInfo> tileQueue;
 
     public MapService() {
@@ -27,7 +27,7 @@ public class MapService {
     public void init(LinkedList<Tile> tiles) {
         tiles = deepCopyTiles(tiles);
         map = new LinkedList[xMax][yMax];
-        steps = new LinkedList<>();
+        lines = new LinkedList<>();
         tileQueue = new PriorityQueue<>();
 
         for (int i = 0; i < xMax; i++) {
@@ -47,7 +47,7 @@ public class MapService {
 
 
     @SuppressWarnings("DataFlowIssue")
-    public LinkedList<Step> Generate(){
+    public void Generate(){
         Random rand = new Random();
         int x = rand.nextInt(xMax);
         int y = rand.nextInt(yMax);
@@ -65,12 +65,21 @@ public class MapService {
             tile.setCollapsed(true);
 
             tileQueue.remove();
-            steps.add(new Step(id, x, y, tile.getDisplay()));
             id++;
 
             UpdateNeighbours(x, y);
         }
-        return steps;
+    }
+
+    public LinkedList<String> GetLines(){
+        for(int i=0; i<xMax; i++){
+            StringBuilder line = new StringBuilder();
+            for(int j=0; j<yMax; j++){
+                line.append(map[i][j].getFirst().getDisplay());
+            }
+            lines.add(line.toString());
+        }
+        return lines;
     }
 
     private void UpdateNeighbours(int x, int y) {
