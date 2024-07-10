@@ -19,12 +19,13 @@ public class MapController {
         this.mapService = mapService;
     }
 
-    @CrossOrigin(origins = "http://localhost:5173") // for testing the frontend
+    @CrossOrigin(origins = "http://localhost:4173") // for testing the frontend
     @GetMapping(path = "/api/mapdata")
     public List<String> listMapSteps(){
         LinkedList<Tile> tiles = MapDataUtil.getMapData();
         mapService.init(tiles);
         mapService.Generate();
+        System.out.println("called!");
         return mapService.GetLines();
     }
 }

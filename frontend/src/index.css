@@ -1,3 +1,7 @@
+body{
+    background-color: #263428;
+}
+
 .linesContainer{
     font-family: "Courier New";
     white-space: pre;
@@ -5,7 +9,7 @@
     margin: 0px;
     background-color: #455d48;
     border-radius: 40px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .line{
@@ -13,33 +17,41 @@
 }
 
 .letter-a {
+    opacity: 80%;
     color: #B0D9B1;
 }
 
 .letter-b {
+    opacity: 80%;
     color: #B0D9B1;
 }
 
 .letter-c{
+    opacity: 80%;
     color: #B0D9B1; <!-- #558F56 -->
 }
 
 .letter-d{
+    opacity: 80%;
     color: #B0D9B1; <!-- #558F56 -->
 }
 
 .letter-x{
+    opacity: 80%;
     color: #79AC78;
 }
 
 .letter-w{
+    opacity: 80%;
     color: #D0E7D2;
 }
 
 .letter-o{
+    opacity: 80%;
     color: #B0D9B1;
 }
 
 .letter-g{
+    opacity: 80%;
     color: #B0D9B1;
 }
