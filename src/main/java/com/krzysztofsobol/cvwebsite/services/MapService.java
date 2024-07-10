@@ -1,6 +1,5 @@
 package com.krzysztofsobol.cvwebsite.services;
 
-import com.krzysztofsobol.cvwebsite.domain.dto.Step;
 import com.krzysztofsobol.cvwebsite.domain.dto.Tile;
 import com.krzysztofsobol.cvwebsite.domain.dto.TileInfo;
 import org.springframework.stereotype.Service;
@@ -19,8 +18,8 @@ public class MapService {
     private PriorityQueue<TileInfo> tileQueue;
 
     public MapService() {
-        this.xMax = 26;
-        this.yMax = 126;
+        this.xMax = 30;
+        this.yMax = 211;
     }
 
     @SuppressWarnings("unchecked")
@@ -53,8 +52,8 @@ public class MapService {
         int y = rand.nextInt(yMax);
 
         tileQueue.add(new TileInfo(x, y, 1));
-        int id = 0;
-        for(int h = 0; h < (xMax*yMax)-1; h++){
+
+        while(!tileQueue.isEmpty()){
             TileInfo nextTile = tileQueue.peek();
             x = nextTile.getX();
             y = nextTile.getY();
@@ -65,8 +64,6 @@ public class MapService {
             tile.setCollapsed(true);
 
             tileQueue.remove();
-            id++;
-
             UpdateNeighbours(x, y);
         }
     }

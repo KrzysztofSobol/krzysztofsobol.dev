@@ -1,16 +1,15 @@
-.tableContainer{
-    border-radius: 1px;
+.linesContainer{
+    font-family: "Courier New";
+    white-space: pre;
+    font-size: 15px;
+    margin: 0px;
+    background-color: #455d48;
+    border-radius: 40px;
+    overflow: hidden
 }
 
-.table{
-    width: 100%;
-    background-color: #618264; <!-- #0d5227 , #2C5E38 -->
-}
-
-.table th{
-    font-family: "Arial";
-    padding: 0px;
-    text-align: center;
+.line{
+    margin: 0px;
 }
 
 .letter-a {
