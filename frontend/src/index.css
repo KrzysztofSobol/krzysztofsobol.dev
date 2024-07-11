@@ -6,41 +6,13 @@ body{
     position: relative;
 }
 
-.map-container .titleContainer{
+.map-container .title {
     position: absolute;
-    top: 45%;
-    left: 55%;
-    transform: translate(-50%, -48%);
-    font-size: 15px;
-    color: white;
-    font-family: monospace;
-    dominant-baseline: hanging;
-    white-space: pre;
+    width: 850px;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-.title {
-    width: 562px;
-    background-color: #455d48;
-    margin: 0px;
-}
-
-.titlelast2 {
-    width: 39px;
-    background-color: #455d48;
-    margin: 0px;
-    position: relative;
-    left: 132px;
-}
-
-
-.titlelast{
-    width: 46px;
-    background-color: #455d48;
-    margin: 0px;
-    position: relative;
-    left: 125px;
-}
-
 
 .linesContainer{
     font-family: "Courier New";

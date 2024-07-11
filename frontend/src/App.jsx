@@ -1,10 +1,11 @@
 import Map from "./map.jsx";
-import AsciiArt from "./title.jsx";
+import Title from "./title.jsx";
 
 function App() {
     return (
         <div className="map-container">
             <Map/>
+            <Title/>
         </div>
     );
 }

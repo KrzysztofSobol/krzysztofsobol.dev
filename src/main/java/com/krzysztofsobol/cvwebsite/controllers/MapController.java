@@ -19,7 +19,7 @@ public class MapController {
         this.mapService = mapService;
     }
 
-    @CrossOrigin(origins = "http://localhost:5173") // for testing the frontend
+    @CrossOrigin(origins = "http://localhost:5174")
     @GetMapping(path = "/api/mapdata")
     public List<String> listMapSteps(){
         LinkedList<Tile> tiles = MapDataUtil.getMapData();
