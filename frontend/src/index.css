@@ -9,7 +9,7 @@ body{
 .map-container .title {
     position: absolute;
     width: 850px;
-    top: 51%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
