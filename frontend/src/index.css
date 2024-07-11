@@ -2,6 +2,46 @@ body{
     background-color: #263428;
 }
 
+.map-container {
+    position: relative;
+}
+
+.map-container .titleContainer{
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -48%);
+    font-size: 15px;
+    color: white;
+    font-family: monospace;
+    dominant-baseline: hanging;
+    white-space: pre;
+}
+
+.title {
+    width: 562px;
+    background-color: #455d48;
+    margin: 0px;
+}
+
+.titlelast2 {
+    width: 39px;
+    background-color: #455d48;
+    margin: 0px;
+    position: relative;
+    left: 132px;
+}
+
+
+.titlelast{
+    width: 46px;
+    background-color: #455d48;
+    margin: 0px;
+    position: relative;
+    left: 125px;
+}
+
+
 .linesContainer{
     font-family: "Courier New";
     white-space: pre;
@@ -17,41 +57,61 @@ body{
 }
 
 .letter-a {
-    opacity: 80%;
     color: #B0D9B1;
 }
 
 .letter-b {
-    opacity: 80%;
     color: #B0D9B1;
 }
 
 .letter-c{
-    opacity: 80%;
-    color: #B0D9B1; <!-- #558F56 -->
+    color: #B0D9B1;
 }
 
 .letter-d{
-    opacity: 80%;
-    color: #B0D9B1; <!-- #558F56 -->
+    color: #B0D9B1;
 }
 
 .letter-x{
-    opacity: 80%;
     color: #79AC78;
 }
 
 .letter-w{
-    opacity: 80%;
     color: #D0E7D2;
 }
 
 .letter-o{
-    opacity: 80%;
     color: #B0D9B1;
 }
 
 .letter-g{
-    opacity: 80%;
     color: #B0D9B1;
+}
+
+.letter-a,
+.letter-b,
+.letter-c,
+.letter-d,
+.letter-x,
+.letter-w,
+.letter-o,
+.letter-g {
+    transition: color 2s ease; /* Slow return to original color */
+}
+
+.letter-a:hover,
+.letter-b:hover,
+.letter-c:hover,
+.letter-d:hover,
+.letter-x:hover,
+.letter-w:hover,
+.letter-o:hover,
+.letter-g:hover {
+    color: #FFFFFF;
+    transition: color 0.01s ease; /* Quick highlight on hover */
+}
+
+
+.title{
+    color: #D0E7D2;
 }
