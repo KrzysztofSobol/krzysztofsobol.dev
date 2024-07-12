@@ -2,7 +2,7 @@ import React from 'react';
 
 function Title() {
     return (
-        <img className={"title"} src={"src/assets/title.png"}/>
+        <img className="title" src="/title.png" alt="title image" />
     );
 }
 

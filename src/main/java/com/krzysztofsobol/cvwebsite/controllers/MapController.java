@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.LinkedList;
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class MapController {
     MapService mapService;
@@ -19,13 +20,11 @@ public class MapController {
         this.mapService = mapService;
     }
 
-    @CrossOrigin(origins = "http://localhost:5174")
     @GetMapping(path = "/api/mapdata")
     public List<String> listMapSteps(){
         LinkedList<Tile> tiles = MapDataUtil.getMapData();
         mapService.init(tiles);
         mapService.Generate();
-        System.out.println("called!");
         return mapService.GetLines();
     }
 }

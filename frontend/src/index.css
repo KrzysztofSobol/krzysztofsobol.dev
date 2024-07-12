@@ -28,6 +28,8 @@ body{
     margin: 0px;
 }
 
+/* color of each letter */
+
 .letter-a {
     color: #B0D9B1;
 }
@@ -81,9 +83,4 @@ body{
 .letter-g:hover {
     color: #FFFFFF;
     transition: color 0.01s ease; /* Quick highlight on hover */
-}
-
-
-.title{
-    color: #D0E7D2;
 }
