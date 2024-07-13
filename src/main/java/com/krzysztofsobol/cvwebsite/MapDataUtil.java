@@ -8,7 +8,7 @@ public class MapDataUtil {
     public static LinkedList<Tile> getMapData(){
         LinkedList<Tile> tiles = new LinkedList<>();
 
-        Tile grass = new Tile('X', 200, 3, 3, 3, 3);
+        Tile grass = new Tile('X', 220, 3, 3, 3, 3);
         Tile sea = new Tile('?', 100, 1, 1, 1, 1);
 
         Tile coast = new Tile('A', 10, 3, 5, 1, 5);

@@ -1,5 +1,5 @@
 body{
-    background-color: #263428;
+    background-color: black; /* #263428 */
 }
 
 .map-container {
@@ -9,9 +9,9 @@ body{
 .map-container .title {
     position: absolute;
     width: 850px;
-    top: 50%;
+    top: 49%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -49%);
 }
 
 .linesContainer{
@@ -19,7 +19,7 @@ body{
     white-space: pre;
     font-size: 15px;
     margin: 0px;
-    background-color: #455d48;
+    background-color: #264653;
     border-radius: 40px;
     overflow: hidden;
 }
@@ -31,35 +31,35 @@ body{
 /* color of each letter */
 
 .letter-a {
-    color: #B0D9B1;
+    color: #38a3a5; /* #B0D9B1 */
 }
 
 .letter-b {
-    color: #B0D9B1;
+    color: #38a3a5; /* #B0D9B1 */
 }
 
 .letter-c{
-    color: #B0D9B1;
+    color: #38a3a5; /* #B0D9B1 */
 }
 
 .letter-d{
-    color: #B0D9B1;
+    color: #38a3a5; /* #B0D9B1 */
 }
 
 .letter-x{
-    color: #79AC78;
+    color: #4dbf9d; /* #79AC78 */
 }
 
 .letter-w{
-    color: #D0E7D2;
+    color: #22577a; /* #D0E7D2 */
 }
 
 .letter-o{
-    color: #B0D9B1;
+    color: #38a3a5; /* #B0D9B1 */
 }
 
 .letter-g{
-    color: #B0D9B1;
+    color: #247a91; /* #B0D9B1 */
 }
 
 .letter-a,
