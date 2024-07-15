@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.LinkedList;
 import java.util.List;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*") // added for the time of development
 @RestController
 public class MapController {
     MapService mapService;
