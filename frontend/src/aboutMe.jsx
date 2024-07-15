@@ -1,6 +1,6 @@
 function AboutMe() {
     return(
-            <div className={"AboutMe"}>
+            <div id={"aboutMe"} className={"AboutMe"}>
                 <h1 className={"AboutMeContent"}>
                     <svg className={"aboutMeInfoSvg"} viewBox="3.913 4.2197 30.9153 30.9128" width="30.915" height="30.913" xmlns="http://www.w3.org/2000/svg">
                         <path
