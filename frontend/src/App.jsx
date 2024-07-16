@@ -7,13 +7,13 @@ import ButtonHeader from "./buttonHeader.jsx";
 function App() {
     return (
         <div className="map-container">
-            <Map/>
-            <ScrollButton target={"aboutMe"}/>
-            <ButtonHeader/>
-            <Title/>
-            <AboutMe/>
+            <Map />
+            <ScrollButton target={"aboutMe"} />
+            <ButtonHeader />
+            <Title />
+            <AboutMe />
         </div>
     );
 }
 
-export default App
+export default App;

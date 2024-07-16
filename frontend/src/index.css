@@ -1,9 +1,9 @@
-body{
+body {
     background-color: #0C1519; /* #263428 */
 }
 
 .map-container {
-    position: relative;;
+    position: relative;
     height: 100vh;
 }
 
@@ -16,7 +16,7 @@ body{
     transform: translate(-50%, -44%);
 }
 
-.linesContainer{
+.linesContainer {
     font-family: "Courier New";
     white-space: pre;
     font-size: 15px;
@@ -26,7 +26,7 @@ body{
     overflow: hidden;
 }
 
-.buttonScroll{
+.buttonScroll {
     position: absolute;
     height: 50px;
     max-width: 50px;
@@ -37,16 +37,15 @@ body{
     transform: translate(-50%, -80%);
 }
 
-.buttonScroll:hover{
+.buttonScroll:hover {
     cursor: pointer;
 }
 
-.line{
+.line {
     margin: 0px;
 }
 
 /* color of each letter */
-
 .letter-a {
     color: #38a3a5; /* #B0D9B1 */
 }
@@ -55,32 +54,31 @@ body{
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-c{
+.letter-c {
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-d{
+.letter-d {
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-x{
+.letter-x {
     color: #4dbf9d; /* #79AC78 */
 }
 
-.letter-w{
+.letter-w {
     color: #22577a; /* #D0E7D2 */
 }
 
-.letter-o{
+.letter-o {
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-g{
+.letter-g {
     color: #247a91; /* #B0D9B1 */
 }
 
 /* on hover effect */
-
 .letter-a,
 .letter-b,
 .letter-c,
@@ -106,7 +104,6 @@ body{
 }
 
 /* aboutMe */
-
 .AboutMe {
     width: 100%;
     max-width: 850px;
@@ -121,7 +118,6 @@ body{
     flex-direction: column;
     align-items: flex-start;
     box-shadow: 0 0 20px 0 #38a3a5;
-
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -148,33 +144,48 @@ body{
     margin-left: 10px;
 }
 
-.buttonHeader{
-    margin-top: 41px;
+.buttonHeader {
+    width: 100%;
+    justify-content: center;
+    background-color: #0C1519;
+    z-index: 1000;
+    transition: all .3s ease-in-out;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.placeholder {
+    height: 60px; /* Same height as .buttonHeader */
 }
 
 .button {
-   background: #247a91;
-   border: 1px solid #247a91;
-   border-radius: 8px;
-   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-   box-sizing: border-box;
-   color: #FFFFFF;
-   cursor: pointer;
-   display: inline-block;
-   font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
-   font-size: 20px;
-   font-weight: 800;
-   line-height: 16px;
-   min-height: 40px;
-   outline: 0;
-   padding: 12px 14px;
-   text-align: center;
-   text-rendering: geometricprecision;
-   text-transform: none;
-   user-select: none;
-   -webkit-user-select: none;
-   touch-action: manipulation;
-   vertical-align: middle;
+    background: #247a91;
+    border: 1px solid #247a91;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
     margin: 10px;
 }
 
