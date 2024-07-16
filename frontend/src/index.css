@@ -33,7 +33,12 @@ body{
     width: 100%;
     top: 80%;
     left: 50%;
+    fill: white;
     transform: translate(-50%, -80%);
+}
+
+.buttonScroll:hover{
+    cursor: pointer;
 }
 
 .line{
@@ -84,7 +89,7 @@ body{
 .letter-w,
 .letter-o,
 .letter-g {
-    transition: color 2s ease; /* Slow return to original color */
+    transition: color 1s ease; /* Slow return to original color */
 }
 
 .letter-a:hover,
@@ -96,6 +101,7 @@ body{
 .letter-o:hover,
 .letter-g:hover {
     color: #FFFFFF;
+    cursor: default;
     transition: color 0.01s ease; /* Quick highlight on hover */
 }
 
@@ -107,35 +113,78 @@ body{
     height: 850px;
     background-color: #264653;
     position: relative;
-    top: 9%;
+    top: 4%;
     left: 50%;
-    transform: translate(-50%, 9%);
+    transform: translate(-50%, 4%);
     border-radius: 40px;
     display: flex;
-    box-shadow: 0px 0px 20px 0 #38a3a5;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 0 20px 0 #38a3a5;
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-shadow: 3px 0px 0px #0C1519;
 }
 
-.AboutMe .AboutMeContent{
-    position: relative;
-    top: -1%;
-    left: 1%;
-    transform: translate(1%, -1%);
+.AboutMe .AboutMeTitle {
     display: flex;
-    height: 70px;
     align-items: center;
+    margin-bottom: 0;
+    margin-left: 15px;
 }
 
-.AboutMe .aboutMeInfoSvg {
-    width: 50px;
-    height: 50px;
-    fill: #38a3a5;
-    margin-right: 10px;
+.AboutMe .AboutMeContent {
+    font-size: 24px;
+    color: white;
+    margin-left: 25px;
+}
+
+.headerText {
+    font-size: 42px;
+    color: white;
     margin-left: 10px;
 }
 
-.headerText{
-    font-family: Monospace;
-    font-size: 42px;
-    color: white;
-    font-weight: bold;
+.buttonHeader{
+    margin-top: 41px;
+}
+
+.button {
+   background: #247a91;
+   border: 1px solid #247a91;
+   border-radius: 8px;
+   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+   box-sizing: border-box;
+   color: #FFFFFF;
+   cursor: pointer;
+   display: inline-block;
+   font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+   font-size: 20px;
+   font-weight: 800;
+   line-height: 16px;
+   min-height: 40px;
+   outline: 0;
+   padding: 12px 14px;
+   text-align: center;
+   text-rendering: geometricprecision;
+   text-transform: none;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: middle;
+    margin: 10px;
+}
+
+.button:hover,
+.button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #38a3a5;
+}
+
+.button:active {
+    opacity: .5;
 }
