@@ -1,8 +1,16 @@
-function ScrollButton(props){
+import React from "react";
+
+function ScrollButton({ headerHeight }) {
     const handleScroll = () => {
-        const section = document.getElementById(props.target);
+        const section = document.getElementById('aboutMe');
         if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+            const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight - 22;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
         }
     };
 
@@ -16,11 +24,10 @@ function ScrollButton(props){
             <path
                 d="M 195.635 114.566 L 189.342 120.858 C 188.951 121.249 188.318 121.249 187.927 120.858 L 181.635 114.566"
                 strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                style={{ paintOrder: 'fill', fill: 'rgba(252, 0, 0, 0)', stroke: 'rgb(15 44 55)' }}
+                style={{ paintOrder: 'fill', fillRule: 'nonzero', fill: 'rgba(252, 0, 0, 0)', stroke: 'rgb(15 44 55)' }}
             />
         </svg>
     );
 }
 
-export default ScrollButton
-// rgb(45,141,154)
+export default ScrollButton;

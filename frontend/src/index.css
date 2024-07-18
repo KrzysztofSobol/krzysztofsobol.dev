@@ -20,10 +20,10 @@ body {
     font-family: "Courier New";
     white-space: pre;
     font-size: 15px;
-    margin: 0px;
     background-color: #264653;
     border-radius: 40px;
     overflow: hidden;
+    margin-bottom: 15px;
 }
 
 .buttonScroll {
@@ -31,10 +31,10 @@ body {
     height: 50px;
     max-width: 50px;
     width: 100%;
-    top: 80%;
+    top: 85%;
     left: 50%;
     fill: white;
-    transform: translate(-50%, -80%);
+    transform: translate(-50%, -85%);
 }
 
 .buttonScroll:hover {
@@ -107,7 +107,7 @@ body {
 .AboutMe {
     width: 100%;
     max-width: 850px;
-    height: 850px;
+    height: 1850px;
     background-color: #264653;
     position: relative;
     top: 4%;
@@ -136,6 +136,7 @@ body {
     font-size: 24px;
     color: white;
     margin-left: 25px;
+    margin-right: 25px;
 }
 
 .headerText {
@@ -145,22 +146,27 @@ body {
 }
 
 .buttonHeader {
-    width: 100%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     background-color: #0C1519;
     z-index: 1000;
     transition: all .3s ease-in-out;
+    box-sizing: border-box;
 }
 
 .sticky {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
     border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 .placeholder {
-    height: 60px; /* Same height as .buttonHeader */
+    height: 60px;
+    display: none;
 }
 
 .button {
@@ -198,4 +204,5 @@ body {
 
 .button:active {
     opacity: .5;
+}
 }

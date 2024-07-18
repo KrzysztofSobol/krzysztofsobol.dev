@@ -30,7 +30,14 @@ function ButtonHeader() {
     const handleScrollToSection = (id) => {
         const section = document.getElementById(id);
         if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+            const headerOffset = headerRef.current.offsetHeight;
+            const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset - 22;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
         }
     };
 
@@ -41,6 +48,7 @@ function ButtonHeader() {
                 <button className="button" onClick={() => handleScrollToSection('aboutMe')}>about me</button>
                 <button className="button" onClick={() => handleScrollToSection('projects')}>projects</button>
                 <button className="button" onClick={() => handleScrollToSection('education')}>education</button>
+                <button className="button" onClick={() => handleScrollToSection('contact')}>contact</button>
             </div>
         </>
     );
