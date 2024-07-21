@@ -24,6 +24,7 @@ function App() {
             </div>
             <Title />
             <AboutMe />
+            <AboutMe />
         </div>
     );
 }

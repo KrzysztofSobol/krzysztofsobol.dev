@@ -106,43 +106,59 @@ body {
 /* aboutMe */
 .AboutMe {
     width: 100%;
-    max-width: 850px;
-    height: 1850px;
-    background-color: #264653;
+    max-width: 820px;
+    height: 450px;
+    background: linear-gradient(to bottom right, #264653, #379299);
     position: relative;
-    top: 4%;
-    left: 50%;
-    transform: translate(-50%, 4%);
+    top: 2%;
+    left: 5%;
+    transform: translate(-5%, 2%);
     border-radius: 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     box-shadow: 0 0 20px 0 #38a3a5;
-    font-family: "Montserrat", sans-serif;
+    font-family: Monospace, serif;
     font-optical-sizing: auto;
-    font-weight: 500;
     font-style: normal;
-    text-shadow: 3px 0px 0px #0C1519;
+    margin-bottom: 1000px;
 }
 
 .AboutMe .AboutMeTitle {
+    font-family: 'JetBrains Mono', monospace;
     display: flex;
     align-items: center;
     margin-bottom: 0;
     margin-left: 15px;
+    word-spacing: -5px;
 }
 
 .AboutMe .AboutMeContent {
-    font-size: 24px;
-    color: white;
+    font-size: 22px;
+    color: lightgrey;
     margin-left: 25px;
     margin-right: 25px;
+    margin-top: 20px;
+    font-weight: 300;
+    font-family: 'Signika', sans-serif;
+}
+
+.highlight {
+    color: white;
+    font-weight: 500;
+}
+
+.AboutMeContent p {
+    margin: 0; /* Removes default margin */
+    line-height: 1.5; /* Adjusts the space between lines */
 }
 
 .headerText {
-    font-size: 42px;
+    font-size: 50px;
     color: white;
     margin-left: 10px;
+    margin-top: 3px;
+    font-weight: 0;
 }
 
 .buttonHeader {
@@ -204,5 +220,4 @@ body {
 
 .button:active {
     opacity: .5;
-}
 }
