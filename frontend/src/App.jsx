@@ -4,6 +4,7 @@ import Title from "./title.jsx";
 import AboutMe from "./aboutMe.jsx";
 import ScrollButton from "./buttonScroll.jsx";
 import ButtonHeader from "./buttonHeader.jsx";
+import Timeline from "./timeline.jsx";
 
 function App() {
     const headerRef = useRef(null);
@@ -24,7 +25,8 @@ function App() {
             </div>
             <Title />
             <AboutMe />
-            <AboutMe />
+            <Timeline />
+            <Timeline />
         </div>
     );
 }

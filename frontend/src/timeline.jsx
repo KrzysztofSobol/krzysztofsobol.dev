@@ -1,7 +1,6 @@
-function AboutMe() {
-
-    return(
-        <div id={"aboutMe"} className={"Tile AboutMe"}>
+function Timeline(){
+    return (
+        <div id={"projects"} className={"Tile Timeline"}>
             <h1 className={"AboutMeTitle"}>
                 <svg width="80px" height="80px" viewBox="0 0 24 24" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -13,26 +12,10 @@ function AboutMe() {
                             fill="#2D8D9A"/>
                     </g>
                 </svg>
-                <header className={"headerText"}>About me</header>
+                <header className={"headerText"}>Timeline</header>
             </h1>
-            <h2 className={"AboutMeContent"}>
-                <p>I'm <span className="highlight">Krzysztof Sobolewski</span>, a young <span
-                    className="highlight">developer</span> and <span className="highlight">CS student</span> from
-                    Poland.
-                </p>
-                <p>I love diving into <span className="highlight">Java</span> and have a fondness for <span
-                    className="highlight">C++</span> from when I first started coding.</p>
-                <p>Along the way, I've also experienced other languages like <span className="highlight">C</span>, <span
-                    className="highlight">C#</span>, and <span className="highlight">Python</span>.
-                </p>
-                <p>I'm <span className="highlight">always</span> up for a <span
-                    className="highlight">new challenge</span> and <span
-                    className="highlight">constantly learning</span> new things in the tech. </p>
-                <p> I particularly love <span className="highlight">solving algorithmic</span> problems, data structures
-                    and algorithms was my favorite subject so far.</p>
-            </h2>
         </div>
     );
 }
 
-export default AboutMe;
+export default Timeline;

@@ -43,7 +43,7 @@ function Map() {
     }
 
     return (
-        <div className="linesContainer">
+        <div id={"main"} className="linesContainer">
             {lines.map((line, lineIndex) => (
                 <p key={lineIndex} className="line" >
                     {line.split('').map((char, charIndex) => (
