@@ -5,6 +5,8 @@ import AboutMe from "./aboutMe.jsx";
 import ScrollButton from "./buttonScroll.jsx";
 import ButtonHeader from "./buttonHeader.jsx";
 import Timeline from "./timeline.jsx";
+import Contact from "./contact.jsx";
+import Footer from "./footer.jsx";
 
 function App() {
     const headerRef = useRef(null);
@@ -26,7 +28,8 @@ function App() {
             <Title />
             <AboutMe />
             <Timeline />
-            <Timeline />
+            <Contact />
+            <Footer />
         </div>
     );
 }
