@@ -18,7 +18,7 @@ body {
 }
 
 .linesContainer {
-    font-family: "Courier New";
+    font-family: "Courier New", serif;
     white-space: pre;
     font-size: 15px;
     background-color: #264653;
@@ -43,7 +43,7 @@ body {
 }
 
 .line {
-    margin: 0px;
+    margin: 0;
 }
 
 /* color of each letter */
@@ -171,6 +171,14 @@ body {
     font-weight: 0;
 }
 
+.headerTextContact{
+    font-size: 50px;
+    color: white;
+    margin-left: 13px;
+    margin-top: -10px;
+    font-weight: 0;
+}
+
 .placeholder {
     height: 60px;
     display: none;
@@ -192,6 +200,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    background-color: #122229;
     border-bottom: 1px solid #ccc;
     box-sizing: border-box;
 }
@@ -250,6 +259,27 @@ body {
 
 .button:active {
     opacity: .5;
+}
+
+.Contact{
+    max-width: 820px;
+    height: 250px;
+}
+
+.ContactContent{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 25px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.contactText{
+    font-size: 22px;
+    font-weight: 300;
+    font-family: 'Signika', sans-serif;
+    color: white;
 }
 
 .footer{
