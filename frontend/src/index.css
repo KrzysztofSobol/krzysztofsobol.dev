@@ -40,6 +40,7 @@ body {
 
 .buttonScroll:hover {
     cursor: pointer;
+    transform: translate(-50%, -85%) scale(1.1);
 }
 
 .line {
@@ -313,19 +314,71 @@ body {
 }
 
 .project-card{
-    max-width: 420px;
+    max-width: 620px;
     height: 500px;
+    width: 100%;
+    background: linear-gradient(to bottom right, #264653, #379299);
+    position: relative;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 0 10px 0 #38a3a5;
+    font-family: Monospace, serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin-bottom: 100px;
 }
 
 /* carousel */
-.carousel{
+.carousel {
     display: flex;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.carousel-button:hover{
+.carousel-button {
+    z-index: 2;
     cursor: pointer;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    position: relative;
+    top: -50px;
 }
 
+.carousel-button:hover {
+    /* transform: scale(1.1); */
+}
 
+.left {
+    margin-right: 1px;
+    left: 550px;
+}
+
+.right {
+    margin-left: 1px;
+    right: 550px;
+}
+
+.project {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.mainProject{
+    z-index: 2;
+}
+
+.sideProjectLeft{
+    z-index: 1;
+    opacity: 20%;
+    left: 460px;
+}
+
+.sideProjectRight{
+    z-index: 1;
+    opacity: 20%;
+    right: 460px;
+}
 

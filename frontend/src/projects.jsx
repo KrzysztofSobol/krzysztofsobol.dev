@@ -1,6 +1,6 @@
-function Project({ title, description }) {
+function Project({ title, description, className }) {
     return (
-        <div className="Tile project-card">
+        <div className={`project-card ${className}`}>
             <h1 className="AboutMeTitle">{title}</h1>
             <p className="project-description">{description}</p>
             <img src={"Xd"} alt={"image for a project"}/>
