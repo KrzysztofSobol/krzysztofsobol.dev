@@ -17,9 +17,9 @@ function Contact(){
                     </svg>
                     <header className={"headerTextContact"}>Contact</header>
                 </h1>
-                <h2 className="ContactContent">
-                    <svg width="63px"
-                         height="63px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h2w className="ContactContent" title="email">
+                    <svg width="50px"
+                         height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
                         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#FFFFFF"
                            strokeWidth="0.048"/>
@@ -30,11 +30,11 @@ function Contact(){
                         </g>
                     </svg>
                     <p className={"contactText"}>krzysieksobol9@gmail.com</p>
-                </h2>
-                <h3 className="ContactContent">
+                </h2w>
+                <h3 className="ContactContent" title="discord">
                     <svg
-                        width="65px"
-                        height="65px"
+                        width="52px"
+                        height="52px"
                         viewBox="0 0 48.00 48.00" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" strokeWidth="2.4" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)">
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
                         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC"

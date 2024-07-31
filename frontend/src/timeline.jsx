@@ -1,6 +1,6 @@
 function Timeline(){
     return (
-        <div id={"projects"} className={"Tile Timeline"}>
+        <div id={"education"} className={"Tile Timeline"}>
             <h1 className={"AboutMeTitle"}>
                 <svg width="80px" height="80px" viewBox="0 0 24 24" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
