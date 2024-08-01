@@ -160,8 +160,8 @@ body {
 }
 
 .AboutMeContent p {
-    margin: 0; /* Removes default margin */
-    line-height: 1.5; /* Adjusts the space between lines */
+    margin: 0;
+    line-height: 1.5;
 }
 
 .headerText {
@@ -374,11 +374,32 @@ body {
     z-index: 1;
     opacity: 20%;
     left: 460px;
+    height: 470px;
+    max-width: 620px;
 }
 
 .sideProjectRight{
     z-index: 1;
     opacity: 20%;
     right: 460px;
+    height: 470px;
+}
+
+.project-title{
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-left: 25px;
+    word-spacing: -5px;
+    color: white;
+}
+
+.project-description{
+    margin: 25px;
+    font-size: 20px;
+    color: lightgrey;
+    font-weight: 300;
+    font-family: 'Signika', sans-serif;
 }
 

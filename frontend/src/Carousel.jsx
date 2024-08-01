@@ -5,9 +5,10 @@ function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const projects = [
-        { title: 'Wave Function Collapse', description: 'WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO' },
-        { title: 'krzysztofsobol.xyz', description: 'LOOOOOOOOOOOOOOLOLLOLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL' },
-        { title: 'Filmex', description: 'X DSADASSSSSSSSSSSSSSSSSSDASDDSAD AEGRGRGRGHRHGFGFSDDDGSGFGFGS' },
+        { title: 'Wave Function Collapse', description: 'I\'m Krzysztof Sobolewski, a young developer' },
+        { title: 'krzysztofsobol.xyz', description: 'LOOOOOOOOOOOOOOLOLLOLLLLLLLLLLLLLLLLLLL' },
+        { title: 'Filmex', description: 'X DSADASSSSSSSSSSSSSSSSSSDASDDSAD ' },
+        { title: 'Grlmex 2', description: 'dxd ' },
     ];
 
     const nextProject = () => {
