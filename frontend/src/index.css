@@ -348,7 +348,7 @@ body {
 }
 
 .carousel-button:hover {
-    /* transform: scale(1.1); */
+    transform: scale(1.1);
 }
 
 .left {
@@ -372,7 +372,7 @@ body {
 
 .sideProjectLeft{
     z-index: 1;
-    opacity: 20%;
+    opacity: 8%;
     left: 460px;
     height: 470px;
     max-width: 620px;
@@ -380,7 +380,7 @@ body {
 
 .sideProjectRight{
     z-index: 1;
-    opacity: 20%;
+    opacity: 8%;
     right: 460px;
     height: 470px;
 }
@@ -402,4 +402,25 @@ body {
     font-weight: 300;
     font-family: 'Signika', sans-serif;
 }
+
+.image-container {
+    border-radius: 20px;
+    margin-top: 90px;
+    margin-left: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 545px;
+    height: auto;
+}
+
+.project-img {
+    transition: transform 0.2s ease;
+    width: 100%;
+    height: auto;
+}
+
+.image-container:hover .project-img {
+    transform: scale(3);
+}
+
 
