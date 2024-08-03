@@ -5,9 +5,9 @@ function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const projects = [
-        { title: 'Wave Function Collapse', description: 'I\'m Krzysztof Sobolewski, a young developer', source: '/mostX.png' },
-        { title: 'krzysztofsobol.xyz', description: 'Bla bla bla fa faa', source: 'xd' },
-        { title: 'Filmex', description: 'Xd ghwij adfjoe jaoef fe ', source: 'xd' },
+        { title: 'Wave Function Collapse', description: 'Program that allows you to generate various terrains and is capable of generating anything based on the user defined set of rules', source: '/mapNormal.png' },
+        { title: 'krzysztofsobol.xyz', description: 'Bla bla bla fa faa', source: '/mapShores.png' },
+        { title: 'Filmex', description: 'Xd ghwij adfjoe jaoef fe ', source: '/mapIslands.png' },
         { title: 'Grlmex 2', description: 'OgD fewfege efwoehgff ', source: 'xd' },
     ];
 

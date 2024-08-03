@@ -313,6 +313,14 @@ body {
     background: lightgrey;
 }
 
+.github-svg{
+    margin-right: 5px;
+}
+
+.github-svg:hover{
+    cursor: pointer;
+}
+
 .project-card{
     max-width: 620px;
     height: 500px;
@@ -405,7 +413,7 @@ body {
 
 .image-container {
     border-radius: 20px;
-    margin-top: 90px;
+    margin-top: 40px;
     margin-left: 20px;
     overflow: hidden;
     width: 100%;
@@ -420,7 +428,7 @@ body {
 }
 
 .image-container:hover .project-img {
-    transform: scale(3);
+    transform: scale(2.2);
 }
 
 
