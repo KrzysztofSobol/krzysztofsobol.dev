@@ -4,11 +4,22 @@ import Project from './projects.jsx';
 function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+
+    const images = [
+        { source: '/mapNormal.png' },
+        { source: '/mapShores.png' },
+        { source: '/mapIslands.png' }
+    ];
+
+    const images2 = [
+        { source: 'xp' }
+    ];
+
     const projects = [
-        { title: 'Wave Function Collapse', description: 'Program that allows you to generate various terrains and is capable of generating anything based on the user defined set of rules', source: '/mapNormal.png' },
-        { title: 'krzysztofsobol.xyz', description: 'Bla bla bla fa faa', source: '/mapShores.png' },
-        { title: 'Filmex', description: 'Xd ghwij adfjoe jaoef fe ', source: '/mapIslands.png' },
-        { title: 'Grlmex 2', description: 'OgD fewfege efwoehgff ', source: 'xd' },
+        { title: 'Wave Function Collapse', description: 'Program that allows you to generate various terrains and is capable of generating anything based on the user defined set of rules.', source: '/mapNormal.png', images: images},
+        { title: 'krzysztofsobol.xyz', description: 'Bla bla bla fa faa', source: '/mapShores.png', images: images2 },
+        { title: 'Filmex', description: 'Xd ghwij adfjoe jaoef fe ', source: '/mapIslands.png', images: images2 },
+        { title: 'Grlmex 2', description: 'OgD fewfege efwoehgff ', source: 'xd', images: images2 },
     ];
 
     const nextProject = () => {
@@ -37,18 +48,21 @@ function Carousel() {
                 title={projects[(currentIndex - 1 + projects.length) % projects.length].title}
                 description={projects[(currentIndex - 1 + projects.length) % projects.length].description}
                 source={projects[(currentIndex - 1 + projects.length) % projects.length].source}
+                images={projects[(currentIndex - 1 + projects.length) % projects.length].images}
                 className="sideProjectLeft"
             />
             <Project
                 title={projects[currentIndex].title}
                 description={projects[currentIndex].description}
                 source={projects[currentIndex].source}
+                images={projects[currentIndex].images}
                 className="mainProject"
             />
             <Project
                 title={projects[(currentIndex + 1) % projects.length].title}
                 description={projects[(currentIndex + 1) % projects.length].description}
                 source={projects[(currentIndex + 1) % projects.length].source}
+                images={projects[(currentIndex + 1) % projects.length].images}
                 className="sideProjectRight"
             />
             <svg onClick={nextProject} className="carousel-button right" width="70px" height="70px"

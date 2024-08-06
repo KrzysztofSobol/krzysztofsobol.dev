@@ -8,6 +8,7 @@ import Timeline from "./timeline.jsx";
 import Contact from "./contact.jsx";
 import Footer from "./footer.jsx";
 import Carousel from "./Carousel.jsx";
+import CarouselJustImages from "./carouselJustImages.jsx";
 
 function App() {
     const headerRef = useRef(null);

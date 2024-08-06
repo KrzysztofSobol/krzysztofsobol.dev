@@ -1,11 +1,12 @@
-function Project({ title, description, source, className }) {
+import CarouselJustImages from "./carouselJustImages.jsx";
+
+function Project({ title, description, source, className, images }) {
+
     return (
         <div className={`project-card ${className}`}>
             <h1 className="project-title">{title}</h1>
             <p className="project-description">{description}</p>
-            <div className="image-container">
-                <img className="project-img" src={source} alt="image for a project"/>
-            </div>
+            <CarouselJustImages images={images}/>
         </div>
     );
 }

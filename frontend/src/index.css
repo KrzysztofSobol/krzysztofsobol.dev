@@ -34,7 +34,6 @@ body {
     width: 100%;
     top: 85%;
     left: 50%;
-    fill: white;
     transform: translate(-50%, -85%);
 }
 
@@ -45,6 +44,7 @@ body {
 
 .line {
     margin: 0;
+    cursor: default;
 }
 
 /* color of each letter */
@@ -81,29 +81,7 @@ body {
 }
 
 /* on hover effect */
-.letter-a,
-.letter-b,
-.letter-c,
-.letter-d,
-.letter-x,
-.letter-w,
-.letter-o,
-.letter-g {
-    transition: color 1s ease; /* Slow return to original color */
-}
 
-.letter-a:hover,
-.letter-b:hover,
-.letter-c:hover,
-.letter-d:hover,
-.letter-x:hover,
-.letter-w:hover,
-.letter-o:hover,
-.letter-g:hover {
-    color: #FFFFFF;
-    cursor: default;
-    transition: color 0.01s ease; /* Quick highlight on hover */
-}
 
 /* aboutMe */
 
@@ -412,9 +390,8 @@ body {
 }
 
 .image-container {
+    position: relative; /* Needed for absolute positioning of the buttons */
     border-radius: 20px;
-    margin-top: 40px;
-    margin-left: 20px;
     overflow: hidden;
     width: 100%;
     max-width: 545px;
@@ -428,7 +405,27 @@ body {
 }
 
 .image-container:hover .project-img {
-    transform: scale(2.2);
 }
 
+/* Button styles */
+.carouselJustImages-button {
+    position: absolute;
+    top: 64%;
+    transform: translateY(-64%);
+    height: 10vh;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    z-index: 2;
+}
 
+.carouselJustImages-button.left {
+    left: 20px;
+}
+
+.carouselJustImages-button.right {
+    right: 20px;
+}
+
+.carousel-container:hover .carouselJustImages-button {
+    opacity: 1;
+}
