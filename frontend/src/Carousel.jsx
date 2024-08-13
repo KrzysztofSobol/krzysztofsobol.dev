@@ -8,7 +8,8 @@ function Carousel() {
     const images = [
         { source: '/mapNormal.png' },
         { source: '/mapShores.png' },
-        { source: '/mapIslands.png' }
+        { source: '/mapIslands.png' },
+        { source: '/mapWhateverThisIs.png'}
     ];
 
     const images2 = [
