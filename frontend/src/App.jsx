@@ -21,7 +21,7 @@ function App() {
             setHeaderHeight(headerRef.current.offsetHeight);
         }
     }, []);
-
+ 
     return (
         <div className="map-container">
             <Map />
