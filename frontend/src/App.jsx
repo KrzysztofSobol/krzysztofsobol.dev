@@ -9,6 +9,8 @@ import Contact from "./contact.jsx";
 import Footer from "./footer.jsx";
 import Carousel from "./Carousel.jsx";
 import CarouselJustImages from "./carouselJustImages.jsx";
+import {Axios} from "axios";
+import AboutMeNew from "./aboutMeNew.jsx";
 
 function App() {
     const headerRef = useRef(null);
@@ -28,6 +30,7 @@ function App() {
                 <ButtonHeader />
             </div>
             <Title />
+            <AboutMeNew />
             <AboutMe />
             <Carousel />
             <Timeline />

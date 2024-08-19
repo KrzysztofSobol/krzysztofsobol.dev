@@ -32,7 +32,7 @@ function ButtonHeader() {
         if (section) {
             const headerOffset = headerRef.current.offsetHeight;
             const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerOffset - 22;
+            const offsetPosition = elementPosition - headerOffset - 240;
 
             window.scrollTo({
                 top: offsetPosition,

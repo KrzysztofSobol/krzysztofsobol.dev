@@ -1,7 +1,26 @@
 body {
     background-color: #0C1519; /* #263428 */
     margin: 0;
+    scrollbar-color: #888 #f1f1f1;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0C1519;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
 
 .map-container {
     position: relative;
@@ -82,7 +101,6 @@ body {
 
 /* on hover effect */
 
-
 /* aboutMe */
 
 .AboutMe{
@@ -99,9 +117,6 @@ body {
     width: 100%;
     background: linear-gradient(to bottom right, #264653, #379299);
     position: relative;
-    top: 2%;
-    left: 50%;
-    transform: translate(-50%, 2%);
     border-radius: 40px;
     display: flex;
     flex-direction: column;
@@ -110,7 +125,6 @@ body {
     font-family: Monospace, serif;
     font-optical-sizing: auto;
     font-style: normal;
-    margin-bottom: 100px;
 }
 
 .Tile .AboutMeTitle {
@@ -180,7 +194,7 @@ body {
     top: 0;
     left: 0;
     background-color: #122229;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid black;
     box-sizing: border-box;
 }
 
@@ -282,13 +296,13 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    box-shadow: 0 0 6px 0 white;
+    box-shadow: 0 0 6px 0 black;
 }
 
 .footer-line {
     border: 0;
     height: 1px;
-    background: lightgrey;
+    background: white;
 }
 
 .footer-left{
@@ -442,4 +456,45 @@ body {
 
 .carousel-container:hover .carouselJustImages-button {
     opacity: 1;
+}
+
+/* new about me */
+.aboutMe-container{
+    position: relative;
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 21, 25, 85%);
+    pointer-events: none;
+}
+
+.aboutMe-tile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 1210px;
+}
+
+.profile-picture {
+    border-radius: 15%;
+    object-fit: cover;
+    margin-left: 30px;
+    box-shadow: 0 0 9px 0 #38a3a5;
 }

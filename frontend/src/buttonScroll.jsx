@@ -5,7 +5,7 @@ function ScrollButton({ headerHeight }) {
         const section = document.getElementById('aboutMe');
         if (section) {
             const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerHeight - 22;
+            const offsetPosition = elementPosition - headerHeight - 240;
 
             window.scrollTo({
                 top: offsetPosition,

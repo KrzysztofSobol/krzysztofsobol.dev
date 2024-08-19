@@ -19,7 +19,7 @@ public class MapService {
 
     public MapService() {
         this.xMax = 50;
-        this.yMax = 211;
+        this.yMax = 212;
     }
 
     @SuppressWarnings("unchecked")
