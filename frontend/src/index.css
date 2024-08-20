@@ -464,6 +464,8 @@ body {
     display: block;
     max-width: 100%;
     overflow: hidden;
+    margin: 0;
+    height: 917px;
 }
 
 .image-container img {
@@ -479,7 +481,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(12, 21, 25, 85%);
+    background-color: rgba(12, 21, 25, 70%);
     pointer-events: none;
 }
 

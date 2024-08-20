@@ -11,6 +11,7 @@ import Carousel from "./Carousel.jsx";
 import CarouselJustImages from "./carouselJustImages.jsx";
 import {Axios} from "axios";
 import AboutMeNew from "./aboutMeNew.jsx";
+import ProjectsNew from "./ProjectsNew.jsx";
 
 function App() {
     const headerRef = useRef(null);
@@ -31,7 +32,7 @@ function App() {
             </div>
             <Title />
             <AboutMeNew />
-            <AboutMe />
+            <ProjectsNew />
             <Carousel />
             <Timeline />
             <Contact />
