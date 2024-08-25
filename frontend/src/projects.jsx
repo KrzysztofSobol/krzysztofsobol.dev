@@ -1,12 +1,9 @@
-import CarouselJustImages from "./carouselJustImages.jsx";
-
 function Project({ title, description, source, className, images }) {
 
     return (
-        <div className={`project-card ${className}`}>
-            <h1 className="project-title">{title}</h1>
-            <p className="project-description">{description}</p>
-            <CarouselJustImages images={images}/>
+        <div className={`embla__slide__number `}>
+            <h1 className="">{title}</h1>
+            <p className="">{description}</p>
         </div>
     );
 }

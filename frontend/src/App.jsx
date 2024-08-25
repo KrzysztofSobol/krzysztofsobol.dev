@@ -34,6 +34,7 @@ function App() {
             <Title />
             <AboutMeNew />
             <ProjectsNew />
+            <ProjectsNew />
             <Contact />
             <Footer />
         </div>
