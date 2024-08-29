@@ -1,7 +1,6 @@
 package com.krzysztofsobol.cvwebsite.controllers;
 
 import com.krzysztofsobol.cvwebsite.MapDataUtil;
-import com.krzysztofsobol.cvwebsite.domain.dto.Step;
 import com.krzysztofsobol.cvwebsite.domain.dto.Tile;
 import com.krzysztofsobol.cvwebsite.services.MapService;
 import org.springframework.web.bind.annotation.CrossOrigin;

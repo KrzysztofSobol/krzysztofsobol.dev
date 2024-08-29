@@ -1,18 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
 import Map from "./map.jsx";
 import Title from "./title.jsx";
-import AboutMe from "./aboutMe.jsx";
 import ScrollButton from "./buttonScroll.jsx";
 import ButtonHeader from "./buttonHeader.jsx";
-import Timeline from "./timeline.jsx";
-import Contact from "./contact.jsx";
 import Footer from "./footer.jsx";
-import Carousel from "./Carousel.jsx";
-import CarouselJustImages from "./carouselJustImages.jsx";
-import {Axios} from "axios";
 import AboutMeNew from "./aboutMeNew.jsx";
 import ProjectsNew from "./ProjectsNew.jsx";
-import CarouselNew from "./CarouselNew.jsx";
+import NewContact from "./newContact.jsx";
 
 function App() {
     const headerRef = useRef(null);
@@ -34,8 +28,7 @@ function App() {
             <Title />
             <AboutMeNew />
             <ProjectsNew />
-            <ProjectsNew />
-            <Contact />
+            <NewContact />
             <Footer />
         </div>
     );

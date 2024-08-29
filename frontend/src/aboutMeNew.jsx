@@ -1,7 +1,6 @@
 import AboutMe from "./aboutMe.jsx";
 
 function AboutMeNew() {
-
     return(
         <div id={"aboutMe"} className="aboutMe-container">
             <img src={"/map_1.png"} alt={"BackgroundMap"}/>

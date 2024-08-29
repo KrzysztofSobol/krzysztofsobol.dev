@@ -43,7 +43,7 @@ body {
     background-color: #264653;
     border-radius: 40px;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 19px;
 }
 
 .buttonScroll {
@@ -184,7 +184,7 @@ body {
     width: 100%;
     background-color: #0C1519;
     z-index: 1000;
-    transition: all .3s ease-in-out;
+
     box-sizing: border-box;
     position: relative;
 }
@@ -205,7 +205,6 @@ body {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .buttonHeader.sticky .ksLogo {
@@ -512,11 +511,11 @@ body {
     min-width: 0;
 }
 
-.carousel-tile {
+.carousel-tile {    
     position: absolute;
-    top: 50%;
+    top: 53%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -53%);
     display: flex;
     width: 1210px;
 }
@@ -548,6 +547,7 @@ body {
     font-size: 4rem;
     font-weight: 600;
     display: flex;
+    flex-direction: column; /* Stack children vertically */
     align-items: center;
     justify-content: center;
     height: var(--slide-height);
@@ -557,6 +557,7 @@ body {
     margin-right: 50px;
     color: white;
 }
+
 .embla__controls {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -635,5 +636,16 @@ body {
 .embla__dot--selected:after {
     box-shadow: inset 0 0 0 0.2rem;
 }
+
+.embla-title {
+    font-size: 24px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Space below the header */
+}
+
+.embla-desc {
+    font-size: 16px; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Space below the description */
+}
+
 
 

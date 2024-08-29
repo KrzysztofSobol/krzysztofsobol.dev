@@ -27,12 +27,12 @@ function ButtonHeader() {
         };
     }, []);
 
-    const handleScrollToSection = (id) => {
+    const handleScrollToSection = (id, offset) => {
         const section = document.getElementById(id);
         if (section) {
             const headerOffset = headerRef.current.offsetHeight;
             const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerOffset + 40;
+            const offsetPosition = elementPosition - headerOffset + offset;
 
             window.scrollTo({
                 top: offsetPosition,
@@ -73,10 +73,9 @@ function ButtonHeader() {
                     </g>
                 </svg>
 
-                <button className="button" onClick={() => handleScrollToSection('aboutMe')}>about me</button>
-                <button className="button" onClick={() => handleScrollToSection('projects')}>projects</button>
-                <button className="button" onClick={() => handleScrollToSection('education')}>education</button>
-                <button className="button" onClick={() => handleScrollToSection('contact')}>contact</button>
+                <button className="button" onClick={() => handleScrollToSection('aboutMe', 40)}>about me</button>
+                <button className="button" onClick={() => handleScrollToSection('projects', 18)}>projects</button>
+                <button className="button" onClick={() => handleScrollToSection('contact', 0)}>contact</button>
             </div>
         </>
     );
