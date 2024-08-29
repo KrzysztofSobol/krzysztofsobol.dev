@@ -28,8 +28,8 @@ const EmblaCarousel = (props) => {
                     {slides.map((index) => (
                         <div className="embla__slide" key={index}>
                             <div className={"embla__slide__number"}>
-                                <h className="">womp</h>
-                                <p className="">womp</p>
+                                <h className="">header</h>
+                                <p className="">desc</p>
                                 <img/>
                             </div>
                         </div>
