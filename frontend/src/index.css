@@ -53,12 +53,12 @@ body {
     width: 100%;
     top: 85%;
     left: 50%;
-    transform: translate(-50%, -85%);
+    transform: translate(-40%, -85%);
 }
 
 .buttonScroll:hover {
     cursor: pointer;
-    transform: translate(-50%, -85%) scale(1.1);
+    transform: translate(-40%, -85%) scale(1.1);
 }
 
 .line {
@@ -181,11 +181,10 @@ body {
 .buttonHeader {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
     background-color: #0C1519;
     z-index: 1000;
-
+    transition: all .1s ease-out;
     box-sizing: border-box;
     position: relative;
 }
@@ -203,9 +202,10 @@ body {
     display: block;
     opacity: 0;
     position: absolute;
-    left: 20px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
+    transition: all .1s ease-out;
 }
 
 .buttonHeader.sticky .ksLogo {
@@ -549,9 +549,7 @@ body {
     font-size: 4rem;
     font-weight: 600;
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     height: var(--slide-height);
     user-select: none;
     background: linear-gradient(to bottom right, #264653, #379299);
@@ -651,9 +649,25 @@ body {
 
 .contact-tile {
     position: absolute;
-    top: 50%;
+    top: 43.5%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -43.5%);
+}
+
+.project_name{
+    margin-left: 25px;
+    margin-top: 15px;
+    font-size: 50px;
+    font-family: 'JetBrains Mono', monospace;
+    word-spacing: -5px;
+}
+
+.project_desc{
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 22px;
+    font-weight: 300;
+    font-family: 'Signika', sans-serif;
 }
 
 

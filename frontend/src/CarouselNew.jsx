@@ -28,8 +28,8 @@ const EmblaCarousel = (props) => {
                     {slides.map((index) => (
                         <div className="embla__slide" key={index}>
                             <div className={"embla__slide__number"}>
-                                <h className="">header</h>
-                                <p className="">desc</p>
+                                <h className="project_name">Wave function collapse</h>
+                                <p className="project_desc">Program that allows you to generate various terrains and is capable of generating anything based on the user defined set of rules describing a pattern.</p>
                                 <img/>
                             </div>
                         </div>
