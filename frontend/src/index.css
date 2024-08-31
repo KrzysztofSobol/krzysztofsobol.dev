@@ -665,9 +665,38 @@ body {
 .project_desc{
     margin-left: 25px;
     margin-right: 25px;
+    margin-bottom: 15px;
     font-size: 22px;
     font-weight: 300;
     font-family: 'Signika', sans-serif;
+    word-break: break-word;
+}
+
+.icon-svg-projects{
+    margin-left: 5px;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 15px;
+    max-width: calc(100% - 45px - 6px);
+}
+
+.github-link:hover{
+    transition: all .3s ease-out;
+    color: #53c3c5;
+}
+
+
+.icosik {
+    margin-top: 12px;
+    margin-left: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
