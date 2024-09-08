@@ -296,14 +296,9 @@ body {
 .footer {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    box-shadow: 0 0 6px 0 black;
-}
-
-.footer-line {
-    border: 0;
-    height: 1px;
-    background: white;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .footer-left{
@@ -326,6 +321,8 @@ body {
 
 .icon-svg:hover{
     cursor: pointer;
+    transform: scale(1.1);
+    transition: ease-in-out 0.2s;
 }
 
 .project-card{
@@ -689,7 +686,6 @@ body {
     transition: all .3s ease-out;
     color: #53c3c5;
 }
-
 
 .icosik {
     margin-top: 12px;

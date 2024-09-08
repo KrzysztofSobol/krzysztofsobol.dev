@@ -75,7 +75,7 @@ function ButtonHeader() {
 
                 <button className="button" onClick={() => handleScrollToSection('aboutMe', 40)}>about me</button>
                 <button className="button" onClick={() => handleScrollToSection('projects', 18)}>projects</button>
-                <button className="button" onClick={() => handleScrollToSection('contact', -325)}>contact</button>
+                <button className="button" onClick={() => handleScrollToSection('contact', -300)}>contact</button>
             </div>
         </>
     );
