@@ -1,8 +1,6 @@
 package com.krzysztofsobol.cvwebsite.domain.dto.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
@@ -12,8 +10,9 @@ import lombok.*;
 @Entity
 @Table(name = "project")
 
-public class Project {
+public class ProjectEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "project_id_seq")
     private Long id;
     private String name;
     private String description;

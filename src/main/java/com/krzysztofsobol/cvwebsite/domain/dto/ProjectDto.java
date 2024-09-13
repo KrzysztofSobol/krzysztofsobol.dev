@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Step {
-    private int id;
-    private int x;
-    private int y;
-    private char letter;
+public class ProjectDto {
+    private Long id;
+    private String name;
+    private String description;
+    private String githubLink;
+    private String imageSource;
 }
