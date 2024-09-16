@@ -6,14 +6,12 @@ import com.krzysztofsobol.cvwebsite.mappers.impl.ProjectMapper;
 import com.krzysztofsobol.cvwebsite.services.ProjectService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@CrossOrigin(origins = "*") // added for the time of development
 @RestController
 public class ProjectController {
     private final ProjectMapper projectMapper;

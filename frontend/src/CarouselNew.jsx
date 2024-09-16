@@ -7,8 +7,7 @@ import {
 } from './EmblaCarouselArrowButtons'
 import useEmblaCarousel from 'embla-carousel-react'
 
-const EmblaCarousel = (props) => {
-    const { slides, options } = props
+const EmblaCarousel = ({ options, projects }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel(options)
 
     const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -21,22 +20,20 @@ const EmblaCarousel = (props) => {
         onNextButtonClick
     } = usePrevNextButtons(emblaApi)
 
-    const openGithub = () => {
-        window.open("https://github.com/KrzysztofSobol/WaveFunctionCollapse", "_blank");
+    const openGithub = (link) => {
+        window.open(link, "_blank");
     };
 
     return (
         <section className="embla">
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {slides.map((index) => (
-                        <div className="embla__slide" key={index}>
-                            <div className={"embla__slide__number"}>
-                                <h className="project_name">Wave function collapse</h>
-                                <p className="project_desc">Program that allows you to generate various terrains and is
-                                    capable of generating anything based on the user defined set of rules describing a
-                                    pattern.</p>
-                                <div onClick={openGithub} className="github-link">
+                    {projects.map((project) => (
+                        <div className="embla__slide" key={project.id}>
+                            <div className="embla__slide__number">
+                                <h className="project_name">{project.name}</h>
+                                <p className="project_desc">{project.description}</p>
+                                <div onClick={() => openGithub(project.githubLink)} className="github-link">
                                     <svg
                                         className="icon-svg-projects"
                                         width="45"
@@ -56,7 +53,7 @@ const EmblaCarousel = (props) => {
                                                 d="M12,2A10,10,0,0,0,8.84,21.5c.5.08.66-.23.66-.5V19.31C6.73,19.91,6.14,18,6.14,18A2.69,2.69,0,0,0,5,16.5c-.91-.62.07-.6.07-.6a2.1,2.1,0,0,1,1.53,1,2.15,2.15,0,0,0,2.91.83,2.16,2.16,0,0,1,.63-1.34C8,16.17,5.62,15.31,5.62,11.5a3.87,3.87,0,0,1,1-2.71,3.58,3.58,0,0,1,.1-2.64s.84-.27,2.75,1a9.63,9.63,0,0,1,5,0c1.91-1.29,2.75-1,2.75-1a3.58,3.58,0,0,1,.1,2.64,3.87,3.87,0,0,1,1,2.71c0,3.82-2.34,4.66-4.57,4.91a2.39,2.39,0,0,1,.69,1.85V21c0,.27.16.59.67.5A10,10,0,0,0,12,2Z"/>
                                         </g>
                                     </svg>
-                                    <p className="project_desc icosik">github.com/KrzysztofSobol/WaveFunctionCollapse</p>
+                                    <p className="project_desc icosik">{project.githubLink}</p>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +68,7 @@ const EmblaCarousel = (props) => {
                 </div>
 
                 <div className="embla__dots">
-                    {scrollSnaps.map(( _, index ) => (
+                    {scrollSnaps.map((_, index) => (
                         <DotButton
                             key={index}
                             onClick={() => onDotButtonClick(index)}
