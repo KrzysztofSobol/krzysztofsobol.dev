@@ -16,7 +16,7 @@ function Contact(){
                 </svg>
                 <header className={"headerTextContact"}>Contact</header>
             </h1>
-            <h2w className="ContactContent" title="email">
+            <h2 className="ContactContent" title="email">
                 <svg width="50px"
                      height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -29,29 +29,41 @@ function Contact(){
                     </g>
                 </svg>
                 <p className={"contactText"}>krzysieksobol9@gmail.com</p>
-            </h2w>
+            </h2>
             <h3 className="ContactContent" title="discord">
-                <svg
-                    width="52px"
-                    height="52px"
-                    viewBox="0 0 48.00 48.00" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" strokeWidth="2.4" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)">
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
-                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC"
-                       strokeWidth="0.096"/>
+                <svg width="50px" height="50px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
+
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
                     <g id="SVGRepo_iconCarrier">
-                        <defs>
-                            <style>
-                                {`.a {fill: none; stroke: #FFFFFF; stroke-linecap: round; stroke-linejoin: round;}`}
-                            </style>
-                        </defs>
-                        <path className="a"
-                              d="M17.59,34.1733c-.89,1.3069-1.8944,2.6152-2.91,3.8267C7.3,37.79,4.5,33,4.5,33A44.83,44.83,0,0,1,9.31,13.48,16.47,16.47,0,0,1,18.69,10l1,2.31A32.6875,32.6875,0,0,1,24,12a32.9643,32.9643,0,0,1,4.33.3l1-2.31a16.47,16.47,0,0,1,9.38,3.51A44.8292,44.8292,0,0,1,43.5,33s-2.8,4.79-10.18,5a47.4193,47.4193,0,0,1-2.86-3.81m6.46-2.9c-3.84,1.9454-7.5555,3.89-12.92,3.89s-9.08-1.9446-12.92-3.89"/>
-                        <circle className="a" cx="17.847" cy="26.23" r="3.35"/>
-                        <circle className="a" cx="30.153" cy="26.23" r="3.35"/>
+
+                        <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"
+                              d="M120.755 170c.03-4.669.059-20.874.059-27.29 0-9.272-3.167-15.339-6.719-18.41 22.051-2.464 45.201-10.863 45.201-49.067 0-10.855-3.824-19.735-10.175-26.683 1.017-2.516 4.413-12.63-.987-26.32 0 0-8.296-2.672-27.202 10.204-7.912-2.213-16.371-3.308-24.784-3.352-8.414.044-16.872 1.14-24.785 3.352C52.457 19.558 44.162 22.23 44.162 22.23c-5.4 13.69-2.004 23.804-.987 26.32C36.824 55.498 33 64.378 33 75.233c0 38.204 23.149 46.603 45.2 49.067-3.551 3.071-6.719 9.138-6.719 18.41 0 6.416.03 22.621.059 27.29M27 130c9.939.703 15.67 9.735 15.67 9.735 8.834 15.199 23.178 10.803 28.815 8.265"/>
+
                     </g>
+
                 </svg>
-                <p className={"contactText"}>@kexsu</p>
+                <p className={"contactText"}>github.com/KrzysztofSobol</p>
             </h3>
+            <h4 className="ContactContent">
+                <svg width="49px" height="49px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     stroke="#000000" strokeWidth="1">
+
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
+
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"/>
+
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M22 3.47059V20.5294C22 20.9194 21.845 21.2935 21.5692 21.5693C21.2935 21.8451 20.9194 22 20.5294 22H3.47056C3.08053 22 2.70648 21.8451 2.43069 21.5693C2.15491 21.2935 1.99997 20.9194 1.99997 20.5294V3.47059C1.99997 3.08056 2.15491 2.70651 2.43069 2.43073C2.70648 2.15494 3.08053 2 3.47056 2H20.5294C20.9194 2 21.2935 2.15494 21.5692 2.43073C21.845 2.70651 22 3.08056 22 3.47059V3.47059ZM7.88232 9.64706H4.94115V19.0588H7.88232V9.64706ZM8.14703 6.41176C8.14858 6.18929 8.10629 5.96869 8.02258 5.76255C7.93888 5.55642 7.81539 5.36879 7.65916 5.21039C7.50294 5.05198 7.31705 4.92589 7.1121 4.83933C6.90715 4.75277 6.68715 4.70742 6.46468 4.70588H6.41173C5.95931 4.70588 5.52541 4.88561 5.20549 5.20552C4.88558 5.52544 4.70585 5.95934 4.70585 6.41176C4.70585 6.86419 4.88558 7.29809 5.20549 7.61801C5.52541 7.93792 5.95931 8.11765 6.41173 8.11765V8.11765C6.63423 8.12312 6.85562 8.0847 7.06325 8.00458C7.27089 7.92447 7.46071 7.80422 7.62186 7.65072C7.78301 7.49722 7.91234 7.31346 8.00245 7.10996C8.09256 6.90646 8.14169 6.6872 8.14703 6.46471V6.41176ZM19.0588 13.3412C19.0588 10.5118 17.2588 9.41177 15.4706 9.41177C14.8851 9.38245 14.3021 9.50715 13.7798 9.77345C13.2576 10.0397 12.8142 10.4383 12.4941 10.9294H12.4117V9.64706H9.64703V19.0588H12.5882V14.0529C12.5457 13.5403 12.7072 13.0315 13.0376 12.6372C13.368 12.2429 13.8407 11.9949 14.3529 11.9471H14.4647C15.4 11.9471 16.0941 12.5353 16.0941 14.0176V19.0588H19.0353L19.0588 13.3412Z"
+                            stroke="#FFFFFF" strokeLinejoin="round"/>
+                    </g>
+
+                </svg>
+                <p className={"contactText"}>linkedin.com/in/krzysztof-sobol</p>
+            </h4>
         </div>
     );
 }
