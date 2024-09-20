@@ -6,6 +6,7 @@ function Footer() {
     const openLinkedin = () => {
         window.open("https://www.linkedin.com/in/krzysztof-sobolewski-00789730a/", "_blank");
     };
+
     return (
         <div className="footer-container">
             <div className="footer">

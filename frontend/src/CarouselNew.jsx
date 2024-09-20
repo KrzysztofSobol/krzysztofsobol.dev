@@ -54,6 +54,7 @@ const EmblaCarousel = ({ options, projects }) => {
                                         </g>
                                     </svg>
                                     <p className="project_desc icosik">{project.githubLink}</p>
+                                    <img alt={""}/>
                                 </div>
                             </div>
                         </div>
