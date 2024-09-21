@@ -10,4 +10,6 @@ public interface ProjectService {
     List<ProjectEntity> findAll();
 
     ProjectEntity save(ProjectEntity projectEntity);
+    Boolean exists(Long id);
+    ProjectEntity update(Long id, ProjectEntity projectEntity);
 }

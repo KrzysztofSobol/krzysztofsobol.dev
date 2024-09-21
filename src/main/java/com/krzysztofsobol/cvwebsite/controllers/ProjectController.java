@@ -29,6 +29,17 @@ public class ProjectController {
         return new ResponseEntity<>(projectMapper.mapToDto(savedProjectEntity), HttpStatus.CREATED);
     }
 
+    @PatchMapping(path = "/api/project/{id}")
+    public ResponseEntity<ProjectDto> updateProject(@PathVariable("id") Long id, @RequestBody ProjectDto project){
+        if(!projectService.exists(id))
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        project.setId(id);
+        ProjectEntity projectEntity = projectMapper.mapFromDto(project);
+        ProjectEntity savedProjectEntity = projectService.update(id, projectEntity);
+        return new ResponseEntity<>(projectMapper.mapToDto(savedProjectEntity), HttpStatus.OK);
+    }
+
     @GetMapping(path = "/api/projects")
     public List<ProjectDto> listProjects(){
         List<ProjectEntity> projects = projectService.findAll();

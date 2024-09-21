@@ -687,6 +687,11 @@ body {
     color: #53c3c5;
 }
 
+.projectPhoto{
+    margin: 20px;
+    border-radius: 15px;
+}
+
 .icosik {
     margin-top: 12px;
     margin-left: 6px;
