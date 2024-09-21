@@ -43,4 +43,9 @@ public class ProjectServiceImpl implements ProjectService {
             return projectRepository.save(existingProject);
         }).orElseThrow(() -> new RuntimeException("Project not found"));
     }
+
+    @Override
+    public void delete(Long id) {
+         projectRepository.deleteById(id);
+    }
 }

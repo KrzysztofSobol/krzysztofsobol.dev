@@ -12,4 +12,5 @@ public interface ProjectService {
     ProjectEntity save(ProjectEntity projectEntity);
     Boolean exists(Long id);
     ProjectEntity update(Long id, ProjectEntity projectEntity);
+    void delete(Long id);
 }

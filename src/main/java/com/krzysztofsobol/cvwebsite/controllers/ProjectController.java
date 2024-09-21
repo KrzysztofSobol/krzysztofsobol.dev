@@ -45,4 +45,10 @@ public class ProjectController {
         List<ProjectEntity> projects = projectService.findAll();
         return projects.stream().map(projectMapper::mapToDto).collect(Collectors.toList());
     }
+
+    @DeleteMapping(path = "/api/project/{id}")
+    public ResponseEntity<ProjectDto> deleteProject(@PathVariable("id") Long id){
+        projectService.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
