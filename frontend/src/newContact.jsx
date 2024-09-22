@@ -1,7 +1,6 @@
-import AboutMe from "./aboutMe.jsx";
 import Contact from "./contact.jsx";
 
-function newContact(){
+function contact(){
     return (
         <div id={"aboutMe"} className="aboutMe-container">
             <img src={"/map_3.png"} alt={"BackgroundMap"}/>
@@ -13,4 +12,4 @@ function newContact(){
     );
 }
 
-export default newContact;
+export default contact;
