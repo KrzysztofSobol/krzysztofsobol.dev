@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Title from "./title.jsx";
 
 function Map() {
     const [lines, setLines] = useState(() => {
@@ -22,39 +23,39 @@ function Map() {
     function getLetterClass(letter) {
         switch (letter) {
             case 'X':
-                return 'letter-x';
+                return 'x';
             case '?':
-                return 'letter-w';
+                return 'w';
             case 'A':
-                return 'letter-a';
+                return 'a';
             case 'B':
-                return 'letter-b';
+                return 'b';
             case 'C':
-                return 'letter-c';
+                return 'c';
             case 'D':
-                return 'letter-d';
+                return 'd';
             case 'O':
-                return 'letter-o';
+                return 'o';
             case 'G':
-                return 'letter-g';
+                return 'g';
             default:
                 return 'letter-default';
         }
     }
 
     return (
-        <div>
+        <div className={"theMap"}>
             <div id={"main"} className="linesContainer">
                 {lines.map(( line, lineIndex ) => (
                     <p key={lineIndex} className="line">
                         {line.split('').map(( char, charIndex ) => (
-                            <span key={charIndex} className={getLetterClass(char)}>
+                            <span key={charIndex} className={"letter " + getLetterClass(char)}>
                             {char}
                         </span>
                         ))}
                     </p>
                 ))}
-
+                <Title />
             </div>
             <svg className={"settings-button"} width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"

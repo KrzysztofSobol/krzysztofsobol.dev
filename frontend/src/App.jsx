@@ -25,7 +25,6 @@ function App() {
             <div ref={headerRef}>
                 <ButtonHeader />
             </div>
-            <Title />
             <AboutMeNew />
             <ProjectsNew />
             <NewContact />

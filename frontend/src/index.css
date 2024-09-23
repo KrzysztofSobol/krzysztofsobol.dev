@@ -27,23 +27,55 @@ body {
     height: 100vh;
 }
 
-.map-container .title {
-    position: absolute;
-    max-width: 850px;
-    width: 100%;
-    top: 44%;
-    left: 50%;
-    transform: translate(-50%, -44%);
+.theMap{
+    height: 89%;
+    margin-bottom: 20px;
 }
 
 .linesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-family: "Courier New", serif;
     white-space: pre;
-    font-size: 15px;
+    font-size: 0.781vw;
     background-color: #264653;
-    border-radius: 40px;
     overflow: hidden;
     margin-bottom: 19px;
+    border-radius: 40px;
+    height: 100%;
+}
+
+@media (max-width: 1300px) {
+    .linesContainer {
+        font-size: 0.9vw;
+    }
+}
+
+@media (max-width: 1100px) {
+    .linesContainer {
+        font-size: 1.2vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .linesContainer {
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .linesContainer {
+        font-size: 3vw;
+    }
+}
+
+.title {
+    max-width: 48%;
+    min-width: 800px;
+    width: 100%;
+    position: absolute;
 }
 
 .buttonScroll {
@@ -51,9 +83,6 @@ body {
     height: 50px;
     max-width: 50px;
     width: 100%;
-    top: 85%;
-    left: 50%;
-    transform: translate(-40%, -85%);
 }
 
 .buttonScroll:hover {
@@ -64,38 +93,45 @@ body {
 .line {
     margin: 0;
     cursor: default;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 /* color of each letter */
-.letter-a {
+.letter{
+    height: auto;
+}
+
+.a {
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-b {
+.b {
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-c {
+.c {
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-d {
+.d {
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-x {
+.x {
     color: #4dbf9d; /* #79AC78 */
 }
 
-.letter-w {
+.w {
     color: #22577a; /* #D0E7D2 */
 }
 
-.letter-o {
+.o {
     color: #38a3a5; /* #B0D9B1 */
 }
 
-.letter-g {
+.g {
     color: #247a91; /* #B0D9B1 */
 }
 
@@ -462,7 +498,7 @@ body {
     max-width: 100%;
     overflow: hidden;
     margin: 0;
-    height: 918px;
+    height: auto;
 }
 
 .image-container img {
@@ -510,7 +546,7 @@ body {
     min-width: 0;
 }
 
-.carousel-tile {    
+.carousel-tile {
     position: absolute;
     top: 53%;
     left: 50%;
@@ -713,6 +749,8 @@ body {
     transition: ease-in-out;
 }
 
-
-
-
+.background-img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
