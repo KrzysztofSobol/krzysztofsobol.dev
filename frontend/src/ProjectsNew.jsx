@@ -33,7 +33,7 @@ function ProjectsNew() {
 
     return (
         <div id="projects" className="aboutMe-container">
-            <img src="/map_2.png" alt="BackgroundMap"/>
+            <img className={"background-img"} src="/map_2.png" alt="BackgroundMap"/>
             <div className="color-overlay"></div>
             <div className="carousel-tile">
                 {projects.length > 0 ? (

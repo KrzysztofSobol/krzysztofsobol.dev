@@ -556,16 +556,17 @@ body {
 }
 
 .embla__controls {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
-    gap: 1.2rem;
-    margin-top: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 0.5rem;
 }
+
 .embla__buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 0.6rem;
+    justify-content: center;
     align-items: center;
 }
 .embla__button {
@@ -573,7 +574,6 @@ body {
     appearance: none;
     background-color: transparent;
     touch-action: manipulation;
-    display: inline-flex;
     text-decoration: none;
     cursor: pointer;
     border: 0;
@@ -684,7 +684,7 @@ body {
 
 .github-link:hover{
     transition: all .3s ease-out;
-    color: #53c3c5;
+    color: darkgray; /* 53c3c5 */
 }
 
 .projectPhoto{
@@ -699,5 +699,20 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.settings-button{
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    z-index: 100;
+}
+
+.settings-button:hover{
+    fill: #38a3a5;
+    cursor: pointer;
+    transition: ease-in-out;
+}
+
+
 
 
