@@ -50,20 +50,24 @@ body {
 .title {
     max-width: 48%;
     min-width: 700px;
-    width: 100%;
+    position: absolute;
+}
+
+.title-small {
+    min-width: 36%;
     position: absolute;
 }
 
 .buttonScroll {
+    bottom: 15%;
+    min-width: 3%;
+    height: auto;
     position: absolute;
-    height: 50px;
-    max-width: 50px;
-    width: 100%;
 }
 
 .buttonScroll:hover {
     cursor: pointer;
-    transform: translate(-40%, -85%) scale(1.1);
+    transform: scale(1.1);
 }
 
 .line {

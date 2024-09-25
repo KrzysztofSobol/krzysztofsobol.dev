@@ -20,8 +20,7 @@ function App() {
  
     return (
         <div className="map-container">
-            <Map />
-            <ScrollButton target={"aboutMe"} headerHeight={headerHeight} />
+            <Map target={"aboutMe"} headerHeight={headerHeight}/>
             <div ref={headerRef}>
                 <ButtonHeader />
             </div>
