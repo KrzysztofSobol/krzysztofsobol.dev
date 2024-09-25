@@ -4,12 +4,12 @@ function Title() {
     const [screenState, setScreenState] = useState(null);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(max-width: 720px)');
+        const mediaQuery = window.matchMedia('(max-width: 740px)');
 
         const handleMediaQueryChange = (event) => {
             setScreenState({
                 isSmall: event.matches,
-                src: event.matches ? "/logoKS.svg" : "/title.png",
+                src: event.matches ? "/logoKS.svg" : "/title.svg",
                 className: event.matches ? "title-small" : "title"
             });
         };
