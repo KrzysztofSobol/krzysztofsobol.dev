@@ -37,7 +37,7 @@ function ProjectsNew() {
             <div className="color-overlay"></div>
             <div className="carousel-tile">
                 {projects.length > 0 ? (
-                    <EmblaCarousel projects={projects} />
+                    <EmblaCarousel projects={projects}/>
                 ) : (
                     <p>No projects available at the moment.</p>
                 )}

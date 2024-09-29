@@ -4,7 +4,7 @@ function Title() {
     const [screenState, setScreenState] = useState(null);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(max-width: 740px)');
+        const mediaQuery = window.matchMedia('(max-width: 700px)');
 
         const handleMediaQueryChange = (event) => {
             setScreenState({
@@ -24,7 +24,6 @@ function Title() {
         };
     }, []);
 
-    // Only render the image when we've determined the screen state
     if (screenState === null) {
         return null;
     }
