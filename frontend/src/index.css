@@ -123,11 +123,6 @@ body {
     height: 38vh;
 }
 
-.Timeline{
-    max-width: 820px;
-    height: 500px;
-}
-
 .Tile {
     width: 100%;
     background: linear-gradient(to bottom right, #264653, #379299);
@@ -551,7 +546,6 @@ body {
     margin-left: 30px;
     box-shadow: 0 0 9px 0 #38a3a5;
     height: 38vh;
-
 }
 
 /* CarouselNew */
@@ -782,15 +776,6 @@ body {
     object-position: center;
 }
 
-@media (max-width: 700px) {
-    .background-img {
-        width: 1920px;
-        height: 1080px;
-        left: -145vw;
-        transform: translateX(-145vw);
-    }
-}
-
 @media (min-width: 1920px) {
     .background-img {
         object-fit: cover;
@@ -802,4 +787,60 @@ body {
 .contactSvg{
     width: 8.4vh;
     height: auto;
+}
+
+@media (max-width: 700px) {
+    /* about me */
+    .aboutMe-tile {
+        position: absolute;
+        width: 91%;
+        height: 50%;
+        top: 32%;
+        left: 50%;
+        transform: translate(-50%, -32%);
+        display: grid;
+    }
+
+    .Tile{
+        height: 100%;
+    }
+
+    .Tile .AboutMeTitle {
+        margin-top: 1.7vh;
+        margin-left: 1.9vw;
+        word-spacing: -5px;
+    }
+
+    .Tile .AboutMeContent{
+        font-size: 2.1vh;
+        margin-top: 1.3vh;
+        margin-left: 4vw;
+        margin-right: 4vw;
+    }
+
+    .Tile .AboutMeIcon{
+        width: 8.2vh;
+        height: auto;
+    }
+
+    .AboutMeContent{
+        font-size: 10vw;
+    }
+
+    .background-img {
+        width: 190vw;
+        height: 95.3vh;
+        left: -41.8vw;
+        transform: translateX(-41.8vw);
+    }
+
+    .profile-picture {
+        object-fit: cover;
+        box-shadow: 0 0 9px 0 #38a3a5;
+        width: 100%;
+        height: 60%;
+        margin-top: 2vh;
+        margin-left: 0;
+    }
+
 }
