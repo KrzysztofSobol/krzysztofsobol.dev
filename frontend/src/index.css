@@ -189,11 +189,12 @@ body {
 }
 
 .placeholder {
-    height: 60px;
+    height: 7.5vh;
     display: none;
 }
 
 .buttonHeader {
+    height: 7.5vh;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -843,4 +844,10 @@ body {
         margin-left: 0;
     }
 
+    .placeholder {
+        height: 10vh;
+    }
+    .buttonHeader {
+        height: 10vh;
+    }
 }
