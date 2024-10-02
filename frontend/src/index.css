@@ -245,7 +245,7 @@ body {
     cursor: pointer;
     display: inline-block;
     font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-    font-size: calc(10px + 0.7vw);
+    font-size: calc(10px + 0.7vw + 0.2vh);
     font-weight: 800;
     line-height: 16px;
     min-height: 4.6vh;
