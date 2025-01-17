@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import Map from "./map.jsx";
+import Map from "./Heropage/map.jsx";
 import Title from "./title.jsx";
 import ScrollButton from "./buttonScroll.jsx";
 import ButtonHeader from "./buttonHeader.jsx";

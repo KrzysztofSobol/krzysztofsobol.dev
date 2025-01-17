@@ -1,13 +1,15 @@
 import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
-import Title from "./title.jsx";
-import ScrollButton from "./buttonScroll.jsx";
+import Title from "../title.jsx";
+import ScrollButton from "../buttonScroll.jsx";
 
 function Map() {
     const [lines, setLines] = useState(() => {
         const storedData = localStorage.getItem('mapData');
         return storedData ? JSON.parse(storedData) : [];
     });
+
+    const canvasRef = useRef(null);
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/mapdata')
@@ -19,15 +21,6 @@ function Map() {
             .catch(error => {
                 console.error(error);
             });
-    }, []);
-
-    const headerRef = useRef(null);
-    const [headerHeight, setHeaderHeight] = useState(0);
-
-    useEffect(() => {
-        if (headerRef.current) {
-            setHeaderHeight(headerRef.current.offsetHeight);
-        }
     }, []);
 
     function getLetterClass(letter) {
