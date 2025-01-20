@@ -1,0 +1,32 @@
+.aboutMe-tile {
+    width: 64vw;
+}
+
+
+.Tile .aboutMeTitle {
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 2.09vh;
+    margin-left: 1.3vw;
+    word-spacing: -5px;
+}
+
+.Tile .AboutMeContent {
+    font-size: 1.27vw;
+    color: lightgrey;
+    margin-left: 1.3vw;
+    margin-right: 1.3vw;
+    margin-top: 1.06vw;
+    font-weight: 300;
+    font-family: 'Signika', sans-serif;
+}
+
+.headerTextAboutMe {
+    font-size: 5.23vh;
+    color: white;
+    margin-left: 1.1vh;
+    margin-top: 0.05vh;
+    font-weight: 0;
+}

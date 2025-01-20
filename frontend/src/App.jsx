@@ -1,12 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import Map from "./Heropage/map.jsx";
-import Title from "./title.jsx";
-import ScrollButton from "./buttonScroll.jsx";
 import ButtonHeader from "./buttonHeader.jsx";
 import Footer from "./footer.jsx";
-import AboutMeNew from "./aboutMeNew.jsx";
+import AboutMeNew from "./AboutMe/aboutMeNew.jsx";
 import ProjectsNew from "./ProjectsNew.jsx";
 import NewContact from "./newContact.jsx";
+import AboutMe from "./AboutMe/aboutMe.jsx";
 
 function App() {
     const headerRef = useRef(null);
@@ -24,7 +23,7 @@ function App() {
             <div ref={headerRef}>
                 <ButtonHeader />
             </div>
-            <AboutMeNew />
+            <AboutMe />
             <ProjectsNew />
             <NewContact />
             <Footer />

@@ -1,6 +1,6 @@
 import AboutMe from "./aboutMe.jsx";
 
-function AboutMeNew() {
+function Page() {
     return(
         <div id={"aboutMe"} className="aboutMe-container">
             <img className={"background-img"} src={"/map_1.png"} alt={"BackgroundMap"}/>
@@ -13,4 +13,4 @@ function AboutMeNew() {
     );
 }
 
-export default AboutMeNew;
+export default Page;
