@@ -2,14 +2,13 @@ import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import Title from "../title.jsx";
 import ScrollButton from "../buttonScroll.jsx";
+import './map.css';
 
 function Map() {
     const [lines, setLines] = useState(() => {
         const storedData = localStorage.getItem('mapData');
         return storedData ? JSON.parse(storedData) : [];
     });
-
-    const canvasRef = useRef(null);
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/mapdata')
