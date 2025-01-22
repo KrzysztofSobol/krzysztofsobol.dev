@@ -55,6 +55,7 @@ body {
 .title {
     max-width: 74vh;
     width: 97%;
+    height: auto;
     position: absolute;
 }
 
@@ -91,11 +92,6 @@ body {
     cursor: default;
     width: 100%;
     height: 100%;
-}
-
-/* color of each letter */
-.letter{
-
 }
 
 /* aboutMe */
@@ -176,7 +172,7 @@ body {
     background: #247a91;
     border: 1px solid #247a91;
     border-radius: 0.4vw;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-shadow: 0 0 11px 0 #000000;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;

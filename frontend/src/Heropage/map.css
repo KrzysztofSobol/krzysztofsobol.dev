@@ -1,3 +1,12 @@
+.letter {
+    transition: color 0.5s ease;
+}
+
+.letter:hover {
+    color: white;
+    transition: none;
+}
+
 .a {
     color: #38a3a5; /* #B0D9B1 */
 }
