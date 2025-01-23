@@ -1,6 +1,5 @@
 package com.krzysztofsobol.cvwebsite.domain.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,14 +28,6 @@ public class Tile implements Cloneable{
         this.setSouth(south);
         this.setWest(west);
         this.collapsed = false;
-    }
-
-    public void Rotate(){
-        int temp = this.north;
-        this.north = this.west;
-        this.west = this.south;
-        this.south = this.east;
-        this.east = temp;
     }
 
     @Override

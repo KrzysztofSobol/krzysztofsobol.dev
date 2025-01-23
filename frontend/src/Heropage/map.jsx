@@ -11,7 +11,7 @@ function Map() {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/mapdata')
+        axios.get('http://localhost:8080/api/modifiedMapData?grassWeight=50&seaWeight=100&coastCornerWeight=5&coastWeight=1')
             .then(response => {
                 setLines(response.data);
                 // Store the new data in local storage so the map doesn't disappear after the refresh

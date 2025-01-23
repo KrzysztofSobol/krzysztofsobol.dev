@@ -19,9 +19,7 @@ function App() {
     return (
         <div className="map-container">
             <Map target={"aboutMe"} headerHeight={headerHeight}/>
-            <div ref={headerRef}>
-                <ButtonHeader />
-            </div>
+            <ButtonHeader />
             <AboutMe />
             <ProjectsNew />
             <NewContact />
