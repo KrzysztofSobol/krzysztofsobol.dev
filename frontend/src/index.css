@@ -52,18 +52,6 @@ body {
     height: 100%;
 }
 
-.title {
-    max-width: 74vh;
-    width: 97%;
-    height: auto;
-    position: absolute;
-}
-
-.title-small {
-    min-width: 36%;
-    position: absolute;
-}
-
 .buttonScrollCircle {
     bottom: 13%;
     position: absolute;

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Title from "../title.jsx";
 import ScrollButton from "../buttonScroll.jsx";
 import './map.css';
+import MapOptions from "./mapOptions.jsx";
 
 function Map() {
     const [lines, setLines] = useState(() => {
@@ -58,6 +59,7 @@ function Map() {
                     </p>
                 ))}
                 <Title />
+                <MapOptions/>
                 <ScrollButton target={"aboutMe"}/>
             </div>
             <svg className={"settings-button"} width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

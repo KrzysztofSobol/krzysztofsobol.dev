@@ -39,3 +39,15 @@
 .g {
     color: #247a91; /* #B0D9B1 */
 }
+
+.title {
+    max-width: 74vh;
+    width: 97%;
+    height: auto;
+    position: absolute;
+}
+
+.title-small {
+    min-width: 36%;
+    position: absolute;
+}

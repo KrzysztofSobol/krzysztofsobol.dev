@@ -1,0 +1,7 @@
+.map-options-container {
+    background-color: black;
+    width: 25vw;
+    min-width: 350px;
+    height: 30vh;
+    position: absolute;
+}
