@@ -1,43 +1,36 @@
 .letter {
-    will-change: color;
-    transition: color 0.5s ease;
+
 }
 
 .letter:hover {
-    color: white;
-    transition: none;
+
 }
 
-.a {
-    color: #38a3a5; /* #B0D9B1 */
+.line {
+    margin: 0;
+    cursor: default;
+    width: 100%;
+    height: 100%;
 }
 
-.b {
-    color: #38a3a5; /* #B0D9B1 */
-}
-
-.c {
-    color: #38a3a5; /* #B0D9B1 */
-}
-
-.d {
-    color: #38a3a5; /* #B0D9B1 */
+.a, .b, .c, .d {
+    color: #38a3a5;
 }
 
 .x {
-    color: #4dbf9d; /* #79AC78 */
+    color: #4dbf9d;
 }
 
 .w {
-    color: #22577a; /* #D0E7D2 */
+    color: #22577a;
 }
 
 .o {
-    color: #38a3a5; /* #B0D9B1 */
+    color: #38a3a5;
 }
 
 .g {
-    color: #247a91; /* #B0D9B1 */
+    color: #247a91;
 }
 
 .title {
@@ -50,4 +43,39 @@
 .title-small {
     min-width: 36%;
     position: absolute;
+}
+
+.theMap{
+    height: 89%;
+    margin-bottom: 1.7vh;
+}
+
+.linesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Courier New", serif;
+    white-space: pre;
+    font-size: clamp(0.781vw, 0.1vw + 0.8rem, 3vw);
+    background-color: #264653;
+    overflow: hidden;
+    border-radius: 40px;
+    height: 100%;
+    box-shadow: 0 2px 10px 0 #000000;
+}
+
+.settings-button{
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    z-index: 100;
+    width: 7vh;
+    height: 7vh;
+}
+
+.settings-button:hover{
+    fill: #38a3a5;
+    cursor: pointer;
+    transition: ease-in-out;
 }

@@ -33,25 +33,6 @@ body {
     height: 100vh;
 }
 
-.theMap{
-    height: 89%;
-    margin-bottom: 1.5vh;
-}
-
-.linesContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: "Courier New", serif;
-    white-space: pre;
-    font-size: clamp(0.781vw, 0.1vw + 0.8rem, 3vw);
-    background-color: #264653;
-    overflow: hidden;
-    border-radius: 40px;
-    height: 100%;
-}
-
 .buttonScrollCircle {
     bottom: 13%;
     position: absolute;
@@ -73,13 +54,6 @@ body {
 
 .buttonScroll:hover {
     cursor: pointer;
-}
-
-.line {
-    margin: 0;
-    cursor: default;
-    width: 100%;
-    height: 100%;
 }
 
 /* aboutMe */
@@ -159,17 +133,17 @@ body {
 .button {
     background: #247a91;
     border: 1px solid #247a91;
-    border-radius: 0.4vw;
+    border-radius: 8px;
     box-shadow: 0 0 11px 0 #000000;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-    font-size: calc(10px + 0.7vw + 0.2vh);
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif, system-ui;
+    font-size: clamp(25px, 2vmin, 24px);
     font-weight: 800;
-    line-height: 16px;
-    min-height: 4.6vh;
+    line-height: 1.5;
+    min-height: 44px;
     text-align: center;
     text-rendering: geometricprecision;
     text-transform: none;
@@ -177,7 +151,13 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
-    margin: 1rem;
+    margin: clamp(0.5rem, 2vmin, 1rem);
+    transition: transform 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 13px 0 #000000;
 }
 
 .icon {
@@ -662,21 +642,6 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.settings-button{
-    position: absolute;
-    top: 7px;
-    right: 6px;
-    z-index: 100;
-    width: 8vh;
-    height: 8vh;
-}
-
-.settings-button:hover{
-    fill: #38a3a5;
-    cursor: pointer;
-    transition: ease-in-out;
 }
 
 .background-img {

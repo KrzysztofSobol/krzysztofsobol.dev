@@ -15,10 +15,12 @@ function App() {
             setHeaderHeight(headerRef.current.offsetHeight);
         }
     }, []);
- 
+
+    const MapComponent = React.memo(Map)
+
     return (
         <div className="map-container">
-            <Map target={"aboutMe"} headerHeight={headerHeight}/>
+            <MapComponent />
             <ButtonHeader />
             <AboutMe />
             <ProjectsNew />

@@ -12,7 +12,7 @@ function Map() {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/modifiedMapData?grassWeight=60&seaWeight=100&coastCornerWeight=5&coastWeight=1')
+        axios.get('http://localhost:8080/api/modifiedMapData?grassWeight=60&seaWeight=100&coastCornerWeight=4&coastWeight=1')
             .then(response => {
                 setLines(response.data);
                 // Store the new data in local storage so the map doesn't disappear after the refresh
@@ -59,7 +59,7 @@ function Map() {
                     </p>
                 ))}
                 <Title />
-                <MapOptions/>
+
                 <ScrollButton target={"aboutMe"}/>
             </div>
             <svg className={"settings-button"} width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
