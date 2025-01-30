@@ -28,24 +28,6 @@ body {
     min-height: 100vh;
 }
 
-.map-container {
-    position: relative;
-    height: 100vh;
-}
-
-.buttonScrollCircle {
-    bottom: 13%;
-    position: absolute;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: clamp(60px, 4.2vw, 150px);
-    height: clamp(60px, 4.2vw, 150px);
-    backdrop-filter: blur(clamp(1px, 0.09vw, 3px));
-}
-
 .buttonScroll {
     margin-top: 0.3rem;
     height: auto;
@@ -756,4 +738,11 @@ body {
         margin-top: auto;
         border-radius: 1.175rem;
     }
+}
+
+.unselectable{
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }

@@ -45,9 +45,15 @@
     position: absolute;
 }
 
+.map-container {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+}
+
 .theMap{
-    height: 89%;
-    margin-bottom: 1.7vh;
+    height: 100%;
+    margin-bottom: 0.9vh;
 }
 
 .linesContainer {
@@ -65,17 +71,21 @@
     box-shadow: 0 2px 10px 0 #000000;
 }
 
-.settings-button{
-    position: absolute;
-    top: 7px;
-    right: 8px;
-    z-index: 100;
-    width: 7vh;
-    height: 7vh;
-}
-
 .settings-button:hover{
     fill: #38a3a5;
     cursor: pointer;
     transition: ease-in-out;
+}
+
+.buttonScrollCircle {
+    bottom: 25px;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: clamp(60px, 4.2vw, 150px);
+    height: clamp(60px, 4.2vw, 150px);
+    backdrop-filter: blur(clamp(1px, 0.09vw, 3px));
 }

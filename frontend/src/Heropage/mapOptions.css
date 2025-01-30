@@ -1,7 +1,29 @@
 .map-options-container {
     background-color: black;
     width: 25vw;
+    height: 97.2%;
     min-width: 350px;
-    height: 30vh;
     position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 39px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.25s ease-in;
 }
+
+.map-options-container.visible {
+    opacity: 100%;
+    transform: translateX(0);
+
+}
+
+.settings-button{
+    position: absolute;
+    width: 7vh;
+    height: 7vh;
+    top: 15px;
+    right: 15px;
+    z-index: 1;
+}
+

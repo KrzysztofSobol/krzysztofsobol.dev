@@ -19,14 +19,14 @@ function App() {
     const MapComponent = React.memo(Map)
 
     return (
-        <div className="map-container">
+        <>
             <MapComponent />
             <ButtonHeader />
             <AboutMe />
             <ProjectsNew />
             <NewContact />
             <Footer />
-        </div>
+        </>
     );
 }
 
