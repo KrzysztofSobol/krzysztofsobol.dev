@@ -15,7 +15,6 @@
 .map-options-container.visible {
     opacity: 100%;
     transform: translateX(0);
-
 }
 
 .settings-button{
@@ -25,5 +24,9 @@
     top: 15px;
     right: 15px;
     z-index: 1;
+}
+
+.sliders{
+    margin: 30px 30px;
 }
 

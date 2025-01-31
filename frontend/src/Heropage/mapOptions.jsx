@@ -29,34 +29,36 @@ function MapOptions() {
             </svg>
 
             <div className={`map-options-container ${isOpen ? 'visible' : ''}`}>
-                <SliderWithNumber
-                    name="slider1"
-                    value={sliderValues.slider1}
-                    onChange={handleSliderChange}
-                    min={1}
-                    max={500}
-                />
-                <SliderWithNumber
-                    name="slider2"
-                    value={sliderValues.slider2}
-                    onChange={handleSliderChange}
-                    min={1}
-                    max={500}
-                />
-                <SliderWithNumber
-                    name="slider3"
-                    value={sliderValues.slider3}
-                    onChange={handleSliderChange}
-                    min={1}
-                    max={100}
-                />
-                <SliderWithNumber
-                    name="slider4"
-                    value={sliderValues.slider4}
-                    onChange={handleSliderChange}
-                    min={1}
-                    max={100}
-                />
+                <div className={"sliders"}>
+                    <SliderWithNumber
+                        name="slider1"
+                        value={sliderValues.slider1}
+                        onChange={handleSliderChange}
+                        min={1}
+                        max={500}
+                    />
+                    <SliderWithNumber
+                        name="slider2"
+                        value={sliderValues.slider2}
+                        onChange={handleSliderChange}
+                        min={1}
+                        max={500}
+                    />
+                    <SliderWithNumber
+                        name="slider3"
+                        value={sliderValues.slider3}
+                        onChange={handleSliderChange}
+                        min={1}
+                        max={100}
+                    />
+                    <SliderWithNumber
+                        name="slider4"
+                        value={sliderValues.slider4}
+                        onChange={handleSliderChange}
+                        min={1}
+                        max={100}
+                    />
+                </div>
             </div>
         </>
     );
