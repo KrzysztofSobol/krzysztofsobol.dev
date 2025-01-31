@@ -30,7 +30,7 @@ function Title() {
 
     return (
         <img
-            className={screenState.className}
+            className={screenState.className + " unselectable"}
             src={screenState.src}
             alt="title image"
         />

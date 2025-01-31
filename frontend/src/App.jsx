@@ -21,7 +21,6 @@ function App() {
     return (
         <>
             <MapComponent />
-            <ButtonHeader />
             <AboutMe />
             <ProjectsNew />
             <NewContact />

@@ -4,6 +4,7 @@ import Title from "../title.jsx";
 import ScrollButton from "../buttonScroll.jsx";
 import './map.css';
 import MapOptions from "./mapOptions.jsx";
+import ButtonHeader from "@/Navbar/buttonHeader.jsx";
 
 function Map() {
     const [lines, setLines] = useState(() => {
@@ -47,23 +48,22 @@ function Map() {
     }
 
     return (
-        <div className="map-container">
-            <div className={"theMap"}>
-                <div id={"main"} className="linesContainer">
-                    {lines.map(( line, lineIndex ) => (
-                        <p key={lineIndex} className="line">
-                            {line.split('').map(( char, charIndex ) => (
-                                <span key={charIndex} className={"unselectable " + getLetterClass(char)}>
-                                {char}
-                            </span>
-                            ))}
-                        </p>
-                    ))}
-                    <MapOptions/>
-                    <Title />
-                    <ScrollButton target={"aboutMe"}/>
-                </div>
+        <div className="theMap">
+            <div id="main" className="linesContainer">
+                {lines.map((line, lineIndex) => (
+                    <p key={lineIndex} className="line">
+                        {line.split('').map((char, charIndex) => (
+                            <span key={charIndex} className={"unselectable " + getLetterClass(char)}>
+                            {char}
+                        </span>
+                        ))}
+                    </p>
+                ))}
+                <MapOptions/>
+                <Title/>
+                <ScrollButton target={"aboutMe"}/>
             </div>
+            <ButtonHeader />
         </div>
     );
 }
