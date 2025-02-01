@@ -2,3 +2,4 @@
 ---
 After learning more about react and UI/UX etc, I decided to redesign mose of the website. Updates soon.
 Might be done this month
+.
