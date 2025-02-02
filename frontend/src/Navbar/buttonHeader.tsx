@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './buttonHeader.css';
 
 function ButtonHeader() {
-    const headerRef = useRef(null);
-    const placeholderRef = useRef(null);
+    const headerRef = useRef<HTMLDivElement>(null);
+    const placeholderRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
+            if (!headerRef.current || !placeholderRef.current) return;
+
             const header = headerRef.current;
             const placeholder = placeholderRef.current;
             const headerRect = header.getBoundingClientRect();
@@ -28,7 +30,9 @@ function ButtonHeader() {
         };
     }, []);
 
-    const handleScrollToSection = (id, offset) => {
+    const handleScrollToSection = (id : string, offset : number) => {
+        if (!headerRef.current) return;
+
         const section = document.getElementById(id);
         if (section) {
             const headerOffset = headerRef.current.offsetHeight;
@@ -46,7 +50,7 @@ function ButtonHeader() {
         <>
             <div ref={placeholderRef} className="placeholder"></div>
             <div ref={headerRef} className="buttonHeader">
-                <svg className={"ksLogo"} onClick={() => handleScrollToSection('main')} viewBox="0 0 500 500" width="80"
+                <svg className={"ksLogo"} onClick={() => handleScrollToSection('main', 0)} viewBox="0 0 500 500" width="80"
                      height="80" xmlns="http://www.w3.org/2000/svg">
                     <g transform="matrix(0.05740800127387046, 0, 0, -0.05740800127387046, -45.54309844970704, 548.1242065429686)"
                        fill="#FFFFFF" stroke="none">

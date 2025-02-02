@@ -1,4 +1,4 @@
-import Contact from "./contact.jsx";
+import Contact from "./Contact/contact.jsx";
 
 function contact(){
     return (

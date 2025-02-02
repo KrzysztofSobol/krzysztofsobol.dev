@@ -1,10 +1,11 @@
 import './map.css';
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import Title from "../title.jsx";
-import ScrollButton from "../buttonScroll.jsx";
+import ScrollButton from "./buttonScroll.jsx";
 import MapOptions from "./mapOptions.jsx";
 import ButtonHeader from "@/Navbar/buttonHeader.jsx";
 import {getCustomMap} from "@/services/mapService.ts";
+import {mapParameters} from "@/types/mapType.ts";
 
 function Map() {
     const [lines, setLines] = useState(() => {
@@ -12,18 +13,26 @@ function Map() {
         return storedData ? JSON.parse(storedData) : [];
     });
 
+    const generateMap = async (parameters : mapParameters) => {
+        try {
+            const response = await getCustomMap(parameters);
+            setLines(response);
+            localStorage.setItem('mapData', JSON.stringify(response));
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     useEffect(() => {
-        getCustomMap({grassWeight: 90, seaWeight: 100, coastCornerWeight: 4, coastWeight: 1})
-            .then(response => {
-                setLines(response);
-                localStorage.setItem('mapData', JSON.stringify(response));
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        generateMap({
+            grassWeight: 90,
+            seaWeight: 100,
+            coastCornerWeight: 4,
+            coastWeight: 1
+        });
     }, []);
 
-    function getLetterClass(letter) {
+    function getLetterClass(letter : string) {
         switch (letter) {
             case 'X':
                 return 'x';
@@ -49,7 +58,7 @@ function Map() {
     return (
         <div className="theMap">
             <div id="main" className="linesContainer">
-                {lines.map((line, lineIndex) => (
+                {lines.map((line : string, lineIndex : number) => (
                     <p key={lineIndex} className="line">
                         {line.split('').map((char, charIndex) => (
                             <span key={charIndex} className={"unselectable " + getLetterClass(char)}>
@@ -59,8 +68,8 @@ function Map() {
                     </p>
                 ))}
                 <Title/>
-                <ScrollButton target={"aboutMe"}/>
-                <MapOptions/>
+                <ScrollButton/>
+                <MapOptions onGenerateMap={generateMap}/>
             </div>
             <ButtonHeader />
         </div>

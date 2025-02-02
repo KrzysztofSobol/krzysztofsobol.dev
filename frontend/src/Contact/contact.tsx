@@ -1,3 +1,5 @@
+import "@/Contact/contact.css"
+
 function Contact(){
     return(
         <div id={"contact"} className={"Tile Contact"}>

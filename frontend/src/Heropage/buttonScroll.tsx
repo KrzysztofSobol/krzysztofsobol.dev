@@ -1,10 +1,8 @@
-import React from "react";
-
 function ScrollButton() {
     const handleScroll = () => {
         const section = document.getElementById('aboutMe');
         if (section) {
-            const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
+            const elementPosition = section.getBoundingClientRect().top + window.scrollY;
             const offsetPosition = elementPosition - 25;
 
             window.scrollTo({

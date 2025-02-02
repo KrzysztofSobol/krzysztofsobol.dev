@@ -2,7 +2,6 @@
     width: 64vw;
 }
 
-
 .Tile .aboutMeTitle {
     font-family: 'JetBrains Mono', monospace;
     display: flex;
@@ -29,4 +28,9 @@
     margin-left: 1.1vh;
     margin-top: 0.05vh;
     font-weight: 0;
+}
+
+.AboutMeContent p {
+    margin: 0;
+    line-height: 1.4;
 }

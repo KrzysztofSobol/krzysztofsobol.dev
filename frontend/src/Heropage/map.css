@@ -72,12 +72,6 @@
     position: relative;
 }
 
-.settings-button:hover{
-    fill: #38a3a5;
-    cursor: pointer;
-    transition: ease-in-out;
-}
-
 .buttonScrollCircle {
     bottom: 5vh;
     position: absolute;
@@ -86,7 +80,9 @@
     justify-content: center;
     align-items: center;
 
-    width: clamp(60px, 4.2vw, 150px);
-    height: clamp(60px, 4.2vw, 150px);
+    min-width: 60px;
+    width: 4vw;
+    min-height: 60px;
+    height: 4vw;
     backdrop-filter: blur(clamp(1px, 0.09vw, 3px));
 }

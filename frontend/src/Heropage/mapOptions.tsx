@@ -1,8 +1,13 @@
 import "./mapOptions.css"
-import React, {useState} from "react";
+import {useState} from "react";
 import SliderWithNumber from "../Components/SliderNumberInput.jsx";
+import {mapParameters} from "@/types/mapType.ts";
 
-function MapOptions() {
+interface mapOptionProps {
+    onGenerateMap: (paremeters: mapParameters) => void;
+}
+
+function MapOptions({onGenerateMap} : mapOptionProps) {
     const [isOpen, Open] = useState(false);
     const [sliderValues, setSliderValues] = useState({
         slider1: 100,
@@ -11,12 +16,23 @@ function MapOptions() {
         slider4: 1
     })
 
-    const handleSliderChange = (e) => {
+    const handleSliderChange = (e : any) => {
         const {name, value} = e.target;
         setSliderValues(prev => ({
             ...prev,
             [name]: value
         }));
+    }
+
+    const handleGenerate = () => {
+        const mapParameters = {
+            grassWeight: sliderValues.slider1,
+            seaWeight: sliderValues.slider2,
+            coastCornerWeight: sliderValues.slider3,
+            coastWeight: sliderValues.slider4
+        };
+
+        onGenerateMap(mapParameters);
     }
 
     return(
@@ -58,7 +74,7 @@ function MapOptions() {
                         min={1}
                         max={100}
                     />
-                    <button className="button">
+                    <button className="button" onClick={handleGenerate}>
                         <span className="text">generate</span>
                     </button>
                 </div>
