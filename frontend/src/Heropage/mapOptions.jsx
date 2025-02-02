@@ -58,6 +58,9 @@ function MapOptions() {
                         min={1}
                         max={100}
                     />
+                    <button className="button">
+                        <span className="text">generate</span>
+                    </button>
                 </div>
             </div>
         </>

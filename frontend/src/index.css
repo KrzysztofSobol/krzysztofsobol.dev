@@ -1,3 +1,7 @@
+html {
+    font-size: 62.5%;
+}
+
 body {
     background-color: #0C1519; /* #263428 */
     margin: 0;
@@ -77,23 +81,6 @@ body {
     font-weight: 0;
 }
 
-.placeholder {
-    height: 7.5vh;
-    display: none;
-}
-
-.buttonHeader {
-    height: 7.5vh;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: #0C1519;
-    z-index: 1000;
-    transition: all .1s ease-out;
-    box-sizing: border-box;
-    position: relative;
-}
-
 .sticky {
     position: fixed;
     top: 0;
@@ -102,15 +89,6 @@ body {
     border-bottom: 1px solid black;
     box-sizing: border-box;
 }
-
-.buttonHeader.sticky .ksLogo {
-    opacity: 1;
-}
-
-.buttonHeader.sticky .ksLogo:hover {
-    cursor: pointer;
-}
-
 
 .button {
     background: #247a91;

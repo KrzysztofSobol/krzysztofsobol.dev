@@ -19,7 +19,7 @@ public class MapService {
 
     public MapService() {
         this.xMax = 54;
-        this.yMax = 212;
+        this.yMax = 227;
     }
 
     public void init(LinkedList<Tile> tiles) {

@@ -1,12 +1,17 @@
 .placeholder {
     height: 7.5vh;
+    display: none;
 }
+
 .buttonHeader {
+    width: 100%;
     min-height: 60px;
     height: 7.5vh;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .buttonHeader .ksLogo {
@@ -19,6 +24,14 @@
     transition: all .1s ease-out;
     min-width: 4.1%;
     height: auto;
+}
+
+.buttonHeader.sticky .ksLogo {
+    opacity: 1;
+}
+
+.buttonHeader.sticky .ksLogo:hover {
+    cursor: pointer;
 }
 
 .button-container {

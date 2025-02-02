@@ -34,8 +34,8 @@
 }
 
 .title {
-    max-width: 64vh;
-    width: 97%;
+    min-width: 500px;
+    width: 32vw;
     height: auto;
     position: absolute;
 }
@@ -53,7 +53,6 @@
 .theMap{
     height: 100%;
     overflow: hidden;
-    position: relative
 }
 
 .linesContainer {
@@ -63,14 +62,14 @@
     flex-direction: column;
     font-family: "Courier New", serif;
     white-space: pre;
-    font-size: clamp(0.781vw, 0.1vw + 0.8rem, 0.5vw);
-    min-font-size: 1000vw;
+    font-size: 1.5rem;
     background-color: #264653;
     overflow: hidden;
     border-radius: 40px;
     height: calc(100vh - 7.5vh);
     max-height: calc(100vh - 60px);
     box-shadow: 0 2px 10px 0 #000000;
+    position: relative;
 }
 
 .settings-button:hover{
@@ -80,7 +79,7 @@
 }
 
 .buttonScrollCircle {
-    bottom: 9vh;
+    bottom: 5vh;
     position: absolute;
     border-radius: 50%;
     display: flex;

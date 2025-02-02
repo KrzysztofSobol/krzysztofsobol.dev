@@ -1,10 +1,10 @@
-import React, {useState, useEffect, useRef} from 'react';
-import axios from 'axios';
+import './map.css';
+import React, {useState, useEffect} from 'react';
 import Title from "../title.jsx";
 import ScrollButton from "../buttonScroll.jsx";
-import './map.css';
 import MapOptions from "./mapOptions.jsx";
 import ButtonHeader from "@/Navbar/buttonHeader.jsx";
+import {getCustomMap} from "@/services/mapService.ts";
 
 function Map() {
     const [lines, setLines] = useState(() => {
@@ -13,11 +13,10 @@ function Map() {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/modifiedMapData?grassWeight=90&seaWeight=100&coastCornerWeight=4&coastWeight=1')
+        getCustomMap({grassWeight: 90, seaWeight: 100, coastCornerWeight: 4, coastWeight: 1})
             .then(response => {
-                setLines(response.data);
-                // Store the new data in local storage so the map doesn't disappear after the refresh
-                localStorage.setItem('mapData', JSON.stringify(response.data));
+                setLines(response);
+                localStorage.setItem('mapData', JSON.stringify(response));
             })
             .catch(error => {
                 console.error(error);
@@ -59,9 +58,9 @@ function Map() {
                         ))}
                     </p>
                 ))}
-                <MapOptions/>
                 <Title/>
                 <ScrollButton target={"aboutMe"}/>
+                <MapOptions/>
             </div>
             <ButtonHeader />
         </div>
