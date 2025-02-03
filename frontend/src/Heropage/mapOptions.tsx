@@ -47,6 +47,7 @@ function MapOptions({onGenerateMap} : mapOptionProps) {
             <div className={`map-options-container ${isOpen ? 'visible' : ''}`}>
                 <div className={"sliders"}>
                     <SliderWithNumber
+                        tabIndex={isOpen ? 0 : -1}
                         name="slider1"
                         value={sliderValues.slider1}
                         onChange={handleSliderChange}
@@ -54,6 +55,7 @@ function MapOptions({onGenerateMap} : mapOptionProps) {
                         max={500}
                     />
                     <SliderWithNumber
+                        tabIndex={isOpen ? 0 : -1}
                         name="slider2"
                         value={sliderValues.slider2}
                         onChange={handleSliderChange}
@@ -61,6 +63,7 @@ function MapOptions({onGenerateMap} : mapOptionProps) {
                         max={500}
                     />
                     <SliderWithNumber
+                        tabIndex={isOpen ? 0 : -1}
                         name="slider3"
                         value={sliderValues.slider3}
                         onChange={handleSliderChange}
@@ -68,13 +71,14 @@ function MapOptions({onGenerateMap} : mapOptionProps) {
                         max={100}
                     />
                     <SliderWithNumber
+                        tabIndex={isOpen ? 0 : -1}
                         name="slider4"
                         value={sliderValues.slider4}
                         onChange={handleSliderChange}
                         min={1}
                         max={100}
                     />
-                    <button className="button" onClick={handleGenerate}>
+                    <button className="button" onClick={handleGenerate} tabIndex={isOpen ? 0 : -1}>
                         <span className="text">generate</span>
                     </button>
                 </div>

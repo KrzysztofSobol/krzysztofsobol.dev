@@ -1,4 +1,5 @@
 interface sliderProps {
+    tabIndex: number;
     name: string;
     value: number;
     onChange: (e: any) => void;
@@ -6,10 +7,11 @@ interface sliderProps {
     max: number;
 }
 
-export default function SliderWithNumber({ name, value, onChange, min = 0, max = 100 } : sliderProps) {
+export default function SliderWithNumber({ tabIndex, name, value, onChange, min = 0, max = 100 } : sliderProps) {
     return (
         <div className="flex items-center space-x-4 p-4">
             <input
+                tabIndex={tabIndex}
                 type="range"
                 name={name}
                 min={min}
@@ -19,6 +21,7 @@ export default function SliderWithNumber({ name, value, onChange, min = 0, max =
                 className="slider"
             />
             <input
+                tabIndex={tabIndex}
                 type="number"
                 name={name}
                 min={min}
