@@ -1,40 +1,5 @@
-.letter {
-
-}
-
-.letter:hover {
-
-}
-
-.line {
-    margin: 0;
-    cursor: default;
-    width: 100%;
-    height: 100%;
-}
-
-.a, .b, .c, .d {
-    color: #38a3a5;
-}
-
-.x {
-    color: #4dbf9d;
-}
-
-.w {
-    color: #22577a;
-}
-
-.o {
-    color: #38a3a5;
-}
-
-.g {
-    color: #247a91;
-}
-
 .title {
-    min-width: 500px;
+    min-width: 600px;
     width: 32vw;
     height: auto;
     position: absolute;

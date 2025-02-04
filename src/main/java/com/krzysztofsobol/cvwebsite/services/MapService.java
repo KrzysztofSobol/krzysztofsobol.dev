@@ -18,7 +18,7 @@ public class MapService {
     private PriorityQueue<TileInfo> tileQueue;
 
     public MapService() {
-        this.xMax = 54;
+        this.xMax = 70;
         this.yMax = 227;
     }
 
