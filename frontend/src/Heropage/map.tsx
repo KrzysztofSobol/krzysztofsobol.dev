@@ -57,20 +57,12 @@ function Map() {
 
     return (
         <div className="theMap">
-            <div id="main" className="linesContainer">
-                {lines.map((line : string, lineIndex : number) => (
-                    <p key={lineIndex} className={"unselectable " + "line"}>
-                        {line.split('').map((char, charIndex) => (
-                            <span key={charIndex} className={getLetterClass(char)}>
-                            {char}
-                        </span>
-                        ))}
-                    </p>
-                ))}
-                <Title/>
-                <ScrollButton/>
-                <MapOptions onGenerateMap={generateMap}/>
-            </div>
+            <Title/>
+            <canvas id="main" className="map-canvas">
+
+            </canvas>
+            <ScrollButton/>
+            <MapOptions onGenerateMap={generateMap}/>
             <ButtonHeader />
         </div>
     );
