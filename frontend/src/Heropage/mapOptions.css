@@ -1,7 +1,6 @@
 .map-options-container {
     background-color: black;
     width: 25vw;
-    height: 90.8vh;
     min-width: 350px;
     position: absolute;
     top: 8px;
@@ -9,7 +8,7 @@
     border-radius: 39px;
     opacity: 0;
     transform: translateX(100%);
-    transition: all 0.25s ease-in;
+    transition: all 0.3s ease-in;
 }
 
 .map-options-container.visible {
@@ -20,11 +19,20 @@
 .settings-button{
     position: absolute;
     width: 7vh;
-    min-width: 50px;
+    min-width: 60px;
     height: auto;
     top: 15px;
     right: 15px;
     z-index: 1;
+    transition: transform 0.4s;
+}
+
+.settings-button.rotate-clockwise {
+    transform: rotate(90deg);
+}
+
+.settings-button.rotate-counterclockwise {
+    transform: rotate(-90deg);
 }
 
 .settings-button:hover{
