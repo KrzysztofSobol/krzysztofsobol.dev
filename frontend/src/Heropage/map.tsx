@@ -11,7 +11,6 @@ function Map() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const offScreenCanvasRef = useRef<HTMLCanvasElement | null>(null);
     const animationFrameRef = useRef<number>(0);
-    const timeRef = useRef<number>(0);
 
     const [lines, setLines] = useState(() => {
         const storedData = localStorage.getItem('mapData');
@@ -59,19 +58,28 @@ function Map() {
 
         ctx.font = "16px Courier New";
 
+        const colorGroups: Record<string, {  c: string; x: number; y: number}[]> = {};
+
         lines.forEach((line: string, rowIndex: number) => {
             line.split("").forEach((char: string, colIndex: number) => {
-                ctx.fillStyle = getCharColor(char);
+                const color = getCharColor(char);
+                if (!colorGroups[color]) colorGroups[color] = [];
+
                 if(char === "?"){
-                    ctx.fillText(" ", 10 * colIndex, 14 * rowIndex);
+                    colorGroups[color].push({ c: " ", x: 10 * colIndex, y: 14 * rowIndex});
                 } else {
-                    ctx.fillText(char, 10 * colIndex, 14 * rowIndex);
+                    colorGroups[color].push({ c: char, x: 10 * colIndex, y: 14 * rowIndex});
                 }
             });
         });
-    }, [lines]);
 
-    // ========================= MID slow code below ============================== //
+        Object.keys(colorGroups).forEach((color) => {
+            ctx.fillStyle = color;
+            colorGroups[color].forEach(({c,x,y}) => {
+                ctx.fillText(c, x, y);
+            })
+        })
+    }, [lines]);
 
     const animate = (timestamp: number) => {
         const canvas = canvasRef.current;
@@ -82,22 +90,34 @@ function Map() {
 
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
+        ctx.clearRect(0,0, canvas.width,canvas.height);
 
         ctx.drawImage(offscreenCanvas, 0, 0); // copy the pre-rendered canvas
 
         ctx.font = "16px Courier New";
         const time = timestamp * 0.001;
 
-        lines.forEach((line : string, rowIndex: number) => {
-            line.split("").forEach((char : string, colIndex : number) => {
-                if(char === "?"){
-                    const wave = Math.sin(rowIndex * 0.6 + time * 2);
-                    const brightness = Math.floor((wave + 1) * 30);
-                    ctx.fillStyle = `rgb(${34 + brightness}, ${87 + brightness}, ${122 + brightness})`;
-                    ctx.fillText(char, 10 * colIndex, 14 * rowIndex);
+        lines.forEach((line: string, rowIndex: number) => {
+            const questionMarks: { x: number; char: string }[] = [];
+
+            line.split("").forEach((char: string, colIndex: number) => {
+                if (char === "?") {
+                    questionMarks.push({ x: 10 * colIndex, char });
                 }
             });
+
+            if (questionMarks.length > 0) {
+                const wave = Math.sin(rowIndex * 0.3 + time * 3); // ((frequency) + (speed))
+                const brightness = Math.floor((wave + 1) * 30);
+                ctx.fillStyle = `rgb(${34 + brightness}, ${87 + brightness}, ${122 + brightness})`;
+
+                questionMarks.forEach(({ x, char }) => {
+                    ctx.fillText(char, x, 14 * rowIndex);
+                });
+            }
         });
+
+        animationFrameRef.current = requestAnimationFrame(animate);
     };
 
     useEffect(() => {
@@ -122,12 +142,9 @@ function Map() {
         };
 
         resizeCanvas();
-
-        timeRef.current = 0;
         animationFrameRef.current = requestAnimationFrame(animate);
 
         window.addEventListener('resize', resizeCanvas);
-
         return () => {
             cancelAnimationFrame(animationFrameRef.current);
             window.removeEventListener('resize', resizeCanvas);
