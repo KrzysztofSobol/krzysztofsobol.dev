@@ -65,10 +65,8 @@ function Heropage() {
                 const color = getCharColor(char);
                 if (!colorGroups[color]) colorGroups[color] = [];
 
-                if(char === "?"){
-                    colorGroups[color].push({ c: " ", x: 10 * colIndex, y: 14 * rowIndex});
-                } else {
-                    colorGroups[color].push({ c: char, x: 10 * colIndex, y: 14 * rowIndex});
+                if(char !== "?"){
+                    colorGroups[color].push({ c: char, x: 9.602 * colIndex, y: 14 * rowIndex});
                 }
             });
         });
@@ -84,36 +82,28 @@ function Heropage() {
     const animate = (timestamp: number) => {
         const canvas = canvasRef.current;
         const offscreenCanvas = offScreenCanvasRef.current;
-        if (!canvas || !offscreenCanvas){
+        if (!canvas || !offscreenCanvas) {
             return;
         }
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         if (!ctx) return;
-        ctx.clearRect(0,0, canvas.width,canvas.height);
 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(offscreenCanvas, 0, 0); // copy the pre-rendered canvas
 
         ctx.font = "16px Courier New";
         const time = timestamp * 0.001;
 
         lines.forEach((line: string, rowIndex: number) => {
-            const questionMarks: { x: number; char: string }[] = [];
+            const waterLine = line.replace(/[^?]/g, " ");
 
-            line.split("").forEach((char: string, colIndex: number) => {
-                if (char === "?") {
-                    questionMarks.push({ x: 10 * colIndex, char });
-                }
-            });
-
-            if (questionMarks.length > 0) {
-                const wave = Math.sin(rowIndex * 0.3 + time * 3); // ((frequency) + (speed))
+            if (waterLine.includes("?")) {
+                const wave = Math.sin(rowIndex * 0.3 + time * 3); // (wave length + speed)
                 const brightness = Math.floor((wave + 1) * 30);
                 ctx.fillStyle = `rgb(${34 + brightness}, ${87 + brightness}, ${122 + brightness})`;
 
-                questionMarks.forEach(({ x, char }) => {
-                    ctx.fillText(char, x, 14 * rowIndex);
-                });
+                ctx.fillText(waterLine, 0, 14 * rowIndex);
             }
         });
 
