@@ -1,5 +1,5 @@
 import './map.css';
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef, useCallback} from 'react';
 import Title from "../title.jsx";
 import ScrollButton from "./buttonScroll.jsx";
 import MapOptions from "./mapOptions.jsx";
@@ -7,7 +7,7 @@ import ButtonHeader from "@/Navbar/buttonHeader.jsx";
 import {getCustomMap} from "@/services/mapService.ts";
 import {mapParameters} from "@/types/mapType.ts";
 
-function Map() {
+function Heropage() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const offScreenCanvasRef = useRef<HTMLCanvasElement | null>(null);
     const animationFrameRef = useRef<number>(0);
@@ -40,7 +40,7 @@ function Map() {
         }
     }
 
-    useEffect(() => {
+    const drawOffScreenCanvas = useCallback(() => {
         const canvas = canvasRef.current;
         if(!canvas){
             return;
@@ -139,6 +139,8 @@ function Map() {
 
             canvas.width = container.clientWidth;
             canvas.height = container.clientHeight;
+
+            drawOffScreenCanvas();
         };
 
         resizeCanvas();
@@ -166,4 +168,4 @@ function Map() {
     );
 }
 
-export default Map;
+export default Heropage;
