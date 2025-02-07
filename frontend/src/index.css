@@ -119,29 +119,6 @@ body {
     padding: 12px 14px;
 }
 
-@media (max-width: 700px) {
-    .icon {
-        display: inline;
-        padding: 6px 1px;
-    }
-    .text {
-        display: none;
-    }
-    .buttonHeader.sticky {
-        justify-content: right;
-    }
-    .theMap{
-        height: 89%;
-        margin-bottom: 0.5vh;
-    }
-    .button{
-        border-radius: 2vw;
-    }
-    .buttonHeader .ksLogo {
-        left: 2vw;
-    }
-}
-
 .button:hover,
 .button:active {
     background-color: initial;
@@ -572,108 +549,9 @@ body {
     object-position: center;
 }
 
-@media (min-width: 1920px) {
-    .background-img {
-        object-fit: cover;
-        width: 100%;
-        height: 100vh
-    }
-}
-
 .contactSvg{
     width: 8.4vh;
     height: auto;
-}
-
-@media (max-width: 700px) {
-    .buttonScrollCircle {
-        width: clamp(76px, 21vw, 100px);
-        height: clamp(76px, 21vw, 100px);
-        backdrop-filter: blur(clamp(1.1px, 0.09vw, 3px));
-    }
-
-    .buttonScroll {
-        height: auto;
-        width: 55%;
-    }
-
-    /* about me */
-    .aboutMe-tile {
-        position: absolute;
-        width: 91%;
-        height: 50%;
-        top: 32%;
-        left: 50%;
-        transform: translate(-50%, -32%);
-        display: grid;
-    }
-
-    .Tile{
-        height: 100%;
-    }
-
-    .background-img {
-        width: 190vw;
-        height: 95.3vh;
-        left: -41.8vw;
-        transform: translateX(-41.8vw);
-    }
-
-    .profile-picture {
-        object-fit: cover;
-        box-shadow: 0 0 9px 0 #38a3a5;
-        width: 100%;
-        height: 60%;
-        margin-top: 2vh;
-        margin-left: 0;
-    }
-
-    .embla {
-        max-width: 88rem;
-        margin: auto;
-        --slide-height: 32rem;
-        --slide-spacing: 0rem;
-        --slide-size: 100%;
-    }
-
-    .embla__viewport {
-        width: 116vw;
-    }
-
-    .embla__slide__number {
-        height: 70vh;
-    }
-
-    .project_name{
-        margin-top: 2.6vh;
-        margin-left: 4.5vw;
-        margin-right: 4.5vw;
-        font-size: 7.8vw;
-    }
-
-    .project_desc{
-        font-size: 0.35em;
-        margin-left: 4.5vw;
-        margin-right: 4.5vw;
-    }
-
-    .icon-svg-projects{
-        flex-shrink: 0;
-        width: 45px;
-        height: 45px;
-    }
-
-    .gitlink {
-        margin: 0 0 0 1.2vw;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .projectPhoto{
-        margin-top: auto;
-        border-radius: 1.175rem;
-    }
 }
 
 .unselectable{

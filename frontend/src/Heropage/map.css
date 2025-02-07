@@ -8,8 +8,12 @@
 }
 
 .title-small {
-    min-width: 36%;
+    min-width: 160px;
+    width: 25vw;
+    height: auto;
     position: absolute;
+    top: 36%;
+    z-index: 1;
 }
 
 .map-container {
@@ -51,4 +55,13 @@
     min-height: 80px;
     height: 4vw;
     backdrop-filter: blur(clamp(1px, 0.09vw, 3px));
+}
+
+@media (max-width: 700px) {
+    .text {
+        font-size: 1.9rem;
+    }
+    .buttonHeader.sticky {
+        justify-content: right;
+    }
 }
