@@ -1,32 +1,27 @@
-package com.krzysztofsobol.cvwebsite.services;
+package com.krzysztofsobol.cvwebsite.services.impl;
 
 import com.krzysztofsobol.cvwebsite.domain.dto.Tile;
 import com.krzysztofsobol.cvwebsite.domain.dto.TileInfo;
 import org.springframework.stereotype.Service;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class MapService {
-    private final int xMax;
-    private final int yMax;
+    private int xMax;
+    private int yMax;
     private LinkedList<Tile>[][] map;
     private LinkedList<String> lines;
     private PriorityQueue<TileInfo> tileQueue;
 
-    public MapService() {
-        this.xMax = 70;
-        this.yMax = 227;
-    }
-
-    public void init(LinkedList<Tile> tiles) {
+    public void init(LinkedList<Tile> tiles, int x, int y) {
         tiles = deepCopyTiles(tiles);
-        map = new LinkedList[xMax][yMax];
-        lines = new LinkedList<>();
-        tileQueue = new PriorityQueue<>();
+        this.xMax = x;
+        this.yMax = y;
+
+        this.map = new LinkedList[xMax][yMax]; // IDE tells me to use a Java ArrayList, but I won't because it's 5-6 times slower than a primitive [][]. [][] is more comfortable to use too.
+        this.lines = new LinkedList<>();
+        this.tileQueue = new PriorityQueue<>();
 
         for (int i = 0; i < xMax; i++) {
             for (int j = 0; j < yMax; j++) {
@@ -138,18 +133,30 @@ public class MapService {
     }
 
     // Chooses a random tile based on its weight
-    private Tile RandomTile(LinkedList<Tile> tiles){
-        int totalWeight = tiles.stream().mapToInt(Tile::getWeight).sum();
+    private Tile RandomTile(LinkedList<Tile> tiles) {
+        Map<Character, List<Tile>> typeOfTiles = new HashMap<>();
+        int totalWeight = 0;
+
+        for (Tile tile : tiles) {
+            char type = tile.getDisplay();
+            typeOfTiles.putIfAbsent(type, new ArrayList<>());
+            typeOfTiles.get(type).add(tile);
+            totalWeight += tile.getWeight();
+        }
+
         Random rand = new Random();
         int rValue = rand.nextInt(totalWeight);
 
-        for(Tile tile : tiles){
-            rValue -= tile.getWeight();
-            if(rValue <= 0){
-                return tile;
+        for (Character key : typeOfTiles.keySet()) {
+            List<Tile> tilesOfType = typeOfTiles.get(key);
+            rValue -= tilesOfType.getFirst().getWeight() * tilesOfType.size(); // rValue -= weight * appearances
+
+            if (rValue < 0) {
+                return tilesOfType.get(rand.nextInt(tilesOfType.size()));
             }
         }
-        return null;
+
+        return null; // should never happen
     }
 
     public LinkedList<Tile> getCustomizedTiles(int g, int s, int c, int cc){

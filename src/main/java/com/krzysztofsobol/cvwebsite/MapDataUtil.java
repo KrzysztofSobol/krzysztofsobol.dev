@@ -5,7 +5,7 @@ import com.krzysztofsobol.cvwebsite.domain.dto.Tile;
 import java.util.LinkedList;
 
 public class MapDataUtil {
-    public static LinkedList<Tile> getMapData(){
+    public static LinkedList<Tile> getTiles(){
         LinkedList<Tile> tiles = new LinkedList<>();
 
         Tile grass = new Tile('X', 250, 3, 3, 3, 3);
