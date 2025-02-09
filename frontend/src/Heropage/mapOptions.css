@@ -1,45 +1,164 @@
+
 .map-options-container {
-    background-color: black;
-    width: 25vw;
-    min-width: 350px;
+    background-color: rgba(26, 26, 26, 0.8);
+    width: 300px;
+    height: 92.5vh;
     position: absolute;
-    top: 8px;
-    right: 8px;
-    border-radius: 39px;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: all 0.3s ease-in;
+    top: 0;
+    right: -330px;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 2;
 }
 
 .map-options-container.visible {
-    opacity: 100%;
-    transform: translateX(0);
+    right: 0;
 }
 
-.settings-button{
+.map-options-content {
+    padding: 20px;
+    color: #ffffff;
+}
+
+.options-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.settings-button {
+    background-color: rgba(44, 62, 80, 0.3);
+    backdrop-filter: blur(0.15rem);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
     position: absolute;
-    width: 7vh;
-    min-width: 60px;
-    height: auto;
-    top: 15px;
-    right: 15px;
-    z-index: 1;
-    transition: transform 0.4s;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+.settings-button:hover {
+    backdrop-filter: blur(0.25rem);
+}
+
+.settings-button svg {
+    width: 100px;
+    height: 100px;
+    fill: #ffffff;
 }
 
 .settings-button.rotate-clockwise {
     transform: rotate(90deg);
+    background-color: rgba(44, 62, 80, 0);
+    backdrop-filter: none;
 }
 
 .settings-button.rotate-counterclockwise {
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
 }
 
-.settings-button:hover{
+.sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.slider-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.slider-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-range {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+}
+
+.slider-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #3498db;
     cursor: pointer;
 }
 
-.sliders{
-    margin: 30px 30px;
+.slider-range::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
 }
 
+.slider-number {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #3498db;
+    border-radius: 3px;
+    background-color: rgba(44, 62, 80, 0.8);
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.option-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.option-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.option-button.generate {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+
+.option-button.generate:hover {
+    background-color: #27ae60;
+}
+
+.option-button.save {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.option-button.save:hover {
+    background-color: #2980b9;
+}

@@ -1,3 +1,5 @@
+import "./sliderNumberInput.css"
+
 interface sliderProps {
     tabIndex: number;
     name: string;
@@ -9,8 +11,8 @@ interface sliderProps {
 
 export default function SliderWithNumber({ tabIndex, name, value, onChange, min = 0, max = 100 } : sliderProps) {
     return (
-        <div className="flex items-center space-x-4 p-4">
-            <input
+        <div className={"slider-input"}>
+            <input className={"slider-range"}
                 tabIndex={tabIndex}
                 type="range"
                 name={name}
@@ -18,9 +20,8 @@ export default function SliderWithNumber({ tabIndex, name, value, onChange, min 
                 max={max}
                 value={value}
                 onChange={onChange}
-                className="slider"
             />
-            <input
+            <input className={"slider-number"}
                 tabIndex={tabIndex}
                 type="number"
                 name={name}
@@ -28,7 +29,6 @@ export default function SliderWithNumber({ tabIndex, name, value, onChange, min 
                 max={max}
                 value={value}
                 onChange={onChange}
-                className="w-16 p-1 border rounded"
             />
         </div>
     );

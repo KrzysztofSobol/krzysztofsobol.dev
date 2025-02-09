@@ -26,6 +26,15 @@
     height: auto;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--navbar-background-color);
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+
 .buttonHeader.sticky .ksLogo {
     opacity: 1;
 }

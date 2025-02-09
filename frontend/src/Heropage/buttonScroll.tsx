@@ -13,7 +13,7 @@ function ScrollButton() {
     };
 
     return (
-        <div className={"buttonScrollCircle"}>
+        <div className={"button-scroll-circle"}>
             <svg className="buttonScroll" onClick={handleScroll} width="56px" height="56px"
                  viewBox="180.59 105.544 16.095 16.622" xmlns="http://www.w3.org/2000/svg">
                 <path

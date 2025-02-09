@@ -48,7 +48,7 @@
     will-change: transform;
 }
 
-.buttonScrollCircle {
+.button-scroll-circle {
     bottom: 10vh;
     position: absolute;
     border-radius: 50%;
@@ -56,11 +56,15 @@
     justify-content: center;
     align-items: center;
 
-    min-width: 60px;
-    width: 3vw;
-    min-height: 60px;
-    height: 3vw;
-    backdrop-filter: blur(clamp(1px, 0.09vw, 3px));
+    width: 55px;
+    height: 55px;
+    background-color: rgba(44, 62, 80, 0.3);
+    backdrop-filter: blur(0.15rem);
+    transition: transform 0.3s ease-in-out;
+}
+
+.button-scroll-circle:hover {
+    backdrop-filter: blur(0.25rem);
 }
 
 @media (max-width: 700px) {
