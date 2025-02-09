@@ -99,8 +99,8 @@ function Heropage() {
             const waterLine = line.replace(/[^?]/g, " ");
 
             if (waterLine.includes("?")) {
-                const wave = Math.sin(rowIndex * 0.3 + time * 3); // (wave length + speed)
-                const brightness = Math.floor((wave + 1) * 30);
+                const wave = Math.sin(rowIndex * 0.25 + time * 3); // (wave length + speed)
+                const brightness = Math.floor((wave + 1) * 40);
                 ctx.fillStyle = `rgb(${34 + brightness}, ${87 + brightness}, ${122 + brightness})`;
 
                 ctx.fillText(waterLine, 0, 14 * rowIndex);

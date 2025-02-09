@@ -1,18 +1,24 @@
 .title {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -47%);
     min-width: 600px;
     width: 32vw;
     height: auto;
-    position: absolute;
-    top: 39%;
     z-index: 1;
+    text-align: center;
 }
+
 
 .title-small {
     min-width: 160px;
     width: 25vw;
     height: auto;
     position: absolute;
-    top: 36%;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -42%);
     z-index: 1;
 }
 
@@ -58,9 +64,6 @@
 }
 
 @media (max-width: 700px) {
-    .text {
-        font-size: 1.9rem;
-    }
     .buttonHeader.sticky {
         justify-content: right;
     }
