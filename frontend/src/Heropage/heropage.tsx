@@ -145,14 +145,15 @@ function Heropage() {
 
     return (
         <div className="theMap">
-            <Title/>
-            <canvas
-                ref={canvasRef}
-                id="main"
-                className="map-canvas"
-            />
+            <div className={"map-canvas"}>
+                <canvas
+                    ref={canvasRef}
+                    id="main"
+                />
+                <MapOptions onGenerateMap={generateMap}/>
+                <Title/>
+            </div>
             <ScrollButton/>
-            <MapOptions onGenerateMap={generateMap}/>
             <ButtonHeader/>
         </div>
     );

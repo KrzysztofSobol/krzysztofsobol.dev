@@ -6,10 +6,9 @@ import "./mapOptions.css"
 
 interface mapOptionProps {
     onGenerateMap: (parameters: mapParameters) => void;
-    onSaveMap: () => void;
 }
 
-function MapOptions({ onGenerateMap, onSaveMap }: mapOptionProps) {
+function MapOptions({ onGenerateMap }: mapOptionProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [rotationClass, setRotationClass] = useState("");
     const [sliderValues, setSliderValues] = useState({
@@ -94,11 +93,11 @@ function MapOptions({ onGenerateMap, onSaveMap }: mapOptionProps) {
                         />
                     </div>
                     <div className="option-container">
-                        <button className="option-button generate" onClick={handleGenerate}>
-                            Generate
+                        <button className="button btn-options" onClick={handleGenerate}>
+                            generate
                         </button>
-                        <button className="option-button save" onClick={onSaveMap}>
-                            Save
+                        <button className="button btn-options">
+                            save
                         </button>
                     </div>
                 </div>

@@ -11,7 +11,10 @@ body {
 :root {
     --main-white-color: #f4f8ff;
     --main-background-color: #0C1519;
+    --main-background-color-rgb: 12,21,25;
+    --main-ui-color-light: #39afce;
     --main-ui-color: #247a91;
+    --main-ui-color-dark: #1b5d6e;
     --navbar-background-color: #122229;
 }
 
@@ -85,25 +88,19 @@ body {
     color: var(--main-white-color);
     cursor: pointer;
     display: inline-block;
-    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif, system-ui;
-    font-size: clamp(25px, 2vmin, 24px);
+    font-family: sans-serif;
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 1.5;
-    min-height: 44px;
     text-align: center;
-    text-rendering: geometricprecision;
-    text-transform: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    margin: clamp(0.5rem, 2vmin, 1rem);
+    margin: 1rem;
     transition: transform 0.2s;
 }
 
 .button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 0 13px 0 #000000;
+    box-shadow: 0 0 10px 0 #000000;
+    backdrop-filter: blur(0.1rem);
 }
 
 .icon {
