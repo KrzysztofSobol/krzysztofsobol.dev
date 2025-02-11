@@ -10,7 +10,7 @@
     overflow-y: auto;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
     z-index: 2;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--main-font), monospace;
 }
 
 .map-options-container.visible {
@@ -19,7 +19,7 @@
 
 .map-options-content {
     padding: 20px;
-    color: #ffffff;
+    color: var(--main-white-color);
 }
 
 .options-title {
@@ -54,7 +54,6 @@
 .settings-button svg {
     width: 100px;
     height: 100px;
-    fill: #ffffff;
 }
 
 .settings-button.rotate-clockwise {
@@ -105,7 +104,7 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background: #3498db;
+    background: var(--main-ui-color-light);
     cursor: pointer;
 }
 
@@ -113,16 +112,16 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background: #3498db;
+    background: var(--main-ui-color-light);
     cursor: pointer;
 }
 
 .slider-number {
     width: 50px;
     padding: 5px;
-    border: 1px solid #3498db;
+    border: 1px solid var(--main-ui-color-light);
     border-radius: 3px;
-    background-color: rgba(44, 62, 80, 0.8);
+    background-color: var(--main-ui-color-dark);
     color: #ffffff;
     font-size: 14px;
     text-align: center;

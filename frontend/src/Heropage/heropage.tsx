@@ -17,8 +17,12 @@ function Heropage() {
         return storedData ? JSON.parse(storedData) : [];
     });
 
-    const generateMap = async (parameters: mapParameters) => {
+    const generateMap = async (parameters: mapParameters, isSaved: number) => {
         try {
+            if(localStorage.getItem('isSaved') === '1' && isSaved == 0){
+                return;
+            }
+
             const response = await getCustomMap(parameters);
             setLines(response);
             localStorage.setItem('mapData', JSON.stringify(response));
@@ -116,7 +120,7 @@ function Heropage() {
             seaWeight: 100,
             coastCornerWeight: 4,
             coastWeight: 1
-        });
+        }, 0);
     }, []);
 
     useEffect(() => {

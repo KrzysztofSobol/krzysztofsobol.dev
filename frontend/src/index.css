@@ -12,10 +12,13 @@ body {
     --main-white-color: #f4f8ff;
     --main-background-color: #0C1519;
     --main-background-color-rgb: 12,21,25;
-    --main-ui-color-light: #39afce;
+    --main-map-color: #264653;
+    --main-ui-color-light: #33b4d6;
     --main-ui-color: #247a91;
-    --main-ui-color-dark: #1b5d6e;
+    --main-ui-color-dark: #2c4250;
     --navbar-background-color: #122229;
+
+    --main-font: 'Signika';
 }
 
 ::-webkit-scrollbar {

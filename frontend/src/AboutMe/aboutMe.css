@@ -19,7 +19,7 @@
     margin-right: 1.3vw;
     margin-top: 1.06vw;
     font-weight: 300;
-    font-family: 'Signika', sans-serif;
+    font-family: var(--main-font), monospace;
 }
 
 .headerTextAboutMe {

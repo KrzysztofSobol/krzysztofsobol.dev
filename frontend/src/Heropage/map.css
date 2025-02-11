@@ -36,7 +36,7 @@
 
 .map-canvas {
     display: flex;
-    background-color: #264653;
+    background-color: var(--main-map-color);
     overflow: hidden;
     border-radius: 0 0 40px 40px;
     width: 100%;

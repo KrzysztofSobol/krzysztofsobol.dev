@@ -1,26 +1,33 @@
-"use client"
-
-import { useState } from "react"
+import {useState} from "react"
 import type { mapParameters } from "@/types/mapType.ts"
 import "./mapOptions.css"
 
 interface mapOptionProps {
-    onGenerateMap: (parameters: mapParameters) => void;
+    onGenerateMap: (parameters: mapParameters, isSaved: number) => void;
 }
 
 function MapOptions({ onGenerateMap }: mapOptionProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [rotationClass, setRotationClass] = useState("");
-    const [sliderValues, setSliderValues] = useState({
-        slider1: 220,
-        slider2: 200,
-        slider3: 6,
-        slider4: 3,
+
+    const [isSaved, setIsSaved] = useState(() => {
+        const isSavedValue = localStorage.getItem('isSaved');
+        return isSavedValue && JSON.parse(isSavedValue) === 1 ? 1 : 0;
+    });
+
+    const [sliderValues, setSliderValues] = useState(() => {
+        const savedValues = localStorage.getItem('sliderValues');
+        return savedValues && isSaved === 1 ? JSON.parse(savedValues) : {
+            slider1: 220,
+            slider2: 200,
+            slider3: 6,
+            slider4: 3,
+        };
     });
 
     const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setSliderValues((prev) => ({
+        setSliderValues((prev : any) => ({
             ...prev,
             [name]: Number.parseInt(value),
         }));
@@ -34,7 +41,20 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
             coastWeight: sliderValues.slider4,
         };
 
-        onGenerateMap(mapParameters);
+        localStorage.setItem('sliderValues', JSON.stringify(sliderValues));
+        onGenerateMap(mapParameters, isSaved);
+    }
+
+    const handleSaveMap = () => {
+        setIsSaved(prev => {
+            const newValue = Number(!prev);
+            localStorage.setItem('isSaved', `${newValue}`);
+            if(newValue == 0){
+                localStorage.removeItem('sliderValues');
+            }
+            return newValue;
+        });
+        localStorage.setItem('isSaved', '1');
     }
 
     const toggleOptions = () => {
@@ -96,8 +116,8 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                         <button className="button btn-options" onClick={handleGenerate}>
                             generate
                         </button>
-                        <button className="button btn-options">
-                            save
+                        <button className="button btn-options" onClick={handleSaveMap}>
+                            {isSaved === 1 ? "unlock map" : "lock map"}
                         </button>
                     </div>
                 </div>
