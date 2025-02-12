@@ -18,6 +18,15 @@ body {
     --main-ui-color-dark: #2c4250;
     --navbar-background-color: #122229;
 
+    --teal-900: #004D40;
+    --teal-100: #B2DFDB;
+    --blue-900: #0D47A1;
+    --green-400: #4ade80;
+
+    --content-bg: rgba(38, 70, 83, 0.3);
+    --highlight-text: #33b4d6;
+    --border-color: rgba(51, 180, 214, 0.2);
+
     --main-font: 'Signika';
 }
 
@@ -45,6 +54,11 @@ body {
     min-height: 100vh;
 }
 
+.highlight {
+    color: white;
+    font-weight: 500;
+}
+
 .buttonScroll {
     margin-top: 0.3rem;
     height: auto;
@@ -67,11 +81,6 @@ body {
     font-family: Monospace, serif;
     font-optical-sizing: auto;
     font-style: normal;
-}
-
-.highlight {
-    color: white;
-    font-weight: 500;
 }
 
 .headerTextContact{

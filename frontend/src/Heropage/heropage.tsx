@@ -1,4 +1,4 @@
-import './map.css';
+import './heropage.css';
 import {useState, useEffect, useRef, useCallback} from 'react';
 import Title from "../title.jsx";
 import ScrollButton from "./buttonScroll.jsx";

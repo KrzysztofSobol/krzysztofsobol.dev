@@ -22,10 +22,6 @@
     z-index: 1;
 }
 
-.map-container {
-    overflow: hidden;
-}
-
 .theMap{
     height: 100%;
     display: flex;

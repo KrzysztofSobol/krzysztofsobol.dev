@@ -1,36 +1,137 @@
-.aboutMe-tile {
-    width: 64vw;
+:root {
+    --about-highlight: #4dbf9d;      /* Bright teal from your X characters */
+    --about-secondary: #38a3a5;      /* Balanced blue-green from your letters */
+    --about-deep: #247a91;           /* Deeper ocean blue */
+    --about-bg: rgba(38, 70, 83, 0.4); /* Based on your map color */
+    --about-border: rgba(77, 191, 157, 0.2); /* Subtle teal border */
+    --about-text: #f4f8ff;          /* Your main white color */
+    --about-glass: rgba(44, 62, 80, 0.3); /* Matching your button background */
 }
 
-.Tile .aboutMeTitle {
-    font-family: 'JetBrains Mono', monospace;
+/* Container styles */
+.page {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    margin-bottom: 0;
-    margin-top: 2.09vh;
-    margin-left: 1.3vw;
-    word-spacing: -5px;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #0C1519, #264653);
 }
 
-.Tile .AboutMeContent {
-    font-size: 1.27vw;
-    color: lightgrey;
-    margin-left: 1.3vw;
-    margin-right: 1.3vw;
-    margin-top: 1.06vw;
-    font-weight: 300;
-    font-family: var(--main-font), monospace;
+/* Main content container */
+.about-section {
+    max-width: 1000px;
+    width: 90%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
 }
 
-.headerTextAboutMe {
-    font-size: 5.23vh;
-    color: white;
-    margin-left: 1.1vh;
-    margin-top: 0.05vh;
-    font-weight: 0;
+.about-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.AboutMeContent p {
+/* ASCII border styling */
+.ascii-border {
+    color: #4fd1c5;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    margin-bottom: 2rem;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+/* Main content area */
+.content-container {
+    background-color: var(--about-glass);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--about-border);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Left column styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-content h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.4rem;
+    color: var(--about-highlight);
     margin: 0;
-    line-height: 1.4;
+}
+
+.main-content p {
+    color: var(--about-text);
+    line-height: 1.6;
+    margin: 0;
+    font-family: var(--main-font), monospace;
+    font-size: 1.5rem;
+}
+
+/* Skills section */
+.skills-container {
+    margin-top: 1.5rem;
+}
+
+.skills-container h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    color: var(--about-secondary);
+    margin-bottom: 1rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    padding: 0.5rem 1rem;
+    background-color: var(--about-glass);
+    color: var(--about-text);
+    border: 1px solid var(--about-border);
+    border-radius: 4px;
+    font-size: 1.5rem;
+}
+
+.skill-tag:hover {
+    background-color: rgba(44, 62, 80, 0.5);
+    transform: translateY(-2px);
+    transition: 0.2s ease-in-out;
+}
+
+.terminal-info {
+    margin-top: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+}
+
+.terminal-info p {
+    color: var(--about-secondary);
+    margin: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.terminal-info p:hover {
+    color: var(--about-highlight);
 }
