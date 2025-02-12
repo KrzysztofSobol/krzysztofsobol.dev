@@ -32,16 +32,6 @@
     transform: translateY(0);
 }
 
-/* ASCII border styling */
-.ascii-border {
-    color: #4fd1c5;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    margin-bottom: 2rem;
-    white-space: pre;
-    overflow-x: auto;
-}
-
 /* Main content area */
 .content-container {
     background-color: var(--about-glass);
@@ -69,31 +59,26 @@
 .main-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 }
 
 .main-content h2 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono), monospace;
     font-size: 2.4rem;
     color: var(--about-highlight);
     margin: 0;
 }
 
 .main-content p {
-    color: var(--about-text);
-    line-height: 1.6;
-    margin: 0;
-    font-family: var(--main-font), monospace;
-    font-size: 1.5rem;
-}
-
-/* Skills section */
-.skills-container {
-    margin-top: 1.5rem;
+    color: var(--main-white-color);
+    line-height: 1.5;
+    margin-top: 1.1rem;
+    margin-bottom: 0;
+    font-family: var(--font-signika), monospace;
+    font-size: 1.6rem;
 }
 
 .skills-container h3 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono-jetbrains), monospace;
     font-size: 1.5rem;
     color: var(--about-secondary);
     margin-bottom: 1rem;
@@ -108,9 +93,10 @@
 .skill-tag {
     padding: 0.5rem 1rem;
     background-color: var(--about-glass);
-    color: var(--about-text);
+    color: var(--main-white-color);
     border: 1px solid var(--about-border);
     border-radius: 4px;
+    font-family: var(--font-signika), monospace;
     font-size: 1.5rem;
 }
 
@@ -122,7 +108,7 @@
 
 .terminal-info {
     margin-top: 2rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono-jetbrains), monospace;
     font-size: 1.3rem;
 }
 

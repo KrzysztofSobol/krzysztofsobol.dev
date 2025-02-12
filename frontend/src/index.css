@@ -27,7 +27,9 @@ body {
     --highlight-text: #33b4d6;
     --border-color: rgba(51, 180, 214, 0.2);
 
-    --main-font: 'Signika';
+    --font-signika: "Signika";
+    --font-mono: "Space Mono";
+    --font-mono-jetbrains: "JetBrains Mono";
 }
 
 ::-webkit-scrollbar {
