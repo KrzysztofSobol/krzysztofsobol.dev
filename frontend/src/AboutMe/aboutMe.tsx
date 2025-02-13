@@ -46,23 +46,20 @@ function AboutMe() {
                             <div className="skills-container">
                                 <h3>{"> Skills"}</h3>
                                 <div className="skills-grid">
-                                    {['Java', 'C++', 'C', 'C#', 'Python'].map((skill) => (
+                                    {['Java', 'React', 'Backend', 'Frontend', 'DSA'].map((skill) => (
                                         <span key={skill} className="skill-tag">
                                             {skill}
                                         </span>
                                     ))}
                                 </div>
                             </div>
+                            <div className="terminal-info">
+                                <p>$ status: available for opportunities</p>
+                                <p>$ location: Poland</p>
+                                <p>$ specialization: algorithms & data structures</p>
+                            </div>
                         </div>
-
-                        {/* Right Column - ASCII Art */}
-                    </div>
-
-                    {/* Terminal-style Elements */}
-                    <div className="terminal-info">
-                        <p>$ status: available for opportunities</p>
-                        <p>$ location: Poland</p>
-                        <p>$ specialization: algorithms & data structures</p>
+                        <img src={"https://placehold.co/500x350"}/>
                     </div>
                 </div>
             </div>

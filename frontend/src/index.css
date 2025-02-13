@@ -10,6 +10,7 @@ body {
 
 :root {
     --main-white-color: #f4f8ff;
+    --main-off-white-color: #e9ecf2;
     --main-background-color: #0C1519;
     --main-background-color-rgb: 12,21,25;
     --main-map-color: #264653;
@@ -44,11 +45,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-.highlight {
-    color: white;
-    font-weight: 500;
 }
 
 .buttonScroll {
