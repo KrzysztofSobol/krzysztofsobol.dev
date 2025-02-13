@@ -11,10 +11,12 @@
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
     z-index: 2;
     font-family: var(--font-signika), monospace;
+    pointer-events: none;
 }
 
 .map-options-container.visible {
     right: 0;
+    pointer-events: all;
 }
 
 .map-options-content {

@@ -78,7 +78,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                 </svg>
             </button>
 
-            <div className={`map-options-container ${isOpen ? "visible" : ""}`}>
+            <div className={`map-options-container ${isOpen ? "visible" : ""}`} tabIndex={-1}>
                 <div className="map-options-content">
                     <h2 className="options-title">Map Options</h2>
                     <div className="sliders">
@@ -89,6 +89,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             onChange={handleSliderChange}
                             min={1}
                             max={500}
+                            isOpen={isOpen}
                         />
                         <SliderWithNumber
                             label="Sea Weight"
@@ -97,6 +98,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             onChange={handleSliderChange}
                             min={1}
                             max={500}
+                            isOpen={isOpen}
                         />
                         <SliderWithNumber
                             label="Coast Corner Weight"
@@ -105,6 +107,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             onChange={handleSliderChange}
                             min={1}
                             max={100}
+                            isOpen={isOpen}
                         />
                         <SliderWithNumber
                             label="Coast Weight"
@@ -113,13 +116,14 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             onChange={handleSliderChange}
                             min={1}
                             max={100}
+                            isOpen={isOpen}
                         />
                     </div>
                     <div className="option-container">
-                        <button className="button btn-options" onClick={handleGenerate}>
+                        <button className="button btn-options" onClick={handleGenerate} tabIndex={isOpen ? 0 : -1}>
                             generate
                         </button>
-                        <button className="button btn-options btn-lock" onClick={handleSaveMap}>
+                        <button className="button btn-options btn-lock" onClick={handleSaveMap} tabIndex={isOpen ? 0 : -1}>
                             {isSaved === 1 ? "unlock map" : "lock map"}
                         </button>
                     </div>
@@ -136,9 +140,10 @@ interface SliderProps {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     min: number;
     max: number;
+    isOpen: boolean;
 }
 
-function SliderWithNumber({ label, name, value, onChange, min, max }: SliderProps) {
+function SliderWithNumber({ label, name, value, onChange, min, max, isOpen}: SliderProps) {
     return (
         <div className="slider-container">
             <label htmlFor={name} className="slider-label">
@@ -154,6 +159,7 @@ function SliderWithNumber({ label, name, value, onChange, min, max }: SliderProp
                     value={value}
                     onChange={onChange}
                     className="slider-range"
+                    tabIndex={isOpen ? 0 : -1}
                 />
                 <input
                     type="number"
@@ -163,6 +169,7 @@ function SliderWithNumber({ label, name, value, onChange, min, max }: SliderProp
                     value={value}
                     onChange={onChange}
                     className="slider-number"
+                    tabIndex={isOpen ? 0 : -1}
                 />
             </div>
         </div>
