@@ -3,7 +3,7 @@ import type { mapParameters } from "@/types/mapType.ts"
 import "./mapOptions.css"
 
 interface mapOptionProps {
-    onGenerateMap: (parameters: mapParameters, isSaved: number) => void;
+    onGenerateMap: (parameters: mapParameters) => void;
 }
 
 function MapOptions({ onGenerateMap }: mapOptionProps) {
@@ -34,15 +34,18 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
     };
 
     const handleGenerate = () => {
+        if(isSaved === 1){
+            return;
+        }
+
         const mapParameters = {
             grassWeight: sliderValues.slider1,
             seaWeight: sliderValues.slider2,
             coastCornerWeight: sliderValues.slider3,
             coastWeight: sliderValues.slider4,
         };
-
         localStorage.setItem('sliderValues', JSON.stringify(sliderValues));
-        onGenerateMap(mapParameters, isSaved);
+        onGenerateMap(mapParameters);
     }
 
     const handleSaveMap = () => {

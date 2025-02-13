@@ -17,9 +17,9 @@ function Heropage() {
         return storedData ? JSON.parse(storedData) : [];
     });
 
-    const generateMap = async (parameters: mapParameters, isSaved: number) => {
+    const generateMap = async (parameters: mapParameters) => {
         try {
-            if(localStorage.getItem('isSaved') === '1' && isSaved == 0){
+            if(localStorage.getItem('isSaved') === '1'){
                 return;
             }
 
@@ -120,7 +120,7 @@ function Heropage() {
             seaWeight: 100,
             coastCornerWeight: 4,
             coastWeight: 1
-        }, 0);
+        });
     }, []);
 
     useEffect(() => {
