@@ -133,21 +133,15 @@
     margin-top: 30px;
 }
 
-.option-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
 .button.btn-options {
     box-shadow: none;
     font-size: 2rem;
     margin: 0;
     padding: 0.3rem;
+}
+
+.button.btn-options.btn-lock {
+    min-width: 135px;
 }
 
 .button.btn-options:hover {

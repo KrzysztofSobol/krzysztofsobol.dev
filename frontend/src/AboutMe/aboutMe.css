@@ -1,11 +1,10 @@
 :root {
-    --about-highlight: #4dbf9d;      /* Bright teal from your X characters */
-    --about-secondary: #38a3a5;      /* Balanced blue-green from your letters */
-    --about-deep: #247a91;           /* Deeper ocean blue */
-    --about-bg: rgba(38, 70, 83, 0.4); /* Based on your map color */
-    --about-border: rgba(77, 191, 157, 0.2); /* Subtle teal border */
-    --about-text: #f4f8ff;          /* Your main white color */
-    --about-glass: rgba(44, 62, 80, 0.3); /* Matching your button background */
+    --about-highlight: #6bc9b5; /* #4dbf9d */
+    --about-secondary: #38a3a5;
+    --about-deep: #247a91;
+    --about-bg: rgba(38, 70, 83, 0.4);
+    --about-border: rgba(77, 191, 157, 0.2);
+    --about-glass: rgba(44, 62, 80, 0.3);
 }
 
 /* Container styles */

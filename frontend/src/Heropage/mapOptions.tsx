@@ -119,7 +119,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                         <button className="button btn-options" onClick={handleGenerate}>
                             generate
                         </button>
-                        <button className="button btn-options" onClick={handleSaveMap}>
+                        <button className="button btn-options btn-lock" onClick={handleSaveMap}>
                             {isSaved === 1 ? "unlock map" : "lock map"}
                         </button>
                     </div>

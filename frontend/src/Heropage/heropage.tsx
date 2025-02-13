@@ -44,6 +44,7 @@ function Heropage() {
         }
     }
 
+    // land
     const drawOffScreenCanvas = useCallback(() => {
         const canvas = canvasRef.current;
         if(!canvas){
@@ -83,6 +84,7 @@ function Heropage() {
         })
     }, [lines]);
 
+    // water
     const animate = (timestamp: number) => {
         const canvas = canvasRef.current;
         const offscreenCanvas = offScreenCanvasRef.current;
@@ -104,7 +106,7 @@ function Heropage() {
 
             if (waterLine.includes("?")) {
                 const wave = Math.sin(rowIndex * 0.25 + time * 3); // (wave length + speed)
-                const brightness = Math.floor((wave + 1) * 40);
+                const brightness = Math.floor((wave + 1) * 40); // (waveValue * const)
                 ctx.fillStyle = `rgb(${34 + brightness}, ${87 + brightness}, ${122 + brightness})`;
 
                 ctx.fillText(waterLine, 0, 14 * rowIndex);
