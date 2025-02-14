@@ -23,6 +23,10 @@ function AboutMe() {
 
     return (
         <div id="aboutMe" className="page">
+            <div className="background-effects">
+                <div className="ambient-dots"></div>
+                <div className="background-flares"></div>
+            </div>
             <div className={`about-section ${isVisible ? 'visible' : ''}`}>
                 {/* Main Content Container */}
                 <div className="content-container">
