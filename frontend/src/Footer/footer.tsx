@@ -1,3 +1,5 @@
+import './footer.css'
+
 function Footer() {
     const openGithub = () => {
         window.open("https://github.com/KrzysztofSobol", "_blank");
