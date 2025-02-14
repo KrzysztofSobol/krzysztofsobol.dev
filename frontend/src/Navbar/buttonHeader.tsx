@@ -80,7 +80,7 @@ function ButtonHeader() {
                 </svg>
 
                 <div className={"button-container"}>
-                    <button className="button" onClick={() => handleScrollToSection('aboutMe', 75)}>
+                    <button className="button" onClick={() => handleScrollToSection('aboutMe', 50)}>
                         <span className="text">about me</span>
                     </button>
                     <button className="button" onClick={() => handleScrollToSection('projects', 18)}>
