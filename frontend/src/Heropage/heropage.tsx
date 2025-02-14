@@ -1,6 +1,6 @@
 import './heropage.css';
 import {useState, useEffect, useRef, useCallback} from 'react';
-import Title from "../title.jsx";
+import Title from "./title.tsx";
 import ScrollButton from "./buttonScroll.jsx";
 import MapOptions from "./mapOptions.jsx";
 import ButtonHeader from "@/Navbar/buttonHeader.jsx";
