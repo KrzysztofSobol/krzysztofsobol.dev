@@ -17,7 +17,7 @@ body {
     --main-ui-color-light: #33b4d6;
     --main-ui-color: #247a91;
     --main-ui-color-dark: #2c4250;
-    --navbar-background-color: #122229;
+    --navbar-background-color: #0c1519;
     --font-signika: "Signika";
     --font-mono: "Space Mono";
     --font-mono-jetbrains: "JetBrains Mono";
@@ -534,13 +534,6 @@ body {
     left: 0;
     right: 0;
     height: 35vh;
-    background: linear-gradient(
-            to bottom,
-            #0C1519 0%,
-            rgba(18, 34, 41, 0.95) 20%,
-            rgba(18, 34, 41, 0.7) 50%,
-            transparent 100%
-    );
 }
 
 .background-flares {
@@ -600,7 +593,7 @@ body {
     mask-image: linear-gradient(
             to bottom,
             transparent 0%,
-            rgba(0, 0, 0, 0.3) 10%,
+            rgba(0, 0, 0, 0.3) 5%,
             rgba(0, 0, 0, 1) 40%
     );
 }
