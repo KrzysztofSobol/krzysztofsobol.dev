@@ -30,17 +30,15 @@ function ButtonHeader() {
         };
     }, []);
 
-    const handleScrollToSection = (id : string, offset : number) => {
+    const handleScrollToSection = (id : string) => {
         if (!headerRef.current) return;
 
         const section = document.getElementById(id);
         if (section) {
-            const headerOffset = headerRef.current.offsetHeight;
             const elementPosition = section.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - headerOffset + offset;
 
             window.scrollTo({
-                top: offsetPosition,
+                top: elementPosition,
                 behavior: 'smooth'
             });
         }
@@ -50,7 +48,7 @@ function ButtonHeader() {
         <>
             <div ref={placeholderRef} className="placeholder"></div>
             <div ref={headerRef} className="buttonHeader">
-                <svg className={"ksLogo"} onClick={() => handleScrollToSection('main', 0)} viewBox="0 0 500 500" width="80"
+                <svg className={"ksLogo"} onClick={() => handleScrollToSection('main')} viewBox="0 0 500 500" width="80"
                      height="80" xmlns="http://www.w3.org/2000/svg">
                     <g transform="matrix(0.05740800127387046, 0, 0, -0.05740800127387046, -45.54309844970704, 548.1242065429686)"
                        fill="#FFFFFF" stroke="none">
@@ -80,13 +78,13 @@ function ButtonHeader() {
                 </svg>
 
                 <div className={"button-container"}>
-                    <button className="button" onClick={() => handleScrollToSection('aboutMe', 50)}>
+                    <button className="button" onClick={() => handleScrollToSection('aboutMe')}>
                         <span className="text">about me</span>
                     </button>
-                    <button className="button" onClick={() => handleScrollToSection('projects', 18)}>
+                    <button className="button" onClick={() => handleScrollToSection('projects')}>
                         <span className="text">projects</span>
                     </button>
-                    <button className="button" onClick={() => handleScrollToSection('contact', -258)}>
+                    <button className="button" onClick={() => handleScrollToSection('contact')}>
                         <span className="text">contact</span>
                     </button>
                 </div>
