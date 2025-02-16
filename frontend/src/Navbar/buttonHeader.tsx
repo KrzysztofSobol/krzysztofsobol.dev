@@ -33,14 +33,21 @@ function ButtonHeader() {
     const handleScrollToSection = (id : string) => {
         if (!headerRef.current) return;
 
-        const section = document.getElementById(id);
-        if (section) {
-            const elementPosition = section.getBoundingClientRect().top + window.scrollY;
-
+        if (id === 'main'){
             window.scrollTo({
-                top: elementPosition,
+                top: 0,
                 behavior: 'smooth'
             });
+        } else {
+            const section = document.getElementById(id);
+            if (section) {
+                const elementPosition = section.getBoundingClientRect().top + window.scrollY - 15;
+
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
     };
 

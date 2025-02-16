@@ -1,4 +1,9 @@
+.projects-page {
+    align-items: flex-start;
+}
+
 .projects-section {
+    margin-top: 100px;
     position: relative;
 }
 

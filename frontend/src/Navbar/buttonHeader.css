@@ -1,12 +1,13 @@
 .placeholder {
-    height: 7.5vh;
+    height: 7vh;
+    min-height: 60px;
     display: none;
 }
 
 .buttonHeader {
     width: 100%;
     min-height: 60px;
-    height: 7.5vh;
+    height: 7vh;
     z-index: 1;
     display: flex;
     align-items: center;

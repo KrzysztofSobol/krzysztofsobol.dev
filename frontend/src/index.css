@@ -17,7 +17,7 @@ body {
     --main-ui-color-light: #33b4d6;
     --main-ui-color: #247a91;
     --main-ui-color-dark: #2c4250;
-    --navbar-background-color:#122229;
+    --navbar-background-color: #0C1519;
     --font-signika: "Signika";
     --font-mono: "Space Mono";
     --font-mono-jetbrains: "JetBrains Mono";
@@ -51,8 +51,7 @@ body {
 .page {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 102vh;
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
 }

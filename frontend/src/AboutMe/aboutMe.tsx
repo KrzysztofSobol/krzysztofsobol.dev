@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './AboutMe.css';
+import './aboutMe.css';
 
 function AboutMe() {
     const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +22,7 @@ function AboutMe() {
     }, []);
 
     return (
-        <div id="aboutMe" className="page">
+        <div id="aboutMe" className="page aboutMe-page">
             <div className={`about-section ${isVisible ? 'visible' : ''}`}>
                 {/* Main Content Container */}
                 <div className="content-container">

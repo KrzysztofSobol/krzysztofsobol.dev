@@ -1,6 +1,5 @@
-.page {
-    position: relative;
-    overflow: hidden;
+.aboutMe-page {
+    align-items: center;
 }
 
 .about-section {
