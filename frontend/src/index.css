@@ -564,7 +564,7 @@ body {
 
 @keyframes flare-movement {
     0% {
-        transform: translate(-50%, 0) rotate(0deg) translateX(40vmin);
+        transform: translate(-50%, 0) rotate(0deg) translateX(30vmin);
     }
     25% {
         opacity: 0.03;
@@ -576,7 +576,7 @@ body {
         opacity: 0.02;
     }
     100% {
-        transform: translate(-50%, 0) rotate(360deg) translateX(40vmin);
+        transform: translate(-50%, 0) rotate(360deg) translateX(30vmin);
     }
 }
 
