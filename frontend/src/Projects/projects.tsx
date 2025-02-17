@@ -38,27 +38,6 @@ function Projects() {
                         That is a website you are currently on, so welcome. It was supposed to be more of a backend project and it turned out to be a huge frontend learning experience.
                     </p>
                 </div>
-                <div className="content-container">
-                    <h2>Map generation</h2>
-                    <p>
-                        It's a fast wave function collapse algorithm, its being used for generating the main background
-                        of the website.
-                    </p>
-                </div>
-                <div className="content-container">
-                    <h2>Map generation</h2>
-                    <p>
-                        It's a fast wave function collapse algorithm, its being used for generating the main background
-                        of the website.
-                    </p>
-                </div>
-                <div className="content-container">
-                    <h2>Map generation</h2>
-                    <p>
-                        It's a fast wave function collapse algorithm, its being used for generating the main background
-                        of the website.
-                    </p>
-                </div>
             </div>
         </div>
     );
