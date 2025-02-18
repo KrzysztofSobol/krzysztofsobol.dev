@@ -601,3 +601,27 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+.tag {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(
+            135deg,
+            rgba(44, 62, 80, 0.3) 0%,
+            rgba(44, 62, 80, 0.4) 100%
+    );
+    color: var(--main-white-color);
+    border: 1px solid var(--about-border);
+    border-radius: 6px;
+    font-family: var(--font-signika), monospace;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    min-height: 20px;
+    align-content: center;
+}
+
+.tag:hover {
+    background: rgba(44, 62, 80, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--about-highlight);
+}

@@ -18,7 +18,7 @@
         "allowJs": true,
         "paths": {
             "@/*": ["./src/*"],
-            "@components/*": ["./src/components/*"]
+            "@components/*": ["./src/Components/*"]
         }
     },
     "include": ["src"],

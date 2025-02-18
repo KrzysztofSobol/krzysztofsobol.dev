@@ -47,7 +47,7 @@ function AboutMe() {
                                 <h3>{"> Skills"}</h3>
                                 <div className="skills-grid">
                                     {['Java', 'React', 'Backend', 'Frontend', 'DSA'].map((skill) => (
-                                        <span key={skill} className="skill-tag">
+                                        <span key={skill} className="tag">
                                             {skill}
                                         </span>
                                     ))}
