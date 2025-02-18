@@ -552,7 +552,7 @@ body {
     border-radius: 50%;
     background: var(--about-highlight);
     animation: flare-movement 20s linear infinite;
-    opacity: 0.015;
+    opacity: 0.02;
     filter: blur(80px);
     top: 20%;
 }
