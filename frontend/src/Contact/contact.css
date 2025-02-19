@@ -1,29 +1,109 @@
-.Contact{
-    max-width: 1820px;
-    width: 100%;
-    height: 325px;
+.contact-page {
+    align-items: center;
 }
 
-.ContactContent{
+.contact-section {
+    max-width: 1000px;
+    width: 90%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+    position: relative;
+}
+
+.contact-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-container {
+    background: linear-gradient(
+            135deg,
+            rgba(44, 62, 80, 0.2) 0%,
+            rgba(44, 62, 80, 0.3) 100%
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(77, 191, 157, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.1),
+            0 2px 8px rgba(77, 191, 157, 0.1);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight {
+    color: var(--main-white-color);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--about-highlight);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.highlight:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.contact-link {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-left: 29px;
-    margin-bottom: 0;
-    margin-top: 0;
+    text-decoration: none;
+    color: var(--main-off-white-color);
+    font-family: var(--font-mono-jetbrains), monospace;
+    font-size: 1.4rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
 }
 
-.contactText{
-    font-size: 22px;
-    font-weight: 300;
-    font-family: 'Signika', sans-serif;
-    color: white;
+.contact-link:hover {
+    color: var(--about-highlight);
+    transform: translateX(4px);
 }
 
-.contact-tile {
-    position: absolute;
-    top: 43.5%;
-    left: 50%;
-    transform: translate(-50%, -43.5%);
-    width: 48vw;
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    fill: var(--main-off-white-color);
+    transition: fill 0.3s ease;
+}
+
+.contact-link:hover .contact-icon {
+    fill: var(--about-highlight);
 }
