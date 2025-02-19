@@ -11,11 +11,30 @@ function Heropage() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const offScreenCanvasRef = useRef<HTMLCanvasElement | null>(null);
     const animationFrameRef = useRef<number>(0);
+    const [isVisible, setIsVisible] = useState(true);
 
     const [lines, setLines] = useState(() => {
         const storedData = localStorage.getItem('mapData');
         return storedData ? JSON.parse(storedData) : [];
     });
+
+    useEffect(() => {
+        if (!canvasRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            }
+        );
+
+        observer.observe(canvasRef.current);
+
+        return () => {
+            if (canvasRef.current) {
+                observer.unobserve(canvasRef.current);
+            }
+        };
+    }, [canvasRef]);
 
     const generateMap = async (parameters: mapParameters) => {
         try {
@@ -140,14 +159,16 @@ function Heropage() {
         };
 
         resizeCanvas();
-        animationFrameRef.current = requestAnimationFrame(animate);
+        if (isVisible) {
+            animationFrameRef.current = requestAnimationFrame(animate);
+        }
 
         window.addEventListener('resize', resizeCanvas);
         return () => {
             cancelAnimationFrame(animationFrameRef.current);
             window.removeEventListener('resize', resizeCanvas);
         };
-    }, [lines]);
+    }, [lines, isVisible]);
 
     return (
         <div className="theMap">
