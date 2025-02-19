@@ -1,0 +1,9 @@
+.buttonScroll {
+    margin-top: 0.3rem;
+    height: auto;
+    width: 55%;
+}
+
+.buttonScroll:hover {
+    cursor: pointer;
+}

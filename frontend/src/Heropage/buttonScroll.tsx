@@ -1,3 +1,5 @@
+import "./buttonScroll.css"
+
 function ScrollButton() {
     const handleScroll = () => {
         const section = document.getElementById('aboutMe');

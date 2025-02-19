@@ -42,14 +42,6 @@ function Projects() {
                          description={"This project is a solvation of a onboarding problem in the companies, its currently in development, part of my Engineer's Thesis."}
                          techStack={['C#', '.NET', 'React', 'MAUI']}
                          link={"https://github.com/KrzysztofSobol/krzysztofsobol.xyz"} />
-                <Project name={"CatchUp"}
-                         description={"This project is a solvation of a onboarding problem in the companies, its currently in development, part of my Engineer's Thesis."}
-                         techStack={['C#', '.NET', 'React', 'MAUI']}
-                         link={"https://github.com/KrzysztofSobol/krzysztofsobol.xyz"} />
-                <Project name={"CatchUp"}
-                         description={"This project is a solvation of a onboarding problem in the companies, its currently in development, part of my Engineer's Thesis."}
-                         techStack={['C#', '.NET', 'React', 'MAUI']}
-                         link={"https://github.com/KrzysztofSobol/krzysztofsobol.xyz"} />
             </div>
         </div>
     );

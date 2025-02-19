@@ -86,13 +86,13 @@ function ButtonHeader() {
 
                 <div className={"button-container"}>
                     <button className="button" onClick={() => handleScrollToSection('aboutMe')}>
-                        <span className="text">about me</span>
+                        <span>about me</span>
                     </button>
                     <button className="button" onClick={() => handleScrollToSection('projects')}>
-                        <span className="text">projects</span>
+                        <span>projects</span>
                     </button>
                     <button className="button" onClick={() => handleScrollToSection('contact')}>
-                        <span className="text">contact</span>
+                        <span>contact</span>
                     </button>
                 </div>
             </div>

@@ -23,7 +23,7 @@ function Project({name, description, techStack, link}: projectParams) {
                 </div>
 
                 <div className="git-tag">
-                    <a href={link} className="tag">
+                    <a href={link} className="tag" target="_blank">
                         <svg
                             className="git-logo"
                             viewBox="0 0 98 96"
