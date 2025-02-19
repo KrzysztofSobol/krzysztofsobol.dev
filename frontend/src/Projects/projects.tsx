@@ -24,7 +24,7 @@ function Projects() {
 
     return (
         <div id="projects" className="page projects-page">
-            <div className={`projects-section ${isVisible ? 'visible' : ''}`}>
+            <div className={`projects-section ${isVisible ? 'visible' : ''} main-content`}>
                 <h2>{"<Projects/>"}</h2>
                 <Project name={"Map generation"}
                          description={"It's a fast wave function collapse algorithm, its being used for generating the main background of the website."}

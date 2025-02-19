@@ -23,7 +23,7 @@ function Contact() {
 
     return (
         <div id="contact" className="page contact-page">
-            <div className={`contact-section ${isVisible ? 'visible' : ''}`}>
+            <div className={`contact-section ${isVisible ? 'visible' : ''} main-content`}>
                 <div className="content-container">
                     <h2>Contact</h2>
                     <div className="links-container">
