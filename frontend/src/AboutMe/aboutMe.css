@@ -36,8 +36,8 @@
 .main-content p {
     color: var(--main-off-white-color);
     line-height: 1.5;
-    margin-top: 1.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
+    margin-top: 0.8rem;
     font-family: var(--font-signika), monospace;
     font-size: 1.6rem;
     font-weight: 100;

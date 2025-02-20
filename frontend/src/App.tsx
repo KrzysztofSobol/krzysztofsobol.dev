@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <Heropage />
-            <div>
+            <div className="main-content">
                 <div className="background-effects">
                     <div className="ambient-dots"></div>
                     <div className="background-flares"></div>

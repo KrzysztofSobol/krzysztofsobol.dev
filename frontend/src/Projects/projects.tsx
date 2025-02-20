@@ -30,7 +30,7 @@ function Projects() {
                          description={"It's a fast wave function collapse algorithm, its being used for generating the main background of the website."}
                          techStack={['Java', 'DSA']}
                          link={"https://github.com/KrzysztofSobol"} />
-                <Project name={"krzysztofsobol.xyz"}
+                <Project name={"Krzysztofsobol.xyz"}
                          description={"That is a website you are currently on, so welcome. It was supposed to be more of a backend project and it turned out to be a huge frontend learning experience."}
                          techStack={['Java', 'React', 'CSS']}
                          link={"https://github.com/KrzysztofSobol/krzysztofsobol.xyz"} />
@@ -41,6 +41,10 @@ function Projects() {
                 <Project name={"CatchUp"}
                          description={"This project is a solvation of a onboarding problem in the companies, its currently in development, part of my Engineer's Thesis."}
                          techStack={['C#', '.NET', 'React', 'MAUI']}
+                         link={"https://github.com/KrzysztofSobol/krzysztofsobol.xyz"} />
+                <Project name={"Password manager"}
+                         description={"Open source and free, simple, very effective and save password manager."}
+                         techStack={['Python', 'SQLite']}
                          link={"https://github.com/KrzysztofSobol/krzysztofsobol.xyz"} />
             </div>
         </div>
