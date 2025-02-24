@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useRef, useState} from "react"
 import type { mapParameters } from "@/types/mapType.ts"
 import "./mapOptions.css"
 
@@ -8,7 +8,9 @@ interface mapOptionProps {
 
 function MapOptions({ onGenerateMap }: mapOptionProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [showWarning, setShowWarning] = useState(false);
     const [rotationClass, setRotationClass] = useState("");
+    const warningTimerRef = useRef<number | null>(null);
 
     const [isSaved, setIsSaved] = useState(() => {
         const isSavedValue = localStorage.getItem('isSaved');
@@ -33,8 +35,22 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
         }));
     };
 
+    const showWarningMessage = () => {
+        if (warningTimerRef.current !== null) {
+            clearTimeout(warningTimerRef.current);
+        }
+
+        setShowWarning(true);
+
+        warningTimerRef.current = window.setTimeout(() => {
+            setShowWarning(false);
+            warningTimerRef.current = null;
+        }, 3000);
+    };
+
     const handleGenerate = () => {
         if(isSaved === 1){
+            showWarningMessage();
             return;
         }
 
@@ -58,6 +74,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
             return newValue;
         });
         localStorage.setItem('isSaved', '1');
+        setShowWarning(false);
     }
 
     const toggleOptions = () => {
@@ -66,7 +83,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
     }
 
     return (
-        <div className="map-options-wrapper">
+        <div>
             <button className={`settings-button ${rotationClass}`} onClick={toggleOptions}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -82,7 +99,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                 <div className="map-options-content">
                     <h2 className="options-title">Map Options</h2>
                     <div className="sliders">
-                        <SliderWithNumber
+                        <SliderWithTooltip
                             label="Grass Weight"
                             name="slider1"
                             value={sliderValues.slider1}
@@ -90,8 +107,9 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             min={1}
                             max={500}
                             isOpen={isOpen}
+                            tooltipText="Controls the amount of grass terrain on the map. Higher values create more grassland areas."
                         />
-                        <SliderWithNumber
+                        <SliderWithTooltip
                             label="Sea Weight"
                             name="slider2"
                             value={sliderValues.slider2}
@@ -99,8 +117,9 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             min={1}
                             max={500}
                             isOpen={isOpen}
+                            tooltipText="Determines the size and distribution of ocean areas. Higher values result in more water coverage."
                         />
-                        <SliderWithNumber
+                        <SliderWithTooltip
                             label="Coast Corner Weight"
                             name="slider3"
                             value={sliderValues.slider3}
@@ -108,8 +127,9 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             min={1}
                             max={100}
                             isOpen={isOpen}
+                            tooltipText="Affects the sharpness of coastal corners. Higher values create more jagged and detailed coastlines."
                         />
-                        <SliderWithNumber
+                        <SliderWithTooltip
                             label="Coast Weight"
                             name="slider4"
                             value={sliderValues.slider4}
@@ -117,6 +137,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             min={1}
                             max={100}
                             isOpen={isOpen}
+                            tooltipText="Controls the general width and prevalence of coastal regions. Higher values create wider transition areas between land and sea."
                         />
                     </div>
                     <div className="option-container">
@@ -127,13 +148,18 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             {isSaved === 1 ? "unlock map" : "lock map"}
                         </button>
                     </div>
+                    {showWarning && (
+                        <div className="warning-message">
+                            You cannot generate a new map when it's locked! Unlock the map first.
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
     )
 }
 
-interface SliderProps {
+interface SliderTooltipProps {
     label: string;
     name: string;
     value: number;
@@ -141,14 +167,31 @@ interface SliderProps {
     min: number;
     max: number;
     isOpen: boolean;
+    tooltipText: string;
 }
 
-function SliderWithNumber({ label, name, value, onChange, min, max, isOpen}: SliderProps) {
+function SliderWithTooltip({ label, name, value, onChange, min, max, isOpen, tooltipText }: SliderTooltipProps) {
+    const [showTooltip, setShowTooltip] = useState(false);
+
     return (
         <div className="slider-container">
-            <label htmlFor={name} className="slider-label">
-                {label}
-            </label>
+            <div className="slider-label-container">
+                <label htmlFor={name} className="slider-label">
+                    {label}
+                </label>
+                <div
+                    className="info-icon"
+                    onMouseEnter={() => setShowTooltip(true)}
+                    onMouseLeave={() => setShowTooltip(false)}
+                >
+                    ?
+                    {showTooltip && (
+                        <div className="tooltip-box">
+                            {tooltipText}
+                        </div>
+                    )}
+                </div>
+            </div>
             <div className="slider-input-group">
                 <input
                     type="range"
