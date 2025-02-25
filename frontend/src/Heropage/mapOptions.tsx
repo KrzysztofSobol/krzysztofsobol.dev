@@ -141,10 +141,14 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                         />
                     </div>
                     <div className="option-container">
-                        <button className="button btn-options" onClick={handleGenerate} tabIndex={isOpen ? 0 : -1}>
+                        <button className="button btn-options" onClick={handleGenerate}
+                                tabIndex={isOpen ? 0 : -1}
+                                title="generates a new map based on chosen parameters">
                             generate
                         </button>
-                        <button className="button btn-options btn-lock" onClick={handleSaveMap} tabIndex={isOpen ? 0 : -1}>
+                        <button className="button btn-options btn-lock" onClick={handleSaveMap}
+                                tabIndex={isOpen ? 0 : -1}
+                                title={isSaved === 1 ? "Unlock to enable map generation" : "Lock the map, so it always stays the same"}>
                             {isSaved === 1 ? "unlock map" : "lock map"}
                         </button>
                     </div>
