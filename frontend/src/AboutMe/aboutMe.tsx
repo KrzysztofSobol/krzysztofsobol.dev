@@ -59,7 +59,7 @@ function AboutMe() {
                                 <p>$ specialization: algorithms & data structures</p>
                             </div>
                         </div>
-                        <img src={"https://placehold.co/500x350"}/>
+                        <img src="/ProfilePicture.png" alt="Description of the image"/>
                     </div>
                 </div>
             </div>

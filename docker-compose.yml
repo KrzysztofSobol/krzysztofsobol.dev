@@ -1,11 +1,36 @@
 version: '3.1'
 
 services:
-
-  db:
-    image: postgres
+  frontend:
+    build: ./frontend
     ports:
-      - "5432:5432"
+      - "80:80"
     restart: always
-    environment:
-      POSTGRES_PASSWORD: changeMeInProd!
+    depends_on:
+      - backend
+
+  backend:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: always
+    # environment:
+    #   SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/cvwebsite
+    #   SPRING_DATASOURCE_USERNAME: postgres
+    #   SPRING_DATASOURCE_PASSWORD: changeMeInProd!
+    # depends_on:
+    #   - db
+
+  # db:
+  #   image: postgres
+  #   ports:
+  #     - "5432:5432"
+  #   restart: always
+  #   environment:
+  #     POSTGRES_PASSWORD: changeMeInProd!
+  #     POSTGRES_DB: cvwebsite
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres-data:
