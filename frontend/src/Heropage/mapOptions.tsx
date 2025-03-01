@@ -127,7 +127,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             min={1}
                             max={100}
                             isOpen={isOpen}
-                            tooltipText="Affects the sharpness of coastal corners. Higher values create more jagged and detailed coastlines."
+                            tooltipText="Affects the sharpness of coastal corners. Higher values create more jagged coastlines."
                         />
                         <SliderWithTooltip
                             label="Coast Weight"
@@ -137,7 +137,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             min={1}
                             max={100}
                             isOpen={isOpen}
-                            tooltipText="Controls the general width and prevalence of coastal regions. Higher values create wider transition areas between land and sea."
+                            tooltipText="Higher values create longer coastlines. If the value is higher than the corner weight, the terrain will be more angular."
                         />
                     </div>
                     <div className="option-container">
