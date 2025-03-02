@@ -101,3 +101,7 @@
     transform: translateX(4px);
 }
 
+.profile-picture {
+    border-radius: 16px;
+}
+
