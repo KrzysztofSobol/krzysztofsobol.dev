@@ -43,13 +43,6 @@
     font-weight: 100;
 }
 
-.highlight {
-    color: var(--main-white-color);
-    font-weight: 500;
-    position: relative;
-    display: inline-block;
-}
-
 .highlight::after {
     content: '';
     position: absolute;
@@ -104,4 +97,3 @@
 .profile-picture {
     border-radius: 16px;
 }
-

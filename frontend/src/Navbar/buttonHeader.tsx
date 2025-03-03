@@ -85,15 +85,15 @@ function ButtonHeader() {
                 </svg>
 
                 <div className={"button-container"}>
-                    <button className="button" onClick={() => handleScrollToSection('aboutMe')}>
-                        <span>about me</span>
-                    </button>
-                    <button className="button" onClick={() => handleScrollToSection('projects')}>
-                        <span>projects</span>
-                    </button>
-                    <button className="button" onClick={() => handleScrollToSection('contact')}>
-                        <span>contact</span>
-                    </button>
+                    <div onClick={() => handleScrollToSection('aboutMe')}>
+                        <span className="highlight nav-button" >about me</span>
+                    </div>
+                    <div onClick={() => handleScrollToSection('projects')}>
+                        <span className="highlight nav-button">projects</span>
+                    </div>
+                    <div onClick={() => handleScrollToSection('contact')}>
+                        <span className="highlight nav-button">contact</span>
+                    </div>
                 </div>
             </div>
         </>
