@@ -73,7 +73,6 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
             }
             return newValue;
         });
-        localStorage.setItem('isSaved', '1');
         setShowWarning(false);
     }
 
