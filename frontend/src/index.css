@@ -118,65 +118,58 @@ body {
     height: 35vh;
 }
 
-.background-flares {
+.glow-spots {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.background-flares::before,
-.background-flares::after {
-    content: '';
+.glow-spot {
     position: absolute;
-    width: 60vmax;
-    height: 60vmax;
     border-radius: 50%;
-    background: var(--about-highlight);
-    animation: flare-movement 20s linear infinite;
-    opacity: 0.02;
-    filter: blur(80px);
-    top: 20%;
+    background: radial-gradient(circle, rgba(64, 224, 208, 0.15) 0%, rgba(11, 36, 53, 0) 70%);
+    filter: blur(20px);
 }
 
-.background-flares::before {
-    animation-delay: -10s;
-    background: var(--about-secondary);
+.glow-spot:nth-child(1) {
+    top: 0;
+    left: 55%;
+    width: 40vmax;
+    height: 40vmax;
+    opacity: 0.9;
 }
 
-@keyframes flare-movement {
-    0% {
-        transform: translate(-50%, 0) rotate(0deg) translateX(30vmin);
-    }
-    25% {
-        opacity: 0.03;
-    }
-    50% {
-        opacity: 0.015;
-    }
-    75% {
-        opacity: 0.02;
-    }
-    100% {
-        transform: translate(-50%, 0) rotate(360deg) translateX(30vmin);
-    }
+.glow-spot:nth-child(2) {
+    top: 15%;
+    left: 9%;
+    width: 20vmax;
+    height: 20vmax;
+    opacity: 0.6;
 }
 
+.glow-spot:nth-child(3) {
+    top: 75%;
+    right: 64%;
+    width: 30vmax;
+    height: 30vmax;
+    opacity: 0.8;
+}
 .ambient-dots {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(var(--about-border) 1px, transparent 1px);
+    background-image: radial-gradient(var(--about-border) 2px, transparent 1px);
     background-size: 50px 50px;
-    opacity: 0.5;
+    opacity: 1;
     mask-image: linear-gradient(
             to bottom,
             transparent 0%,
             rgba(0, 0, 0, 0.4) 5%,
-            rgba(0, 0, 0, 1) 40%
+            rgba(0, 0, 0, 0.7) 40%
     );
 }
 
