@@ -19,7 +19,8 @@
         "paths": {
             "@/*": ["./src/*"],
             "@components/*": ["./src/Components/*"]
-        }
+        },
+        "allowSyntheticDefaultImports": true
     },
     "include": ["src"],
     "references": [{ "path": "./tsconfig.node.json" }]
