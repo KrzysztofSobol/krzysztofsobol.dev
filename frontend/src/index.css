@@ -134,27 +134,27 @@ body {
 }
 
 .glow-spot:nth-child(1) {
-    top: 7%;
-    left: 55%;
-    width: 40vmax;
-    height: 40vmax;
-    opacity: 0.9;
+    top: 11%;
+    left: 56%;
+    width: 30vmax;
+    height: 30vmax;
+    opacity: 0.6;
 }
 
 .glow-spot:nth-child(2) {
-    top: 3%;
-    left: 8%;
-    width: 25vmax;
+    top: 5%;
+    left: 16%;
+    width: 20vmax;
     height: 20vmax;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .glow-spot:nth-child(3) {
     top: 75%;
-    right: 64%;
-    width: 30vmax;
-    height: 30vmax;
-    opacity: 0.8;
+    right: 63%;
+    width: 22vmax;
+    height: 22vmax;
+    opacity: 0.65;
 }
 .ambient-dots {
     position: absolute;
@@ -164,12 +164,12 @@ body {
     height: 100%;
     background-image: radial-gradient(var(--about-border) 2px, transparent 1px);
     background-size: 50px 50px;
-    opacity: 1;
+    opacity: 0.8;
     mask-image: linear-gradient(
             to bottom,
             transparent 0%,
-            rgba(0, 0, 0, 0.4) 5%,
-            rgba(0, 0, 0, 0.7) 40%
+            rgba(0, 0, 0, 0.4) 20%,
+            rgba(0, 0, 0, 0.6) 40%
     );
 }
 
