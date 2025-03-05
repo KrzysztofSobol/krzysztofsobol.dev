@@ -134,7 +134,7 @@ body {
 }
 
 .glow-spot:nth-child(1) {
-    top: 0;
+    top: 7%;
     left: 55%;
     width: 40vmax;
     height: 40vmax;
@@ -142,9 +142,9 @@ body {
 }
 
 .glow-spot:nth-child(2) {
-    top: 15%;
-    left: 9%;
-    width: 20vmax;
+    top: 3%;
+    left: 8%;
+    width: 25vmax;
     height: 20vmax;
     opacity: 0.6;
 }
