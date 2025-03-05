@@ -224,3 +224,15 @@ body {
             0 2px 8px rgba(77, 191, 157, 0.1);
     margin-top: 25px;
 }
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 1100px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}

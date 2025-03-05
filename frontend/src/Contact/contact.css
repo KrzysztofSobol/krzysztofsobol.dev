@@ -16,18 +16,6 @@
     transform: translateY(0);
 }
 
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-}
-
-@media (max-width: 768px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 .main-content {
     display: flex;
     flex-direction: column;

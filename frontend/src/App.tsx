@@ -11,12 +11,6 @@ function App() {
             <div className="main-content">
                 <div className="background-effects">
                     <div className="ambient-dots"></div>
-
-                    <div className="glow-spots">
-                        <div className="glow-spot"></div>
-                        <div className="glow-spot"></div>
-                        <div className="glow-spot"></div>
-                    </div>
                 </div>
                 <AboutMe/>
                 <Projects/>
