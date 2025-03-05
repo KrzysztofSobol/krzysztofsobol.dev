@@ -134,8 +134,8 @@ body {
 }
 
 .glow-spot:nth-child(1) {
-    top: 11%;
-    left: 56%;
+    top: 40vh;
+    left: 56vw;
     width: 30vmax;
     height: 30vmax;
     opacity: 0.6;
