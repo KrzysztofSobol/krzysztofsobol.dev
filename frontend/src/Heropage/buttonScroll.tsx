@@ -5,10 +5,9 @@ function ScrollButton() {
         const section = document.getElementById('aboutMe');
         if (section) {
             const elementPosition = section.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - 25;
 
             window.scrollTo({
-                top: offsetPosition,
+                top: elementPosition,
                 behavior: 'smooth'
             });
         }

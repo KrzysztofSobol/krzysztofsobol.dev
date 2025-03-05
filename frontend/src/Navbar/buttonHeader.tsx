@@ -41,7 +41,7 @@ function ButtonHeader() {
         } else {
             const section = document.getElementById(id);
             if (section) {
-                const elementPosition = section.getBoundingClientRect().top + window.scrollY - 10;
+                const elementPosition = section.getBoundingClientRect().top + window.scrollY;
 
                 window.scrollTo({
                     top: elementPosition,

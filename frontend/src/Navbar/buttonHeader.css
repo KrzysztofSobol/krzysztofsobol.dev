@@ -54,10 +54,11 @@
     font-family: var(--font-mono-jetbrains), monospace;
     font-size: 2.5rem;
     margin: 3rem;
+    transition: 0.5s;
 }
 
 .nav-button:hover {
     color: var(--about-highlight);
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0s;
 }
