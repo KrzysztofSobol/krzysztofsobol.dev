@@ -162,14 +162,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(var(--about-border) 2px, transparent 1px);
+    background-image: radial-gradient(var(--about-border) 2.3px, transparent 1px);
     background-size: 50px 50px;
     opacity: 1;
     mask-image: linear-gradient(
             to bottom,
             transparent 0%,
-            rgba(0, 0, 0, 0.45) 12%,
-            rgba(0, 0, 0, 0.55) 40%
+            rgba(0, 0, 0, 0.65) 18%,
+            rgba(0, 0, 0, 0.75) 40%
     );
 }
 
