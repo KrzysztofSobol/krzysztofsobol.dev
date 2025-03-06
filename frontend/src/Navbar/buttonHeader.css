@@ -50,15 +50,34 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
-.nav-button {
+.nav-button-text {
     font-family: var(--font-mono-jetbrains), monospace;
     font-size: 2.5rem;
     margin: 3rem;
     transition: 0.5s;
+    display: block;
 }
 
-.nav-button:hover {
+.nav-button-text:hover {
     color: var(--about-highlight);
     cursor: pointer;
     transition: 0s;
+}
+
+.nav-button-icon {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .buttonHeader.sticky {
+        justify-content: right;
+    }
+
+    .nav-button-icon {
+        display: block;
+    }
+
+    .nav-button-text {
+        display: none;
+    }
 }

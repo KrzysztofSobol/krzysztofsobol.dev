@@ -23,7 +23,6 @@
     color: var(--main-white-color);
     font-weight: 500;
     position: relative;
-    display: inline-block;
 }
 
 .highlight::after {

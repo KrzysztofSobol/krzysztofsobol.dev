@@ -61,9 +61,3 @@
 .button-scroll-circle:hover {
     backdrop-filter: blur(0.25rem);
 }
-
-@media (max-width: 700px) {
-    .buttonHeader.sticky {
-        justify-content: right;
-    }
-}
