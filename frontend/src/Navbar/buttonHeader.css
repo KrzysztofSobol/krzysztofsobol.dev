@@ -55,7 +55,6 @@
     font-size: 2.5rem;
     margin: 3rem;
     transition: 0.5s;
-    display: block;
 }
 
 .nav-button-text:hover {
@@ -74,10 +73,17 @@
     }
 
     .nav-button-icon {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-button-text {
         display: none;
+    }
+
+    .button {
+        width: 55px;
+        height: 55px;
     }
 }
