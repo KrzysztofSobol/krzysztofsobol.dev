@@ -82,8 +82,8 @@
         display: none;
     }
 
-    .button {
+    .button-container .button {
         width: 55px;
-        height: 55px;
+        height: auto;
     }
 }
