@@ -35,13 +35,9 @@ function AboutMe() {
                                 className="highlight">CS student</span> from Poland.
                                 I’m into <span className="highlight">Java</span>, <span className="highlight">web development</span>,
                                 and <span className="highlight">solving algorithmic problems</span> for fun.
-                                I love <span className="highlight">building things</span> and figuring
-                                out how they work.
-                                Always <span className="highlight">learning</span>, always <span
-                                className="highlight">experimenting</span>—whether it’s a new framework, a tricky
-                                algorithm, or just a cool side project.
+                                I love <span className="highlight">building stuff</span> and figuring out how things work under the hood.
+                                Always <span className="highlight">learning</span> and <span className="highlight">experimenting</span>, whether it's a new framework, a tricky algorithm, or just a cool side project.
                             </p>
-
 
                             {/* Skills Container */}
                             <div className="skills-container">
