@@ -31,15 +31,17 @@ function AboutMe() {
                         <div className="main-content">
                             <h2>Hello World!</h2>
                             <p>
-                                I'm <span className="highlight">Krzysztof Sobolewski</span>, a <span
-                                className="highlight">CS student</span> from
-                                Poland. I love diving into <span className="highlight">Java</span> and anything related to web development.
-                                I'm <span className="highlight">always</span> up for a <span
-                                className="highlight">new challenge</span> and <span
-                                className="highlight">constantly learning</span> new things in the tech.
-                                I particularly love <span className="highlight">solving algorithmic</span> problems.
-                                one more line here would be cool, fix it tommorow!!!
+                                Hey, I'm <span className="highlight">Krzysztof Sobolewski</span>, a <span
+                                className="highlight">CS student</span> from Poland.
+                                I’m into <span className="highlight">Java</span>, <span className="highlight">web development</span>,
+                                and <span className="highlight">solving algorithmic problems</span> for fun.
+                                I love <span className="highlight">building things</span> and figuring
+                                out how they work.
+                                Always <span className="highlight">learning</span>, always <span
+                                className="highlight">experimenting</span>—whether it’s a new framework, a tricky
+                                algorithm, or just a cool side project.
                             </p>
+
 
                             {/* Skills Container */}
                             <div className="skills-container">
