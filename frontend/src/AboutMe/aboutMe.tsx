@@ -41,7 +41,7 @@ function AboutMe() {
 
                             {/* Skills Container */}
                             <div className="skills-container">
-                                <h3>{"> Skills"}</h3>
+                                <h3>{"> Main Skills"}</h3>
                                 <div className="skills-grid">
                                     {['Java', 'React', 'Backend', 'Frontend', 'DSA'].map((skill) => (
                                         <span key={skill} className="tag">
