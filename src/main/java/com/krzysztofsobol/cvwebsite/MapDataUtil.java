@@ -43,4 +43,28 @@ public class MapDataUtil {
 
         return tiles;
     }
+
+    public static LinkedList<Tile> getCustomizedTiles(int g, int s, int c, int cc){
+        LinkedList<Tile> tiles = new LinkedList<>();
+
+        tiles.add(new Tile('X', g, 3, 3, 3, 3));
+        tiles.add(new Tile('?', s, 1, 1, 1, 1));
+
+        tiles.add(new Tile('A', c, 3, 5, 1, 5));
+        tiles.add(new Tile('B', c, 4, 3, 4, 1));
+        tiles.add(new Tile('C', c, 1, 4, 3, 4));
+        tiles.add(new Tile('D', c, 2, 1, 2, 3));
+
+        tiles.add(new Tile('O', cc,3, 5, 2, 3));
+        tiles.add(new Tile('O', cc,3, 3, 4, 5));
+        tiles.add(new Tile('O', cc, 4, 3, 3, 4));
+        tiles.add(new Tile('O', cc, 2, 4, 3, 3));
+
+        tiles.add(new Tile('G', cc, 1, 1, 2, 4));
+        tiles.add(new Tile('G', cc, 2, 1, 1, 5));
+        tiles.add(new Tile('G', cc, 1, 4, 4, 1));
+        tiles.add(new Tile('G', cc, 4, 5, 1, 1));
+
+        return tiles;
+    }
 }

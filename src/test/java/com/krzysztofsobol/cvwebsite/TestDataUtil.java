@@ -9,7 +9,6 @@ public class TestDataUtil {
                 .name("projectName")
                 .description("projectDescription")
                 .githubLink("github.com/krzysztofsobol/project")
-                .imageSource("imageSource")
                 .build();
     }
 
@@ -19,7 +18,6 @@ public class TestDataUtil {
                 .name("projectName2")
                 .description("projectDescription2")
                 .githubLink("github.com/krzysztofsobol/project2")
-                .imageSource("imageSource2")
                 .build();
     }
 
@@ -29,7 +27,6 @@ public class TestDataUtil {
                 .name("projectName3")
                 .description("projectDescription3")
                 .githubLink("github.com/krzysztofsobol/project3")
-                .imageSource("imageSource3")
                 .build();
     }
 }

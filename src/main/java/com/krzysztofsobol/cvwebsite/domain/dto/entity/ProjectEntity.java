@@ -17,5 +17,4 @@ public class ProjectEntity {
     private String name;
     private String description;
     private String githubLink;
-    private String imageSource;
 }

@@ -39,7 +39,6 @@ public class ProjectServiceImpl implements ProjectService {
             Optional.ofNullable(projectEntity.getName()).ifPresent(existingProject::setName);
             Optional.ofNullable(projectEntity.getDescription()).ifPresent(existingProject::setDescription);
             Optional.ofNullable(projectEntity.getGithubLink()).ifPresent(existingProject::setGithubLink);
-            Optional.ofNullable(projectEntity.getImageSource()).ifPresent(existingProject::setImageSource);
             return projectRepository.save(existingProject);
         }).orElseThrow(() -> new RuntimeException("Project not found"));
     }
