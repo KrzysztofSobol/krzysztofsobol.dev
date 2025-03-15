@@ -12,7 +12,7 @@ function Footer() {
     return (
         <div className="footer-container">
             <div className="footer">
-                <p className="footer-left">krzysztofsobol.xyz</p>
+                <p className="footer-left">krzysztofsobol.dev</p>
                 <p className="footer-right">
                     <svg onClick={openGithub} className={"icon-svg"} width="56px" height="56px" viewBox="0 0 24 24"
                          xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
