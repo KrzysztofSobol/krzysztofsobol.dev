@@ -1,7 +1,7 @@
 ![Alt Text](https://github.com/KrzysztofSobol/krzysztofsobol.xyz/blob/master/src/main/resources/title.png)
 # 🌐 CV Website
 
-A personal CV website built with **Java Spring Boot** and **React**, featuring a **pure CSS design** (no libraries) and a **dynamic map generation algorithm** (fast wave function collapse) running on the backend.
+A personal CV website built with **Java Spring Boot** and **React**, featuring a **pure CSS design** (no libraries) and a **dynamic map generation algorithm** (wave function collapse) running on the backend.
 
 ## 🎯 Highlights
 - 💻 Fullstack application with Spring Boot and React
