@@ -27,12 +27,12 @@ function Contact() {
                 <div className="content-container">
                     <h2>Contact</h2>
                     <div className="links-container">
-                        <a href="mailto:krzysztofsobol9@gmail.com" className="contact-link">
+                        <a href="mailto:contact@krzysztofsobol.dev" className="contact-link">
                             <svg className="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-20.728c-.904 0-1.636-.732-1.636-1.636v-13.909c0-.904.732-1.636 1.636-1.636h20.728c.904 0 1.636.732 1.636 1.636zm-2.418 0l-8.946 7.908-8.946-7.908h17.892zm.782 13.909v-12.732l-9.728 8.574-9.728-8.574v12.732h19.456z"/>
                             </svg>
-                            krzysztofsobol9@gmail.com
+                            contact@krzysztofsobol.dev
                         </a>
                         <a href="https://www.linkedin.com/in/krzysztof-sobol/"
                            className="contact-link" target="_blank" rel="noopener noreferrer">
