@@ -1,4 +1,4 @@
-import {useRef, useState} from "react"
+import {useEffect, useRef, useState} from "react"
 import type { mapParameters } from "@/types/mapType.ts"
 import "./mapOptions.css"
 
@@ -10,6 +10,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [showWarning, setShowWarning] = useState(false);
     const [rotationClass, setRotationClass] = useState("");
+    const [isHighlighted, setIsHighlighted] = useState(true);
     const warningTimerRef = useRef<number | null>(null);
 
     const [isSaved, setIsSaved] = useState(() => {
@@ -76,14 +77,23 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
         setShowWarning(false);
     }
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsHighlighted(false);
+        }, 5800);
+        return () => clearTimeout(timer);
+    }, []);
+
     const toggleOptions = () => {
         setIsOpen(!isOpen);
+        setIsHighlighted(false);
         setRotationClass(isOpen ? "rotate-counterclockwise" : "rotate-clockwise");
     }
 
     return (
         <div>
-            <button className={`settings-button ${rotationClass}`} onClick={toggleOptions}>
+            <button
+                className={`settings-button ${rotationClass} ${isHighlighted ? 'focus' : ''}`} onClick={toggleOptions}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         fillRule="evenodd"
@@ -173,7 +183,7 @@ interface SliderTooltipProps {
     tooltipText: string;
 }
 
-function SliderWithTooltip({ label, name, value, onChange, min, max, isOpen, tooltipText }: SliderTooltipProps) {
+function SliderWithTooltip({label, name, value, onChange, min, max, isOpen, tooltipText}: SliderTooltipProps) {
     const [showTooltip, setShowTooltip] = useState(false);
 
     return (
