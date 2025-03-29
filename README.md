@@ -57,4 +57,4 @@ Make sure Docker is running on your system.
 ---
 
 ## 📄 License
-
+The GNU General Public License v3.0
