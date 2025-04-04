@@ -13,6 +13,19 @@ function Heropage() {
     const animationFrameRef = useRef<number>(0);
     const [isVisible, setIsVisible] = useState(true);
 
+    // Base values for 1080p resolution
+    const BASE_FONT_SIZE = 16;
+    const BASE_CHAR_WIDTH = 9.602;
+    const BASE_LINE_HEIGHT = 14;
+    const BASE_WIDTH = 1920;
+
+    // Reference for current font settings
+    const fontSettingsRef = useRef({
+        fontSize: BASE_FONT_SIZE,
+        charWidth: BASE_CHAR_WIDTH,
+        lineHeight: BASE_LINE_HEIGHT
+    });
+
     const [lines, setLines] = useState(() => {
         const storedData = localStorage.getItem('mapData');
         return storedData ? JSON.parse(storedData) : [];
@@ -63,6 +76,20 @@ function Heropage() {
         }
     }
 
+    const calculateFontSettings = (canvasWidth: number) => {
+        // Linear scaling based on width ratio
+        const scaleFactor = (canvasWidth / BASE_WIDTH) + 0.1;
+
+        // Apply scaling
+        fontSettingsRef.current = {
+            fontSize: Math.max(BASE_FONT_SIZE * scaleFactor, BASE_FONT_SIZE),
+            charWidth: Math.max(BASE_CHAR_WIDTH * scaleFactor, BASE_CHAR_WIDTH),
+            lineHeight: Math.max(BASE_LINE_HEIGHT * scaleFactor, BASE_LINE_HEIGHT)
+        };
+
+        return fontSettingsRef.current;
+    };
+
     // land
     const drawOffScreenCanvas = useCallback(() => {
         const canvas = canvasRef.current;
@@ -80,7 +107,8 @@ function Heropage() {
             return;
         }
 
-        ctx.font = "16px Courier New";
+        const settings = calculateFontSettings(canvas.width);
+        ctx.font = `${settings.fontSize}px Courier New`;
 
         const colorGroups: Record<string, {  c: string; x: number; y: number}[]> = {};
 
@@ -90,7 +118,11 @@ function Heropage() {
                 if (!colorGroups[color]) colorGroups[color] = [];
 
                 if(char !== "?"){
-                    colorGroups[color].push({ c: char, x: 9.602 * colIndex, y: 14 * rowIndex});
+                    colorGroups[color].push({
+                        c: char,
+                        x: settings.charWidth * colIndex,
+                        y: settings.lineHeight * rowIndex
+                    });
                 }
             });
         });
@@ -117,7 +149,8 @@ function Heropage() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(offscreenCanvas, 0, 0); // copy the pre-rendered canvas
 
-        ctx.font = "16px Courier New";
+        const settings = fontSettingsRef.current;
+        ctx.font = `${settings.fontSize}px Courier New`;
         const time = timestamp * 0.001;
 
         lines.forEach((line: string, rowIndex: number) => {
@@ -128,7 +161,7 @@ function Heropage() {
                 const brightness = Math.floor((wave + 1) * 40); // (waveValue * const)
                 ctx.fillStyle = `rgb(${34 + brightness}, ${87 + brightness}, ${122 + brightness})`;
 
-                ctx.fillText(waterLine, 0, 14 * rowIndex);
+                ctx.fillText(waterLine, 0, settings.lineHeight * rowIndex);
             }
         });
 
@@ -168,7 +201,7 @@ function Heropage() {
             cancelAnimationFrame(animationFrameRef.current);
             window.removeEventListener('resize', resizeCanvas);
         };
-    }, [lines, isVisible]);
+    }, [lines, isVisible, drawOffScreenCanvas]);
 
     return (
         <div className="theMap">
