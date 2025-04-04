@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.LinkedList;
 import java.util.List;
 
-//@CrossOrigin(origins = "*") // added for the time of development
+@CrossOrigin(origins = "*") // added for the time of development
 @RestController
 public class MapController {
     MapService mapService;
@@ -37,6 +37,11 @@ public class MapController {
         if (grassWeight == 0 || seaWeight == 0 || coastWeight == 0 || coastCornerWeight == 0) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "All weights must be non-zero");
         }
+
+        grassWeight = Math.min(grassWeight, 9999);
+        seaWeight = Math.min(seaWeight, 9999);
+        coastWeight = Math.min(coastWeight, 9999);
+        coastCornerWeight = Math.min(coastCornerWeight, 9999);
 
         LinkedList<Tile> tiles = MapDataUtil.getCustomizedTiles(grassWeight, seaWeight, coastWeight, coastCornerWeight);
         mapService.init(tiles, 70, 227);
