@@ -53,7 +53,7 @@ function AboutMe() {
                             <div className="terminal-info">
                                 <p>$ status: available for opportunities</p>
                                 <p>$ location: Poland</p>
-                                <p>$ specialization: Web development</p>
+                                <p>$ specialization: web development</p>
                             </div>
                         </div>
                         <img className="profile-picture" src="/ProfilePicture.png" alt="Description of the image"/>
