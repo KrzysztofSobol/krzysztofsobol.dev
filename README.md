@@ -32,12 +32,12 @@ The `Heropage` component generates the map and handles the canvas-based animatio
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/KrzysztofSobol/cv-website.git
+git clone https://github.com/KrzysztofSobol/krzysztofsobol.dev.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd cv-website
+cd krzysztofsobol.dev
 ```
 
 3. Run Docker Compose:
@@ -52,7 +52,7 @@ Make sure Docker is running on your system.
 ## 🛡️ Future Improvements
 - 🖌️ Contact background animation
 - 🛠️ Keeping projects in a database + admin panel
-- ⚡ Canvas dynamic resizing
+- ⚡ Canvas dynamic resizing ✅
 - 🌐 Mobile tweaks
 
 ---
