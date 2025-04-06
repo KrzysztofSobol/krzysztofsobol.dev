@@ -6,12 +6,19 @@ import MapOptions from "./mapOptions.jsx";
 import ButtonHeader from "@/Navbar/buttonHeader.jsx";
 import {getCustomMap} from "@/services/mapService.ts";
 import {mapParameters} from "@/types/mapType.ts";
+import {AxiosError} from "axios";
+
+type RateLimitError = {
+    message: string;
+    retryAfter: number;
+};
 
 function Heropage() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const offScreenCanvasRef = useRef<HTMLCanvasElement | null>(null);
     const animationFrameRef = useRef<number>(0);
     const [isVisible, setIsVisible] = useState(true);
+    const [rateLimitError, setRateLimitError] = useState<RateLimitError | null>(null);
 
     // Base values for 1080p resolution
     const BASE_FONT_SIZE = 16;
@@ -58,8 +65,18 @@ function Heropage() {
             const response = await getCustomMap(parameters);
             setLines(response);
             localStorage.setItem('mapData', JSON.stringify(response));
+            setRateLimitError(null);
         } catch (error) {
             console.error(error);
+            if (error instanceof AxiosError && error.response && error.response.status === 429) {
+                const retryAfterHeader = error.response.headers['retry-after'];
+                const retryAfter = parseInt(retryAfterHeader);
+
+                setRateLimitError({
+                    message: "Rate limit exceeded",
+                    retryAfter
+                });
+            }
         }
     }
 
@@ -210,7 +227,7 @@ function Heropage() {
                     ref={canvasRef}
                     id="main"
                 />
-                <MapOptions onGenerateMap={generateMap}/>
+                <MapOptions onGenerateMap={generateMap} rateLimitError={rateLimitError} />
                 <Title/>
             </div>
             <ScrollButton/>
