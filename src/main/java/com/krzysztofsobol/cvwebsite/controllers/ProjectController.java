@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 //@CrossOrigin(origins = "*") // added for the time of development
-@RestController
+
 public class ProjectController {
     private final ProjectMapper projectMapper;
     ProjectService projectService;
