@@ -44,13 +44,12 @@
 }
 
 .button-scroll-circle {
-    bottom: 100px;
     position: absolute;
+    bottom: 15%;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 55px;
     height: 55px;
     background-color: rgba(44, 62, 80, 0.3);

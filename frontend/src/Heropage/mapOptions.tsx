@@ -30,9 +30,10 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
 
     const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
+        const cappedValue = Math.min(Number.parseInt(value), 9999);
         setSliderValues((prev : any) => ({
             ...prev,
-            [name]: Number.parseInt(value),
+            [name]: cappedValue,
         }));
     };
 
