@@ -4,13 +4,15 @@ import "./mapOptions.css"
 
 interface mapOptionProps {
     onGenerateMap: (parameters: mapParameters) => void;
+    rateLimitError: { message: string, retryAfter: number } | null;
 }
 
-function MapOptions({ onGenerateMap }: mapOptionProps) {
+function MapOptions({ onGenerateMap, rateLimitError }: mapOptionProps) {
     const [isOpen, setIsOpen] = useState(false);
-    const [showWarning, setShowWarning] = useState(false);
-    const [rotationClass, setRotationClass] = useState("");
     const [isHighlighted, setIsHighlighted] = useState(true);
+    const [rotationClass, setRotationClass] = useState("");
+    const [warningInfo, setWarningInfo] = useState("");
+    const [showWarning, setShowWarning] = useState(false);
     const warningTimerRef = useRef<number | null>(null);
 
     const [isSaved, setIsSaved] = useState(() => {
@@ -42,6 +44,7 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
             clearTimeout(warningTimerRef.current);
         }
 
+        setWarningInfo("You cannot generate a new map when it's locked! Unlock the map first.");
         setShowWarning(true);
 
         warningTimerRef.current = window.setTimeout(() => {
@@ -162,11 +165,16 @@ function MapOptions({ onGenerateMap }: mapOptionProps) {
                             {isSaved === 1 ? "unlock map" : "lock map"}
                         </button>
                     </div>
-                    {showWarning && (
+                    {rateLimitError ? (
                         <div className="warning-message">
-                            You cannot generate a new map when it's locked! Unlock the map first.
+                            You've reached the rate limit. You can try again in {Math.ceil(rateLimitError.retryAfter / 1000)} seconds.
                         </div>
-                    )}
+                    ) : showWarning ? (
+                        <div className="warning-message">
+                            {warningInfo}
+                        </div>
+                    ) : null}
+
                 </div>
             </div>
         </div>
