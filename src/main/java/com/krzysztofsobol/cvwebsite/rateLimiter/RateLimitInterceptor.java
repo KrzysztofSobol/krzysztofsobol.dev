@@ -23,6 +23,7 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 
         if (!rateLimiter.allowRequest(ipAddress)) {
             response.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
+            response.setHeader("Retry-After", rateLimiter.getTimeRemaining());
             response.getWriter().write("Rate limit exceeded. Please try again later.");
             return false;
         }

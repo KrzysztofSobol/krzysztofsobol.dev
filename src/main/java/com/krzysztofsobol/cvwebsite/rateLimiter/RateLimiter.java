@@ -12,6 +12,7 @@ public class RateLimiter {
 
     private final int MAX_REQUESTS = 20; // Maximum requests allowed
     private final long TIME_WINDOW_MS = 60 * 1000; // 1 minute window
+    private long timeRemaining = 0;
 
     public boolean allowRequest(String ipAddress) {
         long now = System.currentTimeMillis();
@@ -19,7 +20,8 @@ public class RateLimiter {
         RequestCount count = requestCounts.computeIfAbsent(ipAddress, k -> new RequestCount(now));
 
         synchronized (count) {
-            if (now - count.getWindowStart() > TIME_WINDOW_MS) {
+            timeRemaining = now - count.getWindowStart();
+            if (timeRemaining > TIME_WINDOW_MS) {
                 count.reset(now);
             }
 
@@ -36,6 +38,10 @@ public class RateLimiter {
         long cutoffTime = System.currentTimeMillis() - TIME_WINDOW_MS;
         requestCounts.entrySet().removeIf(entry ->
                 entry.getValue().getWindowStart() < cutoffTime);
+    }
+
+    public String getTimeRemaining(){
+        return String.valueOf((60000 - timeRemaining));
     }
 
     private static class RequestCount {
