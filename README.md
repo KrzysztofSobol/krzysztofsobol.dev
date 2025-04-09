@@ -8,13 +8,13 @@ A personal CV website built with **Java Spring Boot** and **React**, featuring a
 - 🖌️ Pure CSS styling (no frameworks or libraries)
 - 🗺️ Dynamic map generation using a custom wave function collapse algorithm
 - 🎨 Canvas-based map painting and smooth animation
-- 🐳 Docker Compose for easy local deployment
+- 🐳 Docker Compose for easy deployment
 
 ---
 
 ## 🛠️ Tech Stack
 - **Backend**: Java Spring Boot
-- **Frontend**: React + Pure CSS
+- **Frontend**: React + CSS
 
 ---
 
