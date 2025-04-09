@@ -1,5 +1,5 @@
 # Stage 1: build the app
-FROM eclipse-temurin:22-jdk as build
+FROM eclipse-temurin:23-jdk as build
 WORKDIR /app
 
 COPY pom.xml .
@@ -11,7 +11,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Stage 2: runtime image
-FROM eclipse-temurin:22-jre
+FROM eclipse-temurin:23-jre
 WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
