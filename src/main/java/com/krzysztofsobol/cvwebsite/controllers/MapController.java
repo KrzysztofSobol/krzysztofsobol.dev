@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.LinkedList;
 import java.util.List;
 
-@CrossOrigin(origins = "*") // added for the time of development
+@CrossOrigin(origins = "*", exposedHeaders = "Retry-After") // * added for the time of development
 @RestController
 public class MapController {
     MapService mapService;

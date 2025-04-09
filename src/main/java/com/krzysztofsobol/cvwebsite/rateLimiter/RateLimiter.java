@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class RateLimiter {
     private final Map<String, RequestCount> requestCounts = new ConcurrentHashMap<>();
 
-    private final int MAX_REQUESTS = 20; // Maximum requests allowed
+    private final int MAX_REQUESTS = 40; // Maximum requests allowed
     private final long TIME_WINDOW_MS = 60 * 1000; // 1 minute window
     private long timeRemaining = 0;
 
