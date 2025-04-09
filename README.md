@@ -14,7 +14,7 @@ A personal CV website built with **Java Spring Boot** and **React**, featuring a
 
 ## 🛠️ Tech Stack
 - **Backend**: Java Spring Boot
-- **Frontend**: React + Pure CSS
+- **Frontend**: React + CSS
 
 ---
 
