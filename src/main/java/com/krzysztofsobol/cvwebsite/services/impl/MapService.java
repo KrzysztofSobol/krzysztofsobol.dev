@@ -151,6 +151,29 @@ public class MapService {
         return null; // should never happen
     }
 
+    public LinkedList<String> encodeMapData(LinkedList<String> lines){
+        StringBuilder stringBuilder = new StringBuilder();
+        LinkedList<String> result = new LinkedList<>();
+        int count = 0;
+
+
+        for(String s : lines){
+            char[] chars = s.toCharArray();
+            for(int i = 0; i < chars.length - 1; i++){
+                if(chars[i] != chars[i+1]){
+                    if(count != 0)
+                        stringBuilder.append(count).append(chars[i]);
+                    else
+                        stringBuilder.append(chars[i]);
+                } else {
+                    count++;
+                }
+            }
+            result.add(stringBuilder.toString());
+        }
+        return result;
+    }
+
     private LinkedList<Tile> deepCopyTiles(LinkedList<Tile> source) {
         LinkedList<Tile> copy = new LinkedList<>();
         for (Tile tile : source) {
