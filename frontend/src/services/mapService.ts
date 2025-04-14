@@ -26,11 +26,9 @@ export const decodeMapData = (encodedLines: string[]): string[] => {
                     i++;
                 }
 
-                if (i < line.length) {
-                    const char = line[i];
-                    decoded += char.repeat(parseInt(count));
-                    i++;
-                }
+                const char = line[i];
+                decoded += char.repeat(parseInt(count));
+                i++;
             } else {
                 decoded += line[i];
                 i++;
