@@ -22,9 +22,8 @@ public class MapController {
     @GetMapping(path = "/api/mapData")
     public List<String> getDefaultMap(){
         LinkedList<Tile> tiles = MapDataUtil.getTiles();
-        mapService.init(tiles, 70, 227);
-        mapService.Generate();
-        return mapService.GetLines();
+        LinkedList<String> lines = mapService.generate(tiles, 70, 227);
+        return mapService.encodeMapData(lines);
     }
 
     @GetMapping(path = "/api/modifiedMapData")
@@ -38,14 +37,8 @@ public class MapController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "All weights must be non-zero");
         }
 
-        grassWeight = Math.min(grassWeight, 9999);
-        seaWeight = Math.min(seaWeight, 9999);
-        coastWeight = Math.min(coastWeight, 9999);
-        coastCornerWeight = Math.min(coastCornerWeight, 9999);
-
         LinkedList<Tile> tiles = MapDataUtil.getCustomizedTiles(grassWeight, seaWeight, coastWeight, coastCornerWeight);
-        mapService.init(tiles, 70, 227);
-        mapService.Generate();
-        return mapService.GetLines();
+        LinkedList<String> lines = mapService.generate(tiles, 70, 227);
+        return mapService.encodeMapData(lines);
     }
 }

@@ -14,7 +14,7 @@ public class MapService {
     private LinkedList<String> lines;
     private PriorityQueue<TileInfo> tileQueue;
 
-    public void init(LinkedList<Tile> tiles, int x, int y) {
+    private void init(LinkedList<Tile> tiles, int x, int y) {
         tiles = deepCopyTiles(tiles);
         this.xMax = x;
         this.yMax = y;
@@ -30,7 +30,9 @@ public class MapService {
         }
     }
 
-    public void Generate(){
+    public LinkedList<String> generate(LinkedList<Tile> tiles, int xMax, int yMax){
+        init(tiles, xMax, yMax);
+
         Random rand = new Random();
         int x = rand.nextInt(xMax);
         int y = rand.nextInt(yMax);
@@ -42,17 +44,19 @@ public class MapService {
             x = nextTile.getX();
             y = nextTile.getY();
 
-            Tile tile = RandomTile(map[x][y]);
+            Tile tile = randomTile(map[x][y]);
             map[x][y].clear();
             map[x][y].add(tile);
             tile.setCollapsed(true);
 
             tileQueue.remove();
-            UpdateNeighbours(x, y);
+            updateNeighbours(x, y);
         }
+
+        return getLines();
     }
 
-    public LinkedList<String> GetLines(){
+    private LinkedList<String> getLines(){
         for(int i=0; i<xMax; i++){
             StringBuilder line = new StringBuilder();
             for(int j=0; j<yMax; j++){
@@ -63,7 +67,7 @@ public class MapService {
         return lines;
     }
 
-    private void UpdateNeighbours(int x, int y) {
+    private void updateNeighbours(int x, int y) {
         Tile tile = map[x][y].getFirst();
 
         // Check left neighbor (x - 1)
@@ -125,7 +129,7 @@ public class MapService {
     }
 
     // Chooses a random tile based on its weight
-    private Tile RandomTile(LinkedList<Tile> tiles) {
+    private Tile randomTile(LinkedList<Tile> tiles) {
         Map<Character, List<Tile>> typeOfTiles = new HashMap<>();
         int totalWeight = 0;
 
@@ -156,17 +160,20 @@ public class MapService {
         LinkedList<String> result = new LinkedList<>();
         int count = 0;
 
-
         for(String s : lines){
+            stringBuilder.setLength(0);
             char[] chars = s.toCharArray();
-            for(int i = 0; i < chars.length - 1; i++){
-                if(chars[i] != chars[i+1]){
-                    if(count != 0)
-                        stringBuilder.append(count).append(chars[i]);
-                    else
-                        stringBuilder.append(chars[i]);
-                } else {
+
+            for(int i = 0; i < chars.length; i++){
+                if(i < chars.length - 1 && chars[i] == chars[i+1]){
                     count++;
+                } else {
+                    if(count+1 > 2){
+                        stringBuilder.append(count + 1).append(chars[i]);
+                    } else {
+                        stringBuilder.append(String.valueOf(chars[i]).repeat(count + 1));
+                    }
+                    count = 0;
                 }
             }
             result.add(stringBuilder.toString());

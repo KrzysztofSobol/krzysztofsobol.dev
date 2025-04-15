@@ -45,6 +45,11 @@ public class MapDataUtil {
     }
 
     public static LinkedList<Tile> getCustomizedTiles(int g, int s, int c, int cc){
+        g = Math.min(g, 9999);
+        s = Math.min(s, 9999);
+        c = Math.min(c, 9999);
+        cc = Math.min(cc, 9999);
+
         LinkedList<Tile> tiles = new LinkedList<>();
 
         tiles.add(new Tile('X', g, 3, 3, 3, 3));
