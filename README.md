@@ -53,7 +53,6 @@ Make sure Docker is running on your system.
 - 🖌️ Contact background animation
 - 🛠️ Keeping projects in a database + admin panel
 - ⚡ Canvas dynamic resizing ✅
-- 🌐 Mobile tweaks 
 
 ---
 
