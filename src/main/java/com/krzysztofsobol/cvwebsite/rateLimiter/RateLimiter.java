@@ -39,6 +39,22 @@ public class RateLimiter {
                 entry.getValue().getWindowStart() < cutoffTime);
     }
 
+    public String getTimeRemaining(String ipAddress){
+        RequestCount count = requestCounts.get(ipAddress);
+        if(count == null){
+            return "0";
+        }
+
+        long now = System.currentTimeMillis();
+        long elapsed = now - count.getWindowStart();
+
+        if(elapsed >= TIME_WINDOW_MS){
+            return "0";
+        }
+
+        return String.valueOf(TIME_WINDOW_MS - elapsed);
+    }
+
     private static class RequestCount {
         @Getter
         private long windowStart;
