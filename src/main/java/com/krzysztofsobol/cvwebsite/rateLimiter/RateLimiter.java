@@ -11,8 +11,7 @@ public class RateLimiter {
     private final Map<String, RequestCount> requestCounts = new ConcurrentHashMap<>();
 
     private final int MAX_REQUESTS = 40; // Maximum requests allowed
-    private final long TIME_WINDOW_MS = 60 * 1000; // 1 minute window
-    private long timeRemaining = 0;
+    private final long TIME_WINDOW_MS = 60 * 1000; // 1-minute window
 
     public boolean allowRequest(String ipAddress) {
         long now = System.currentTimeMillis();
@@ -20,8 +19,8 @@ public class RateLimiter {
         RequestCount count = requestCounts.computeIfAbsent(ipAddress, k -> new RequestCount(now));
 
         synchronized (count) {
-            timeRemaining = now - count.getWindowStart();
-            if (timeRemaining > TIME_WINDOW_MS) {
+            long elapsed = now - count.getWindowStart();
+            if (elapsed > TIME_WINDOW_MS) {
                 count.reset(now);
             }
 
@@ -40,8 +39,20 @@ public class RateLimiter {
                 entry.getValue().getWindowStart() < cutoffTime);
     }
 
-    public String getTimeRemaining(){
-        return String.valueOf((60000 - timeRemaining));
+    public String getTimeRemaining(String ipAddress){
+        RequestCount count = requestCounts.get(ipAddress);
+        if(count == null){
+            return "0";
+        }
+
+        long now = System.currentTimeMillis();
+        long elapsed = now - count.getWindowStart();
+
+        if(elapsed >= TIME_WINDOW_MS){
+            return "0";
+        }
+
+        return String.valueOf(TIME_WINDOW_MS - elapsed);
     }
 
     private static class RequestCount {
