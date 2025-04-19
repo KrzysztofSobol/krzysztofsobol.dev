@@ -14,6 +14,8 @@ function MapOptions({ onGenerateMap, rateLimitError }: mapOptionProps) {
     const [warningInfo, setWarningInfo] = useState("");
     const [showWarning, setShowWarning] = useState(false);
     const warningTimerRef = useRef<number | null>(null);
+    const [cooldownRemaining, setCooldownRemaining] = useState(0);
+    const cooldownTimerRef = useRef<number | null>(null);
 
     const [isSaved, setIsSaved] = useState(() => {
         const isSavedValue = localStorage.getItem('isSaved');
@@ -29,6 +31,37 @@ function MapOptions({ onGenerateMap, rateLimitError }: mapOptionProps) {
             slider4: 3,
         };
     });
+
+    // Handle rate limit error
+    useEffect(() => {
+        if (rateLimitError) {
+            const seconds = Math.ceil(rateLimitError.retryAfter / 1000);
+            setCooldownRemaining(seconds);
+
+            if (cooldownTimerRef.current) {
+                clearInterval(cooldownTimerRef.current);
+            }
+
+            cooldownTimerRef.current = window.setInterval(() => {
+                setCooldownRemaining(prev => {
+                    if (prev <= 1) {
+                        if (cooldownTimerRef.current) {
+                            clearInterval(cooldownTimerRef.current);
+                            cooldownTimerRef.current = null;
+                        }
+                        return 0;
+                    }
+                    return prev - 1;
+                });
+            }, 1000);
+        }
+
+        return () => {
+            if (cooldownTimerRef.current) {
+                clearInterval(cooldownTimerRef.current);
+            }
+        };
+    }, [rateLimitError]);
 
     const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -56,6 +89,10 @@ function MapOptions({ onGenerateMap, rateLimitError }: mapOptionProps) {
     const handleGenerate = () => {
         if(isSaved === 1){
             showWarningMessage();
+            return;
+        }
+
+        if (cooldownRemaining > 0) {
             return;
         }
 
@@ -154,9 +191,13 @@ function MapOptions({ onGenerateMap, rateLimitError }: mapOptionProps) {
                         />
                     </div>
                     <div className="option-container">
-                        <button className="button btn-options" onClick={handleGenerate}
-                                tabIndex={isOpen ? 0 : -1}
-                                title="generates a new map based on chosen parameters">
+                        <button
+                            className={`button btn-options ${cooldownRemaining > 0 ? 'btn-cooldown' : ''}`}
+                            onClick={handleGenerate}
+                            tabIndex={isOpen ? 0 : -1}
+                            title="generates a new map based on chosen parameters"
+                            disabled={cooldownRemaining > 0}
+                        >
                             generate
                         </button>
                         <button className="button btn-options btn-lock" onClick={handleSaveMap}
@@ -165,9 +206,9 @@ function MapOptions({ onGenerateMap, rateLimitError }: mapOptionProps) {
                             {isSaved === 1 ? "unlock map" : "lock map"}
                         </button>
                     </div>
-                    {rateLimitError ? (
+                    {cooldownRemaining > 0 ? (
                         <div className="warning-message">
-                            You've reached the rate limit. You can try again in {Math.ceil(rateLimitError.retryAfter / 1000)} seconds.
+                            You've reached the rate limit. You can try again in {cooldownRemaining} seconds.
                         </div>
                     ) : showWarning ? (
                         <div className="warning-message">
