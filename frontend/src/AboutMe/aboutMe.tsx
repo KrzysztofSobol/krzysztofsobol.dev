@@ -24,10 +24,8 @@ function AboutMe() {
     return (
         <div id="aboutMe" className="page aboutMe-page">
             <div className={`about-section ${isVisible ? 'visible' : ''}`}>
-                {/* Main Content Container */}
                 <div className="content-container">
                     <div className="content-grid">
-                        {/* Left Column - Main Content */}
                         <div className="main-content">
                             <h2>Hello World!</h2>
                             <p>
@@ -39,7 +37,6 @@ function AboutMe() {
                                 Always <span className="highlight">learning</span> and <span className="highlight">experimenting</span>, whether it's a new framework, a tricky algorithm, or just a cool side project.
                             </p>
 
-                            {/* Skills Container */}
                             <div className="skills-container">
                                 <h3>{"> Main Skills"}</h3>
                                 <div className="skills-grid">
@@ -56,7 +53,7 @@ function AboutMe() {
                                 <p>$ specialization: web development</p>
                             </div>
                         </div>
-                        <img className="profile-picture" src="/ProfilePicture.png" alt="Description of the image"/>
+                        <img className="profile-picture" src="/ProfilePicture.png" alt="Website's creator image"/>
                     </div>
                 </div>
             </div>
