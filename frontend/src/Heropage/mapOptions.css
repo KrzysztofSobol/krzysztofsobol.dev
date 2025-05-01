@@ -30,8 +30,7 @@
 }
 
 .settings-button {
-    background-color: rgba(44, 62, 80, 0.3);
-    backdrop-filter: blur(0.15rem);
+    background-color: rgba(44, 62, 80, 0.7);
     border: none;
     border-radius: 50%;
     width: 55px;
@@ -48,7 +47,7 @@
 }
 
 .settings-button:hover {
-    backdrop-filter: blur(0.25rem);
+    background-color: rgba(44, 62, 80, 0.9);
 }
 
 .settings-button svg {
