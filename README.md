@@ -49,12 +49,5 @@ Make sure Docker is running on your system.
 
 ---
 
-## 🛡️ Future Improvements
-- 🖌️ Contact background animation
-- 🛠️ Keeping projects in a database + admin panel
-- ⚡ Canvas dynamic resizing ✅
-
----
-
 ## 📄 License
 The GNU General Public License v3.0
